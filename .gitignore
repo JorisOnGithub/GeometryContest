@@ -3,6 +3,10 @@ challenge_instances
 challenge_instances/
 challenge_instances/*
 
+.idea
+.idea/
+.idea/*
+
 # Prerequisites
 *.d
 
