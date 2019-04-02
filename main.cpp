@@ -1,7 +1,8 @@
-#include <iostream>
 #include "reader.h"
+#include <iostream>
 #include <vector>
 #include <algorithm>
+#include "datastructures/polygon.h"
 #include "simpleChecker.h"
 
 using namespace std;

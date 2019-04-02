@@ -4,7 +4,6 @@
 
 #include <algorithm>
 #include <set>
-#include "datastructures.h"
 #include "simpleChecker.h"
 
 // checks if p is to the left of, on, or to the right of line segment ab
@@ -28,7 +27,7 @@ bool intersect(const SLseg &a, const SLseg &b) {
     return true;
 }
 
-bool isSimple(polygon &P) {
+bool isSimple(const polygon &P) {
     std::vector<point> pts = P.getPoints();
     int n = (int) pts.size() - 1;
     std::vector<event> EQ; // event queue
@@ -79,3 +78,6 @@ bool isSimple(polygon &P) {
     return true;
 }
 
+bool simpleChecker::isSimple() const {
+    return ::isSimple(this->P);
+}

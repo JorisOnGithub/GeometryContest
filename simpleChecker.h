@@ -9,15 +9,29 @@
 // Created by Joris on 31/03/2019.
 //
 
-#include "datastructures.h"
 #include <math.h>
 #include <vector>
 #include <cmath>
 #include <algorithm>
 #include <set>
+#include "datastructures/polygon.h"
 
 enum SEG_SIDE {
     LEFT, RIGHT
+};
+
+class simpleChecker {
+private:
+    polygon P;
+
+public:
+    simpleChecker(const polygon &_P) : P(_P) {}
+
+    // n^2 simple check
+    bool isSimpleSlow() const;
+
+    // n log n simple check
+    bool isSimple() const;
 };
 
 double isLeft(const point &a, const point &b, const point &p);
@@ -83,7 +97,7 @@ public:
 };
 
 
-bool isSimple(polygon &P);
+bool isSimple(const polygon &P);
 
 
 #endif //GEOMETRY_CONTEST_SIMPLECHECKER_H

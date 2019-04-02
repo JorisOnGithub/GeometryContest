@@ -5,8 +5,8 @@
 #ifndef GEOMETRY_CONTEST_READER_H
 #define GEOMETRY_CONTEST_READER_H
 
-#include "datastructures.h"
 #include <vector>
+#include "datastructures/point.h"
 
 /** reader class
  * Reads an input file in the correct format and stores the points in a point list.
