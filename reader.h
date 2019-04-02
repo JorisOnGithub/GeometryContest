@@ -6,6 +6,7 @@
 #define GEOMETRY_CONTEST_READER_H
 
 #include <vector>
+#include <string>
 #include "datastructures/point.h"
 
 /** reader class
