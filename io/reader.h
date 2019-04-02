@@ -7,10 +7,10 @@
 
 #include <vector>
 #include <string>
-#include "datastructures/point.h"
+#include "../datastructures/point.h"
 
 /** reader class
- * Reads an input file in the correct format and stores the points in a point list.
+ *  Reads an input file in the correct format and stores the points in a point list.
  */
 class reader {
 private:
