@@ -14,12 +14,17 @@ void printEvaluation(polygon &solution) {
     std::cout << "input polygon is " << (isSimple(solution) ? "" : " not ") << "simple" << std::endl;
 }
 
-int main() {
+int main(int argc, char **argv) {
+    if (argc < 2) {
+        std::cerr << "File not given" << std::endl;
+        return 1;
+    }
+
     std::cerr << "starting main program" << std::endl;
 
     // read input
     reader r;
-    r.readInput("test.txt");
+    r.readInput(argv[1]);
     vector<point> points = r.getPoints();
 
     // create polygon from input order
