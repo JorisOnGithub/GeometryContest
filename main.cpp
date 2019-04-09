@@ -52,12 +52,12 @@ int main(int argc, char **argv) {
     // inefficient, but just showing it works ;)
     vector<double> coords {};
     for (int i = 0; i < points.size(); i++) {
-			coords.push_back(points[i].x);
-			coords.push_back(points[i].y);
+        coords.push_back(points[i].x);
+        coords.push_back(points[i].y);
     }
 
-		delaunator::Delaunator d(coords);
-		for(std::size_t i = 0; i < d.triangles.size(); i+=3) {
+    delaunator::Delaunator d(coords);
+    for(std::size_t i = 0; i < d.triangles.size(); i+=3) {
         printf(
             "Triangle points: [[%f, %f], [%f, %f], [%f, %f]]\n",
             d.coords[2 * d.triangles[i]],        //tx0
