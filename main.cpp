@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
     std::cout << "sorted points on y coordinate" << std::endl;
     printEvaluation(solution);
 
-    std::cout << "running deleunay trangulation" << std::endl;
+    std::cout << "running delaunay trangulation" << std::endl;
 
     // inefficient, but just showing it works ;)
     vector<double> coords {};
