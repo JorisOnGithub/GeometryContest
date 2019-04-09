@@ -1,0 +1,11 @@
+# for vim users https://github.com/editorconfig/editorconfig-vim
+# for clion users https://plugins.jetbrains.com/plugin/7294-editorconfig
+
+# everything will be space indented, like it is now already
+[*]
+indent_style = space
+indent_size = 4
+
+# make files will be tab indented
+[Makefile]
+indent_style = tab
