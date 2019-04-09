@@ -3,4 +3,4 @@ project(Geometry_Contest)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Geometry_Contest main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/point.cpp datastructures/point.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h)
+add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/point.cpp datastructures/point.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h)
