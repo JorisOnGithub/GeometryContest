@@ -5,7 +5,7 @@
 #ifndef GEOMETRY_CONTEST_VEC_H
 #define GEOMETRY_CONTEST_VEC_H
 
-#include "point.h"
+const double EPS = 1e-9;
 
 // vector in 2D space
 class vec {
@@ -16,7 +16,7 @@ public:
     // constructors
     vec(double _x, double _y) : x(_x), y(_y) {}
 
-    vec(const point &a, const point &b) : vec(b.x - a.x, b.y - a.y) {}
+    vec(const vec &a, const vec &b) : vec(b.x - a.x, b.y - a.y) {}
 
     // operations
 
@@ -34,7 +34,7 @@ public:
 };
 
 // VECTOR
-vec toVec(point a, point b);
+vec toVec(vec a, vec b);
 
 double norm_sq(vec v);
 

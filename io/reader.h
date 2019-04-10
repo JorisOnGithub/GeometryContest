@@ -7,17 +7,17 @@
 
 #include <vector>
 #include <string>
-#include "../datastructures/point.h"
+#include "../datastructures/vec.h"
 
 /** reader class
  *  Reads an input file in the correct format and stores the points in a point list.
  */
 class reader {
 private:
-    std::vector<point> points;
+    std::vector<vec> points;
 
 public:
-    std::vector<point> getPoints();
+    std::vector<vec> getPoints();
     void readInput(std::string fileName);
 };
 

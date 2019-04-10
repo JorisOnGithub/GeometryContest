@@ -5,24 +5,24 @@
 #ifndef GEOMETRY_CONTEST_POLYGON_H
 #define GEOMETRY_CONTEST_POLYGON_H
 
-#include "point.h"
+#include "vec.h"
 #include <vector>
 
 // polygon in 2D space
 class polygon {
 private:
     // p0, p1, ..., pn, p0. Note that p0 must be at the start and end of this list!
-    std::vector<point> points;
+    std::vector<vec> points;
 
 public:
     // constructors
     polygon() {}
 
-    polygon(std::vector<point> &_points) : points(_points) {}
+    polygon(std::vector<vec> &_points) : points(_points) {}
 
-    void setPoints(std::vector<point> &points);
+    void setPoints(std::vector<vec> &points);
 
-    std::vector<point> getPoints() const;
+    std::vector<vec> getPoints() const;
 
     double area() const;
 

@@ -9,7 +9,7 @@
 #include <fstream>
 #include "reader.h"
 
-std::vector<point> reader::getPoints() {
+std::vector<vec> reader::getPoints() {
     return points;
 }
 
@@ -38,7 +38,7 @@ void reader::readInput(std::string fileName) {
             ss >> item;
             int y = std::stoi(item);
 
-            points.emplace_back(point(x, y, index));
+            points.emplace_back(vec(x, y));
         }
         infile.close();
     } else {

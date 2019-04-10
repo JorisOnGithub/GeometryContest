@@ -30,7 +30,7 @@ point line::intersect(const line &l) const {
 
 // LINE UTILITY
 
-line pointsToLine(const point &p1, const point &p2) {
+line pointsToLine(const vec &p1, const vec &p2) {
     return line(p1, p2);
 }
 

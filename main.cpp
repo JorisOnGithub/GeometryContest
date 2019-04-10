@@ -20,7 +20,7 @@ int main() {
     // read input
     reader r;
     r.readInput("test.txt");
-    vector<point> points = r.getPoints();
+    vector<vec> points = r.getPoints();
 
     // create polygon from input order
     polygon solution(points);

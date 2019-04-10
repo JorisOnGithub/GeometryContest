@@ -5,7 +5,7 @@
 #ifndef GEOMETRY_CONTEST_LINE_H
 #define GEOMETRY_CONTEST_LINE_H
 
-#include "point.h"
+#include "vec.h"
 
 // infinite line in 2D space
 class line {
@@ -17,7 +17,7 @@ public:
     // constructors
     line(double _a, double _b, double _c) : a(_a), b(_b), c(_c) {}
 
-    line(const point &p1, const point &p2) {
+    line(const vec &p1, const vec &p2) {
         if (fabs(p1.x - p2.x) < EPS) { // vertical line
             line(1.0, 0.0, -p1.x);
         } else {
@@ -40,7 +40,7 @@ public:
 };
 
 
-line pointsToLine(const point &p1, const point &p2);
+line pointsToLine(const vec &p1, const vec &p2);
 
 bool areParallel(const line &l1, const line &l2);
 

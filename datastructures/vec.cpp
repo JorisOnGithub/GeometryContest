@@ -3,7 +3,7 @@
 //
 
 #include "vec.h"
-
+#include <cmath>
 
 // L2 norm of this vector squared
 double vec::norm_sq() const {
@@ -27,7 +27,7 @@ double vec::cross(const vec &v) const {
 
 // VECTOR UTILITY
 
-vec toVec(const point &a, const point &b) {
+vec toVec(const vec &a, const vec &b) {
     return vec(a, b);
 }
 

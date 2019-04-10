@@ -6,7 +6,7 @@
 #include "vec.h"
 
 // returns true if c is not to the right of vector ab
-bool ccw(const point &a, const point &b, const point &c) {
+bool ccw(const vec &a, const vec &b, const vec &c) {
     return vec(a, b).cross(vec(b, c)) >= 0;
 }
 
