@@ -6,6 +6,7 @@
 #define GEOMETRY_CONTEST_LINE_H
 
 #include "vec.h"
+#include <cmath>
 
 // infinite line in 2D space
 class line {
@@ -36,7 +37,7 @@ public:
 
     bool isEqual(const line &l) const;
 
-    point intersect(const line &l) const;
+    vec intersect(const line &l) const;
 };
 
 
@@ -47,7 +48,7 @@ bool areParallel(const line &l1, const line &l2);
 bool areEqual(const line &l, const line &l2);
 
 // returns intersection point of line l1 and line l2
-point intersect(const line &l1, const line &l2);
+vec intersect(const line &l1, const line &l2);
 
 
 #endif //GEOMETRY_CONTEST_LINE_H

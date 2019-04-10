@@ -90,10 +90,10 @@ bool intersect(const SLseg &a, const SLseg &b);
 class event {
 public:
     SEG_SIDE type; // type of event
-    point *eP; // event point
+    vec *eP; // event point
     SLseg *seg; // segment related to this event
 
-    event(SEG_SIDE type, point &p, SLseg &_seg) {
+    event(SEG_SIDE type, vec &p, SLseg &_seg) {
         this->type = type;
         this->eP = &p;
         this->seg = &_seg;

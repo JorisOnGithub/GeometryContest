@@ -12,7 +12,7 @@ bool line::isEqual(const line &l) const {
     return this->isParallel(l) && fabs(this->c - l.c) < EPS;
 }
 
-point line::intersect(const line &l) const {
+vec line::intersect(const line &l) const {
     if (this->isParallel(l)) throw "lines are parallel, no intersection point";
 
     // solve 2x2 matrix
@@ -25,7 +25,7 @@ point line::intersect(const line &l) const {
         y = (-this->c - this->a * x) / this->b;
     }
 
-    return point(x, y);
+    return vec(x, y);
 }
 
 // LINE UTILITY
@@ -42,6 +42,6 @@ bool areEqual(const line &l1, const line &l2) {
     return l1.isEqual(l2);
 }
 
-point intersect(const line &l1, const line &l2) {
+vec intersect(const line &l1, const line &l2) {
     return l1.intersect(l2);
 }

@@ -3,18 +3,17 @@
 //
 
 #include "polygon.h"
-#include "vec.h"
 
 // returns true if c is not to the right of vector ab
 bool ccw(const vec &a, const vec &b, const vec &c) {
     return vec(a, b).cross(vec(b, c)) >= 0;
 }
 
-void polygon::setPoints(std::vector<point> &points)  {
+void polygon::setPoints(std::vector<vec> &points)  {
     this->points = points;
 }
 
-std::vector<point> polygon::getPoints() const {
+std::vector<vec> polygon::getPoints() const {
     return this->points;
 }
 

@@ -3,7 +3,6 @@
 //
 
 #include "vec.h"
-#include <cmath>
 
 // L2 norm of this vector squared
 double vec::norm_sq() const {
