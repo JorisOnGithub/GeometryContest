@@ -5,7 +5,9 @@
 #ifndef GEOMETRY_CONTEST_VEC_H
 #define GEOMETRY_CONTEST_VEC_H
 
-#include "point.h"
+#include <cmath>
+
+const double EPS = 1e-9;
 
 // vector in 2D space
 class vec {
@@ -14,9 +16,10 @@ public:
 
 public:
     // constructors
+    vec() {}
     vec(double _x, double _y) : x(_x), y(_y) {}
 
-    vec(const point &a, const point &b) : vec(b.x - a.x, b.y - a.y) {}
+    vec(const vec &a, const vec &b) : vec(b.x - a.x, b.y - a.y) {}
 
     // operations
 
@@ -31,10 +34,28 @@ public:
 
     // cross product
     double cross(const vec &v) const;
+
+    // arithmetic
+    vec operator+(const vec &p) const {
+        return vec(x + p.x, y + p.y);
+    }
+
+    vec operator-(const vec &p) const {
+        return vec(x - p.x, y - p.y);
+    }
+
+    // default sorting order: y increasing then x increasing
+    bool operator<(vec p) const {
+        if (fabs(y - p.y) < EPS) {
+            return x < p.x;
+        }
+        return y < p.y;
+    }
+
 };
 
 // VECTOR
-vec toVec(point a, point b);
+vec toVec(vec a, vec b);
 
 double norm_sq(vec v);
 

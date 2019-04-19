@@ -26,8 +26,7 @@ int main(int argc, char **argv) {
     // read input
     reader r;
     r.readInput(argv[1]);
-    vector<point> points = r.getPoints();
-
+    vector<vec> points = r.getPoints();
 
     // create polygon from input order
     polygon solution(points);

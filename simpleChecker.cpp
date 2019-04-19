@@ -8,27 +8,57 @@
 
 // checks if p is to the left of, on, or to the right of line segment ab
 // return < 0 if left, 0 if on, > 0 if right
-double isLeft(const point &a, const point &b, const point &p) {
+double isLeft(const vec &a, const vec &b, const vec &p) {
     // (l.rP - l.lP) and (p - l.lP)
     return (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
 }
 
-bool intersect(const SLseg &a, const SLseg &b) {
+bool SLseg::intersect(const SLseg &o) const {
     // intersection at vertex that is in both segments does not count
-    if (a.edge == b.edge + 1 || b.edge == a.edge + 1) return false;
+    if (this->edge == o.edge + 1 || this->edge + 1 == o.edge) return false;
 
     double l_sign, r_sign;
-    l_sign = isLeft(a.lP, a.rP, b.lP);
-    r_sign = isLeft(a.lP, a.rP, b.rP);
+    l_sign = isLeft(this->lP, this->rP, o.lP);
+    r_sign = isLeft(this->lP, this->rP, o.rP);
     if (l_sign * r_sign > 0) return false; // both endpoints on the same side of line
-    l_sign = isLeft(b.lP, b.rP, a.lP);
-    r_sign = isLeft(b.lP, b.rP, a.rP);
+
+    l_sign = isLeft(o.lP, o.rP, this->lP);
+    r_sign = isLeft(o.lP, o.rP, this->rP);
     if (l_sign * r_sign > 0) return false;
     return true;
 }
 
+bool intersect(const SLseg &a, const SLseg &b) {
+    return a.intersect(b);
+}
+
 bool isSimple(const polygon &P) {
-    std::vector<point> pts = P.getPoints();
+    simpleChecker sC(P);
+    return sC.isSimple();
+}
+
+bool simpleChecker::isSimpleSlow() const {
+    std::vector<vec> pts = this->P.getPoints();
+    int n = (int) pts.size() - 1;
+
+    std::vector<SLseg> segments;
+    for (int i = 0; i < n; i++) {
+        SLseg seg = SLseg(pts[i], pts[i + 1], i);
+        segments.push_back(seg);
+    }
+
+    // check quadratic intersections between n sections
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (segments[i].intersect(segments[j])) return false;
+        }
+    }
+
+    return true;
+}
+
+bool simpleChecker::isSimple() const {
+    std::vector<vec> pts = this->P.getPoints();
     int n = (int) pts.size() - 1;
     std::vector<event> EQ; // event queue
 
@@ -37,8 +67,8 @@ bool isSimple(const polygon &P) {
         SLseg seg = SLseg(pts[i], pts[i + 1], i);
         bool isOrder = pts[i].x <= pts[i + 1].x;
         SEG_SIDE type = isOrder ? LEFT : RIGHT;
-        EQ.emplace_back(event(type, pts[i], seg));
-        EQ.emplace_back(event(isOrder ? RIGHT : LEFT, pts[i + 1], seg));
+        EQ.emplace_back(event(type, pts[i], seg)); // first point
+        EQ.emplace_back(event(isOrder ? RIGHT : LEFT, pts[i + 1], seg)); // second point
     }
     std::sort(EQ.begin(), EQ.end());
 
@@ -74,10 +104,5 @@ bool isSimple(const polygon &P) {
         }
     }
 
-
     return true;
-}
-
-bool simpleChecker::isSimple() const {
-    return ::isSimple(this->P);
 }
