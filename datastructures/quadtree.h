@@ -32,13 +32,7 @@ class quadtree {
             topright = tr;
         }
 
-        void insert(std::vector<line> &lines) {
-            for (int i = 0; i < lines.size(); ++i) {
-                insert(lines[i]);
-            }
-        }
-
-        void insert(line &l);
+        bool insert(line &l);
 
         bool remove(line &l);
 
