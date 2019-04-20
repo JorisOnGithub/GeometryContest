@@ -10,6 +10,7 @@ class quadtree {
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
         vec botleft, topright; // border info
         int node_count;
+        std::vector<line *> data;
 
         quadtree(quadtree* _parent, const vec &bl, const vec &tr) {
             quadtree(bl, tr);
@@ -27,6 +28,7 @@ class quadtree {
             ne = NULL;
             sw = NULL;
             se = NULL;
+            data.reserve(bucketsize);
             node_count = 0;
             botleft = bl;
             topright = tr;
@@ -37,7 +39,10 @@ class quadtree {
         bool remove(line &l);
 
         bool intersects_line(line &l);
-
+        
+        std::vector<line*> get_data() {
+            return data;
+        }
         int size();
 };
 
