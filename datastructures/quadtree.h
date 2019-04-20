@@ -1,0 +1,50 @@
+#include "vec.h"
+#include "line.h"
+#include <vector>
+#ifndef GEOMETRY_CONTEST_QUADTREE_H
+#define GEOMETRY_CONTEST_QUADTREE_H
+
+static constexpr int bucketsize = 4;
+class quadtree {
+    private:
+        quadtree  *parent, *nw, *ne, *sw, *se; // relative info
+        vec botleft, topright; // border info
+        int node_count;
+
+        quadtree(quadtree* _parent, const vec &bl, const vec &tr) {
+            quadtree(bl, tr);
+            parent = _parent;
+        }
+        
+        bool intersects_boundary(line &l);
+
+        void subdivide();
+
+    public:
+        quadtree(const vec &bl, const vec &tr) { // client constructor
+            parent = NULL;
+            nw = NULL;
+            ne = NULL;
+            sw = NULL;
+            se = NULL;
+            node_count = 0;
+            botleft = bl;
+            topright = tr;
+        }
+
+        void insert(std::vector<line> &lines) {
+            for (int i = 0; i < lines.size(); ++i) {
+                insert(lines[i]);
+            }
+        }
+
+        void insert(line &l);
+
+        bool remove(line &l);
+
+        bool intersects_line(line &l);
+
+        int size();
+};
+
+#endif
