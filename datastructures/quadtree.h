@@ -21,6 +21,10 @@ class quadtree {
 
         void subdivide();
 
+        bool is_leaf() {
+            return nw == NULL;
+        }
+
     public:
         quadtree(const vec &bl, const vec &tr) { // client constructor
             parent = NULL;
