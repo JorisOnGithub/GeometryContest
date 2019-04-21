@@ -1,6 +1,6 @@
 #include "vec.h"
-#include "line.h"
-#include <vector>
+#include "lineseg.h"
+#include <set>
 #ifndef GEOMETRY_CONTEST_QUADTREE_H
 #define GEOMETRY_CONTEST_QUADTREE_H
 
@@ -10,14 +10,14 @@ class quadtree {
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
         vec botleft, topright; // border info
         int node_count;
-        std::vector<line *> data;
+        std::set<lineseg *> data;
 
         quadtree(quadtree* _parent, const vec &bl, const vec &tr) {
             quadtree(bl, tr);
             parent = _parent;
         }
         
-        bool intersects_boundary(line &l);
+        bool intersects_boundary(lineseg &l);
 
         void subdivide();
 
@@ -32,19 +32,18 @@ class quadtree {
             ne = NULL;
             sw = NULL;
             se = NULL;
-            data.reserve(bucketsize);
             node_count = 0;
             botleft = bl;
             topright = tr;
         }
 
-        bool insert(line &l);
+        bool insert(lineseg *l);
 
-        bool remove(line &l);
+        bool remove(lineseg *l);
 
-        bool intersects_line(line &l);
+        bool intersects_line(lineseg *l);
         
-        std::vector<line*> get_data() {
+        std::set<lineseg *> get_data() {
             return data;
         }
         int size();
