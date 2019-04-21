@@ -12,16 +12,16 @@ class lineseg {
             b = b;
         }
 
-        void setA(vec *newA) {
-            a = newA; 
+        void set_a(vec *new_a) {
+            a = new_a; 
         }
 
-        void setB(vec *newB) {
-            b = newB; 
+        void set_b(vec *new_b) {
+            b = new_b; 
         }
 
-        bool intersects(lineseg other);
+        bool intersects(lineseg *other);
 
-        bool intersects(line other);
+        bool intersects(line *other);
 };
 #endif
