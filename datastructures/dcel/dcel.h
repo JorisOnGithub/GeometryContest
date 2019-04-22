@@ -41,6 +41,9 @@ public:
     // Insert & return new vertex by splitting edge h
     vertex splitEdge(halfedge h);
 
+    // Insert new vertex without edges
+    void addVertex(vertex v);
+
     // Remove edge between vertex v1 and vertex v2
     void removeEdge(vertex v1, vertex v2);
 
