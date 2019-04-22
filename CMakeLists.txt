@@ -4,3 +4,9 @@ project(Geometry_Contest)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h)
+
+# Google Tests
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+add_executable(UnitTest tests/tests.cpp datastructures/vec.h datastructures/vec.cpp datastructures/polygon.h datastructures/polygon.cpp tests/polygon_test.cpp)
+target_link_libraries(UnitTest ${GTEST_LIBRARIES} pthread)
