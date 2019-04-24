@@ -23,9 +23,11 @@ bool quadtree::intersects_boundary(lineseg *l) {
 }
 
 void quadtree::subdivide() {
-    int y_diff = floor((topright->y - botleft->y)/2.0);
+    // edge lengths, divided by two. 
+    int y_diff = floor((topright->y - botleft->y)/2.0); 
     int x_diff = floor((topright->x - botleft->x)/2.0);
-
+    // define each child, nw=topleft, ne=topright, sw=botleft, se=botright
+    // TODO: could be issues with coordinate precision because of flooring? 
     nw = new quadtree(this, new vec(botleft->x, botleft->y + y_diff),
                             new vec(topright->x - x_diff, topright->y));
     ne = new quadtree(this, new vec(botleft->x + x_diff, botleft->y + y_diff),
