@@ -3,6 +3,8 @@
 //
 
 #include "polygon.h"
+#include <iostream>
+#include <limits>
 
 // returns true if c is not to the right of vector ab
 bool ccw(const vec &a, const vec &b, const vec &c) {
@@ -45,4 +47,43 @@ bool polygon::isConvex() const {
     }
 
     return true;
+}
+/* check if point p intersects an edge(a,b) */
+bool polygon::intersects(vec &a, vec &b, vec &p) {
+    if (a.y > b.y) {
+        return this->intersects(b, a, p);
+    }
+
+    if (p.y == a.y || p.y == b.y) {
+        double eps = std::numeric_limits<float>().epsilon();
+        vec np(p.x, p.y + eps);
+
+        return intersects(a, b, np);
+    }
+
+    if (p.y > b.y || p.y < a.y || p.x >= std::max(a.x, b.x))
+        return false;
+
+    if (p.x < std::min(a.x, b.x))
+        return true;
+
+    double red = (p.y - a.y) / (p.x - a.x);
+    double blue = (b.y - a.y) / (b.x - a.x);
+
+    return red >= blue;
+}
+
+/* check if a point is contained in this polygon */
+bool polygon::contains(vec &point) {
+    int len = this->points.size();
+    bool inside = false;
+
+    // can be split into multiple threads if end results are combined
+    for (int i = 0; i < len; i++) {
+        if (this->intersects(this->points[i], this->points[(i+1) % len], point)) {
+            inside = !inside;
+        }
+    }
+
+    return inside;
 }
