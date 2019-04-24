@@ -35,11 +35,11 @@ public:
     std::list<halfedge> getEdges() const;
     std::list<face> getFaces() const;
 
-    // Add edge between vertex v1 and vertex v2
-    void addEdge(vertex v1, vertex v2);
+    // Add edge between vertex v and h.target, where h.face is split
+    void addEdgeAt(vertex v, halfedge h);
 
-    // Insert new vertex without edges
-    void addVertex(vertex v);
+    // Insert new vertex connected with a new edge to h.target
+    void addVertexAt(vertex v, halfedge h);
 
     // Remove edge between vertex v1 and vertex v2
     void removeEdge(vertex v1, vertex v2);
