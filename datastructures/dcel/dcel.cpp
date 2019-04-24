@@ -104,4 +104,33 @@ void dcel::initialVertices(vertex v1, vertex v2) {
     this->edges.push_back(h2);
 }
 
+void dcel::addVertexAt(vertex v, halfedge h) {
+    halfedge h1;
+    halfedge h2;
+
+    v.addEdge(h2);
+    h.getTarget().addEdge(h1);
+
+    h1.setTwin(h2);
+    h2.setTwin(h1);
+
+    h1.setTarget(v);
+    h2.setTarget(h.getTarget());
+
+    h1.setFace(h.getFace());
+    h2.setFace(h.getFace());
+
+    h1.setNext(h2);
+    h2.setNext(h.getNext());
+
+    h1.setPrevious(h);
+    h2.setPrevious(h1);
+
+    h.setNext(h1);
+    h2.getNext().setPrevious(h2);
+
+    this->edges.push_back(h1);
+    this->edges.push_back(h2);
+}
+
 
