@@ -14,6 +14,7 @@ private:
     // p0, p1, ..., pn, p0. Note that p0 must be at the start and end of this list!
     std::vector<vec> points;
 
+    bool intersects(vec &a, vec &b, vec &p);
 public:
     // constructors
     polygon() {}
@@ -27,6 +28,8 @@ public:
     double area() const;
 
     bool isConvex() const;
+
+    bool contains(vec &point);
 };
 
 
