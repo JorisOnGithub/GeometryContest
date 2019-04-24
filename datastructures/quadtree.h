@@ -55,6 +55,7 @@ class quadtree {
         int size() {
             return node_count;
         }
+
 };
 
 #endif

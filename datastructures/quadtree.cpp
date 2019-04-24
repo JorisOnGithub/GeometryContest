@@ -1,4 +1,5 @@
 #include "quadtree.h"
+#include <math.h>
 
 bool quadtree::in_boundary(vec* p) {
     return p->x >= botleft->x && p->y >= botleft->y && p->x <= topright->x && p->y <= topright->y;
@@ -21,3 +22,16 @@ bool quadtree::intersects_boundary(lineseg *l) {
     return quadtree::in_boundary(l); 
 }
 
+void quadtree::subdivide() {
+    int y_diff = floor((topright->y - botleft->y)/2.0);
+    int x_diff = floor((topright->x - botleft->x)/2.0);
+
+    nw = new quadtree(this, new vec(botleft->x, botleft->y + y_diff),
+                            new vec(topright->x - x_diff, topright->y));
+    ne = new quadtree(this, new vec(botleft->x + x_diff, botleft->y + y_diff),
+                            topright);
+    sw = new quadtree(this, botleft,
+                            new vec(topright->x - x_diff, topright->y - y_diff));
+    se = new quadtree(this, new vec(botleft->x + x_diff, botleft->y),
+                            new vec(topright->x, topright->y - y_diff));
+}
