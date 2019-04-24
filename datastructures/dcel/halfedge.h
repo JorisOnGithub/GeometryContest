@@ -37,6 +37,10 @@ public:
         return *next;
     }
 
+    halfedge* getNextPointer() const {
+        return next;
+    }
+
     halfedge getPrevious() const {
         return *previous;
     }
