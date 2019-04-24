@@ -20,12 +20,12 @@ class quadtree {
             parent = _parent;
         }
         
-        bool intersects_boundary(lineseg *l);
+        bool intersects_boundary(lineseg& l);
 
-        bool in_boundary(vec* p);
+        bool in_boundary(vec& p);
 
-        bool in_boundary(lineseg *l) {
-            return in_boundary(l->a) && in_boundary(l->b);
+        bool in_boundary(lineseg& l) {
+            return in_boundary(l.a) && in_boundary(l.b);
         }
 
         bool should_subdivide() { // definition until when to subdivide
