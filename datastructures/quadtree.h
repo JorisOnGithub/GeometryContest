@@ -52,7 +52,9 @@ class quadtree {
         std::set<lineseg *> get_data() {
             return data;
         }
-        int size();
+        int size() {
+            return node_count;
+        }
 };
 
 #endif
