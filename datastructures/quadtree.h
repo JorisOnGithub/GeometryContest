@@ -8,16 +8,22 @@ static constexpr int bucketsize = 4;
 class quadtree {
     private:
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
-        vec botleft, topright; // border info
+        vec *botleft, *topright; // border info
         int node_count;
         std::set<lineseg *> data;
 
-        quadtree(quadtree* _parent, const vec &bl, const vec &tr) {
+        quadtree(quadtree* _parent, vec* bl, vec* tr) {
             quadtree(bl, tr);
             parent = _parent;
         }
         
-        bool intersects_boundary(lineseg &l);
+        bool intersects_boundary(lineseg *l);
+
+        bool in_boundary(vec* p);
+
+        bool in_boundary(lineseg *l) {
+            return in_boundary(l->a) && in_boundary(l->b);
+        }
 
         void subdivide();
 
@@ -26,7 +32,7 @@ class quadtree {
         }
 
     public:
-        quadtree(const vec &bl, const vec &tr) { // client constructor
+        quadtree(vec* bl, vec* tr) { // client constructor
             parent = NULL;
             nw = NULL;
             ne = NULL;
