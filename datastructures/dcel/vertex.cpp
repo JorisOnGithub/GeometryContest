@@ -3,3 +3,7 @@
 //
 
 #include "vertex.h"
+
+std::list<halfedge> vertex::getEdges() const {
+    return this->edges;
+}
