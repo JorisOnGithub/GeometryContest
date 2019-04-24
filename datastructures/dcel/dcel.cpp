@@ -24,6 +24,9 @@ void dcel::addEdgeAt(vertex v, halfedge h) {
     halfedge h1;
     halfedge h2;
 
+    h.getTarget().addEdge(h1);
+    v.addEdge(h2);
+
     f1.getEdge(h1);
     f2.setEdge(h2);
 

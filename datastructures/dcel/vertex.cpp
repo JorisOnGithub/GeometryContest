@@ -7,3 +7,7 @@
 std::list<halfedge> vertex::getEdges() const {
     return this->edges;
 }
+
+void vertex::addEdge(halfedge h) {
+    this->edges.push_back(h);
+}
