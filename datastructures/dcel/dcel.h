@@ -35,6 +35,9 @@ public:
     std::list<halfedge> getEdges() const;
     std::list<face> getFaces() const;
 
+    // Add initial 2 vertices, constructing outer face
+    void initialVertices(vertex v1, vertex v2);
+
     // Add edge between vertex v and h.target, where h.face is split
     void addEdgeAt(vertex v, halfedge h);
 

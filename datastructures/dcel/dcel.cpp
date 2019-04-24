@@ -70,4 +70,38 @@ void dcel::addEdgeAt(vertex v, halfedge h) {
     this->faces.remove(f);
 }
 
+void dcel::initialVertices(vertex v1, vertex v2) {
+    if(!this->faces.empty()) {
+        throw "Non-empty DCEL";
+    }
+    face outer;
+    halfedge h1;
+    halfedge h2;
+
+    h1.setFace(outer);
+    h2.setFace(outer);
+
+    h1.setTarget(v1);
+    h2.setTarget(v2);
+
+    h1.setNext(h2);
+    h1.setPrevious(h2);
+    h2.setNext(h1);
+    h2.setPrevious(h1);
+
+    h1.setTwin(h2);
+    h2.setTwin(h1);
+
+    v1.addEdge(h2);
+    v2.addEdge(h1);
+
+    outer.setEdge(h1);
+
+    this->vertices.push_back(v1);
+    this->vertices.push_back(v2);
+    this->faces.push_back(outer);
+    this->edges.push_back(h1);
+    this->edges.push_back(h2);
+}
+
 
