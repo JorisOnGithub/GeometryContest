@@ -1,27 +1,28 @@
 #include "vec.h"
 #include "line.h"
+#include <iostream>
 #ifndef GEOMETRY_CONTEST_LINESEGMENT_H
 #define GEOMETRY_CONTEST_LINESEGMENT_H
 
 class lineseg {
     public:
-        vec * a, * b;
+        vec a, b;
     public:
         lineseg(vec *a, vec *b) {
-            a = a;
-            b = b;
+            this->a = *a;
+            this->b = *b;
         }
 
         void set_a(vec *new_a) {
-            a = new_a; 
+            this->a = *new_a; 
         }
 
         void set_b(vec *new_b) {
-            b = new_b; 
+            this->b = *new_b; 
         }
 
-        bool intersects(lineseg *other);
+        bool intersects(lineseg &other);
 
-        bool intersects(line *other);
+        bool intersects(line &other);
 };
 #endif
