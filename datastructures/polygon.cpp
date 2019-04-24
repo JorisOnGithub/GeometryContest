@@ -48,7 +48,7 @@ bool polygon::isConvex() const {
 
     return true;
 }
-
+/* check if point p intersects an edge(a,b) */
 bool polygon::intersects(vec &a, vec &b, vec &p) {
     if (a.y > b.y) {
         return this->intersects(b, a, p);
@@ -73,6 +73,7 @@ bool polygon::intersects(vec &a, vec &b, vec &p) {
     return red >= blue;
 }
 
+/* check if a point is contained in this polygon */
 bool polygon::contains(vec &point) {
     int len = this->points.size();
     bool inside = false;
