@@ -2,6 +2,9 @@
 #include <math.h>
 
 bool quadtree::in_boundary(vec& p) {
+    std::cout<<"IN METHOD"<<std::endl;
+    std::cout<<this->botleft<<std::endl;
+    std::cout<<this->topright<<std::endl;
     return p.x >= botleft->x && p.y >= botleft->y && p.x <= topright->x && p.y <= topright->y;
 }
 
@@ -12,7 +15,7 @@ bool quadtree::intersects_boundary(lineseg& l) {
     // define the rectangle four lines
     lineseg topline = lineseg(&topleft, topright);
     lineseg leftline = lineseg(&topleft, &botright);
-    lineseg botline = lineseg(botleft, &botright);
+    lineseg botline = lineseg(botleft ,&botright);
     lineseg rightline = lineseg(topright, &botright);
     // check if intersects boundary 
     if (l.intersects(topline) || l.intersects(leftline) || l.intersects(botline) || l.intersects(rightline)) {
@@ -26,7 +29,7 @@ void quadtree::subdivide() {
     // edge lengths, divided by two. 
     int y_diff = floor((topright->y - botleft->y)/2.0); 
     int x_diff = floor((topright->x - botleft->x)/2.0);
-    // define each child, nw=topleft, ne=topright, sw=botleft, se=botright
+    // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
     // TODO: could be issues with coordinate precision because of flooring? 
     nw = new quadtree(this, new vec(botleft->x, botleft->y + y_diff),
                             new vec(topright->x - x_diff, topright->y));

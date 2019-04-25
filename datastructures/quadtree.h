@@ -10,30 +10,25 @@ static constexpr int max_depth = 100; // depth cap
 class quadtree {
     private:
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
-        vec *botleft, *topright; // border info
         int node_count;
         int depth;
         std::set<lineseg*> data;
 
-        quadtree(quadtree* _parent, vec* bl, vec* tr) {
-            node_count = 0;
-            parent = _parent;
-            depth = parent == NULL ? 0 : parent->depth + 1;
-            botleft = bl;
-            topright = tr;
-            nw = NULL;
-            ne = NULL;
-            sw = NULL;
-            se = NULL;
+        quadtree(quadtree* _parent, vec *bl, vec *tr) {
+            this->node_count = 0;
+            this->parent = _parent;
+            this->depth = parent == NULL ? 0 : parent->depth + 1;
+            this->botleft = bl;
+            this->topright = tr;
+            std::cout<<"IN CONSTRUCTOR"<<std::endl;
+            std::cout<<this->botleft<<std::endl;
+            std::cout<<this->topright<<std::endl;
+            this->nw = NULL;
+            this->ne = NULL;
+            this->sw = NULL;
+            this->se = NULL;
         }
         
-        bool intersects_boundary(lineseg& l);
-
-        bool in_boundary(vec& p);
-
-        bool in_boundary(lineseg& l) {
-            return in_boundary(l.a) && in_boundary(l.b);
-        }
 
         bool should_subdivide() { // definition until when to subdivide
             return is_leaf() && data.size() > bucketsize && depth < max_depth;
@@ -46,28 +41,35 @@ class quadtree {
         }
 
     public:
+        vec *botleft, *topright; // border info
         /**
          * Initializes a quad tree with a set boundary
          * @param bl bottom left
          * @param tr top right
          */
-        quadtree(vec* bl, vec* tr) {
+        quadtree(vec *bl, vec *tr) {
             quadtree(NULL, bl, tr);
         }
 
-        ~quadtree() { // destructor
-            if (!this->is_leaf()) {
-                delete nw;
-                delete ne;
-                delete sw;
-                delete se;
-            }
-            delete botleft;
-            delete topright;
-            delete &data;
-            delete this;
+        //~quadtree() { // destructor
+        //    if (!this->is_leaf()) {
+        //        delete nw;
+        //        delete ne;
+        //        delete sw;
+        //        delete se;
+        //    }
+        //    // delete &botleft;
+        //    // delete &topright;
+        //    delete &data;
+        //}
+
+        bool in_boundary(vec& p);
+
+        bool in_boundary(lineseg& l) {
+            return in_boundary(l.a) && in_boundary(l.b);
         }
 
+        bool intersects_boundary(lineseg& l);
         /**
          * Inserts a linesegment in the tree
          * @param l linesegment to insert
