@@ -6,6 +6,8 @@
 #define GEOMETRY_CONTEST_TRIANGLE_H
 
 #include "vec.h"
+#include "lineseg.h"
+#include <vector>
 
 class triangle {
 private:
@@ -19,6 +21,19 @@ public:
     }
 
     bool containsPoint(const vec &v) const;
+
+    std::vector<lineseg> getEdges() {
+        lineseg e1(&p1, &p2);
+        lineseg e2(&p2, &p3);
+        lineseg e3(&p3, &p1);
+
+        std::vector<lineseg> linesegs {};
+        linesegs.emplace_back(e1);
+        linesegs.emplace_back(e2);
+        linesegs.emplace_back(e3);
+
+        return linesegs;
+    }
 
 };
 

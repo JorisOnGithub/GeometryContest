@@ -4,6 +4,10 @@
 
 #include <limits>
 #include "solutionMaker.h"
+#include "datastructures/lineseg.h"
+#include <set>
+#include <algorithm>
+#include <iostream>
 
 struct llPoint {
     vec point;
@@ -15,8 +19,44 @@ struct llPoint {
     }
 };
 
+void solutionMaker::createSolution() {
+    std::vector<lineseg> edges{};
 
 
+    for (int i = 0; i < triangles.size(); i++) {
+        std::vector<lineseg> triangleEdges = triangles.at(i).getEdges();
+
+        for (int j = 0; j < triangleEdges.size(); j++)  {
+            if (std::find(edges.begin(), edges.end(), triangleEdges.at(j)) != edges.end() ) {
+                std::vector<lineseg> newedges {};
+
+                for (int k = 0; k < edges.size(); k++) {
+                    if (!(triangleEdges.at(j) == edges.at(k))) {
+                        newedges.emplace_back(edges.at(k));
+                    }
+                }
+
+                edges = newedges;
+            } else {
+                edges.emplace_back(triangleEdges.at(j));
+            }
+        }
+    }
+
+    std::cout << edges.size() << std::endl;
+    std::vector<vec> points {};
+
+    for (int i = 0; i < edges.size(); i++) {
+        lineseg seg = edges.at(i);
+        points.emplace_back(*seg.a);
+        points.emplace_back(*seg.b);
+    }
+
+    this->solution = polygon();
+    this->solution.setPoints(points);
+}
+
+/*
 void solutionMaker::createSolution() {
     // set of all points that are already in the solution
     std::set<vec> available;
@@ -25,7 +65,7 @@ void solutionMaker::createSolution() {
     }
 
     vec start = *available.begin();
-    available.erase(start);
+    available.erase(start);0xe,
 
     llPoint solution = llPoint(start);
     llPoint* cur = &solution;
@@ -76,6 +116,7 @@ void solutionMaker::createSolution() {
     }
 
 }
+*/
 
 polygon solutionMaker::getSolution() {
     // we do not have a solution yet

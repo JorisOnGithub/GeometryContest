@@ -6,6 +6,7 @@
 #include "simpleChecker.h"
 #include "delaunator.hpp"
 #include "datastructures/triangle.h"
+#include "solutionMaker.h"
 
 using namespace std;
 
@@ -78,6 +79,9 @@ int main(int argc, char **argv) {
             d.coords[2 * d.triangles[i + 2] + 1] //ty2
         );
     }
+
+    solutionMaker sm = solutionMaker(triangles);
+    polygon poly = sm.getSolution();
 
     std::cerr << "ending main program" << std::endl;
     return 0;

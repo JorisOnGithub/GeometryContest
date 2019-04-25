@@ -23,5 +23,15 @@ class lineseg {
         bool intersects(lineseg *other);
 
         bool intersects(line *other);
+
+        bool operator ==(const lineseg &other) const{
+            return (this->a == other.a && this->b == other.b) ||
+               (this->b == other.a && this->a == other.b);
+        }
+
+        bool operator <(const lineseg &other) const {
+            return other.a < other.b;
+        }
+
 };
 #endif
