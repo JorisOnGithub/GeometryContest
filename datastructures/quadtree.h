@@ -26,7 +26,6 @@ class quadtree {
             this->se = NULL;
         }
         
-
         bool should_subdivide() { // definition until when to subdivide
             return is_leaf() && data.size() > bucketsize && depth < max_depth;
         }

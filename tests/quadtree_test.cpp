@@ -137,10 +137,8 @@ TEST (QuadTreeTest, QuadLineInteresection) {
     vec aa(30, 39);
     vec bb(35, 39);
     lineseg l6(&aa, &bb);
-    std::cout<<t.size()<<std::endl;
     EXPECT_TRUE(t.insert(l6));
     EXPECT_FALSE(t.is_leaf());
-    std::cout<<t.size()<<std::endl;
     EXPECT_TRUE(t.intersects_line(l1));
     EXPECT_TRUE(t.intersects_line(l2));
     EXPECT_FALSE(t.intersects_line(l3));
