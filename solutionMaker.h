@@ -16,6 +16,8 @@ private:
 //    dcel* triangulation;
 
     void createSolution();
+    // temporary function to test another way of getting a solution
+    void realSolution();
 
 public:
     // input t is a triangulation of the input points
