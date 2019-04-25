@@ -29,7 +29,7 @@ class quadtree {
         }
         
         bool should_subdivide() { // definition until when to subdivide
-            return is_leaf() && data.size() > bucketsize && depth < max_depth;
+            return this->is_leaf() && this->data.size() > bucketsize && this->depth < max_depth;
         }
 
         void subdivide();
@@ -62,11 +62,11 @@ class quadtree {
         bool in_boundary(vec& p);
 
         bool in_boundary(lineseg& l) {
-            return in_boundary(l.a) && in_boundary(l.b);
+            return this->in_boundary(l.a) && this->in_boundary(l.b);
         }
 
         bool is_leaf() {
-            return nw == NULL;
+            return this->nw == NULL;
         }
 
         bool intersects_boundary(lineseg& l);
@@ -102,7 +102,7 @@ class quadtree {
          * @return how many linesegments the 
          */ 
         int size() {
-            return node_count;
+            return this->node_count;
         }
 
 };
