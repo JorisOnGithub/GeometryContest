@@ -5,6 +5,7 @@
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
 #include "delaunator.hpp"
+#include "localOptimizer.h"
 
 using namespace std;
 
