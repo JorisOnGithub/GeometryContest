@@ -44,6 +44,10 @@ public:
         return vec(x - p.x, y - p.y);
     }
 
+    bool operator==(vec p) const {
+        return fabs(x -p.x) < EPS && fabs(y-p.y) < EPS;
+    }
+
     // default sorting order: y increasing then x increasing
     bool operator<(vec p) const {
         if (fabs(y - p.y) < EPS) {
