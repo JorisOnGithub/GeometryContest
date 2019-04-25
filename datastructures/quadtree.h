@@ -33,10 +33,6 @@ class quadtree {
 
         void subdivide();
 
-        bool is_leaf() {
-            return nw == NULL;
-        }
-
     public:
         vec *botleft, *topright; // border info
         /**
@@ -62,6 +58,10 @@ class quadtree {
 
         bool in_boundary(lineseg& l) {
             return in_boundary(l.a) && in_boundary(l.b);
+        }
+
+        bool is_leaf() {
+            return nw == NULL;
         }
 
         bool intersects_boundary(lineseg& l);

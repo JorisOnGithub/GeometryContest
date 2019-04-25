@@ -28,20 +28,20 @@ void quadtree::subdivide() {
     int x_diff = floor((topright->x - botleft->x)/2.0);
     // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
     // TODO: could be issues with coordinate precision because of flooring? 
-    vec nwbl(botleft->x, botleft->y + y_diff);
-    vec nwtr(topright->x - x_diff, topright->y);
-    nw = new quadtree(this, &nwbl, &nwtr);
-    vec nebl(botleft->x + x_diff, botleft->y + y_diff);
-    ne = new quadtree(this, &nebl, topright);
-    vec swtr(topright->x - x_diff, topright->y - y_diff);
-    sw = new quadtree(this, botleft, &swtr);
-    vec sebl(botleft->x + x_diff, botleft->y);
-    vec setr(topright->x, topright->y - y_diff);
-    se = new quadtree(this, &sebl, &setr);
+    vec* nwbl = new vec(botleft->x, botleft->y + y_diff);
+    vec* nwtr = new vec(topright->x - x_diff, topright->y);
+    this->nw = new quadtree(this, nwbl, nwtr);
+    vec* nebl = new vec(botleft->x + x_diff, botleft->y + y_diff);
+    this->ne = new quadtree(this, nebl, topright);
+    vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
+    this->sw = new quadtree(this, botleft, swtr);
+    vec* sebl = new vec(botleft->x + x_diff, botleft->y);
+    vec* setr = new vec(topright->x, topright->y - y_diff);
+    this->se = new quadtree(this, sebl, setr);
 }
 
 bool quadtree::insert(lineseg& l) {
-    if (!quadtree::intersects_boundary(l)) {  // if not in this node
+    if (!this->intersects_boundary(l)) {  // if not in this node
         return false; // cant insert
     }
     if (should_subdivide()) { // if should subdivide
@@ -65,7 +65,7 @@ bool quadtree::intersects_line(lineseg& l) {
         return false;
     }
     for (auto seg : this->data) { // for each linesegment
-        if (seg->intersects(l)) { 
+        if (*seg != l && seg->intersects(l)) { 
             return true;  // return true if it intersects with any
         }
     }
@@ -81,8 +81,13 @@ bool quadtree::remove(lineseg& l) {
     }
     if (this->data.erase(&l) == 0) {
         if (this->is_leaf()) return false;
-        return nw->remove(l) || ne->remove(l) || sw->remove(l) || se->remove(l);
+        if (nw->remove(l) || ne->remove(l) || sw->remove(l) || se->remove(l)) {
+            this->node_count--;
+        } else {
+            return false;
+        }
     } else {
+        this->node_count--;
         return true;
     }
 }
