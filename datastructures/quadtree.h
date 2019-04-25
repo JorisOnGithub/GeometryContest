@@ -20,9 +20,6 @@ class quadtree {
             this->depth = parent == NULL ? 0 : parent->depth + 1;
             this->botleft = bl;
             this->topright = tr;
-            std::cout<<"IN CONSTRUCTOR"<<std::endl;
-            std::cout<<this->botleft<<std::endl;
-            std::cout<<this->topright<<std::endl;
             this->nw = NULL;
             this->ne = NULL;
             this->sw = NULL;
@@ -47,9 +44,7 @@ class quadtree {
          * @param bl bottom left
          * @param tr top right
          */
-        quadtree(vec *bl, vec *tr) {
-            quadtree(NULL, bl, tr);
-        }
+        quadtree(vec *bl, vec *tr) : quadtree(NULL, bl, tr) {}
 
         //~quadtree() { // destructor
         //    if (!this->is_leaf()) {
@@ -91,9 +86,13 @@ class quadtree {
          */
         bool intersects_line(lineseg& l);
         
-        std::set<lineseg *> get_data() {
-            return data;
-        }
+        /**
+         * Finds all line segments in quadtree which intersect it.
+         * @param l linesegment to analyze
+         * @return set of line segments that intersect lineseg l
+         */
+        std::set<lineseg *> get_intersecting_lines(lineseg& l);
+        
         /**
          * @return how many linesegments the 
          */ 

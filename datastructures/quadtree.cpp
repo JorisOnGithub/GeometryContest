@@ -2,10 +2,7 @@
 #include <math.h>
 
 bool quadtree::in_boundary(vec& p) {
-    std::cout<<"IN METHOD"<<std::endl;
-    std::cout<<this->botleft<<std::endl;
-    std::cout<<this->topright<<std::endl;
-    return p.x >= botleft->x && p.y >= botleft->y && p.x <= topright->x && p.y <= topright->y;
+    return p.x >= this->botleft->x && p.y >= this->botleft->y && p.x <= this->topright->x && p.y <= this->topright->y;
 }
 
 bool quadtree::intersects_boundary(lineseg& l) {
@@ -75,6 +72,7 @@ bool quadtree::intersects_line(lineseg& l) {
     }
     return nw->intersects_line(l) || sw->intersects_line(l) || se->intersects_line(l) || ne->intersects_line(l);
 }
+
 bool quadtree::remove(lineseg& l) {
     if (!quadtree::intersects_boundary(l)) {
         return false;
