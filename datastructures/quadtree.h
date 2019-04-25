@@ -12,9 +12,10 @@ class quadtree {
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
         int node_count;
         int depth;
+        bool botl, topr;
         std::set<lineseg*> data;
 
-        quadtree(quadtree* _parent, vec *bl, vec *tr) {
+        quadtree(quadtree* _parent, vec *bl, vec *tr, bool b, bool t) {
             this->node_count = 0;
             this->parent = _parent;
             this->depth = parent == NULL ? 0 : parent->depth + 1;
@@ -23,7 +24,8 @@ class quadtree {
             this->nw = NULL;
             this->ne = NULL;
             this->sw = NULL;
-            this->se = NULL;
+            this->botl = b;
+            this->topr = t;
         }
         
         bool should_subdivide() { // definition until when to subdivide
@@ -39,19 +41,23 @@ class quadtree {
          * @param bl bottom left
          * @param tr top right
          */
-        quadtree(vec *bl, vec *tr) : quadtree(NULL, bl, tr) {}
+        quadtree(vec *bl, vec *tr) : quadtree(NULL, bl, tr, true, true) {}
 
-        //~quadtree() { // destructor
-        //    if (!this->is_leaf()) {
-        //        delete nw;
-        //        delete ne;
-        //        delete sw;
-        //        delete se;
-        //    }
-        //    // delete &botleft;
-        //    // delete &topright;
-        //    delete &data;
-        //}
+        ~quadtree() { // destructor
+            if (!this->is_leaf()) {
+                delete nw;
+                delete ne;
+                delete sw;
+                delete se;
+            }
+            if (!botl) {
+                delete botleft;
+            }
+            if (!topr) {
+                delete topright;
+            }
+            this->data.clear();
+        }
 
         bool in_boundary(vec& p);
 

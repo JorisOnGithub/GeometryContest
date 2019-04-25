@@ -22,7 +22,6 @@ public:
     vec(const vec &a, const vec &b) : vec(b.x - a.x, b.y - a.y) {}
 
     // operations
-
     // L2 norm of this vector squared
     double norm_sq() const;
 
