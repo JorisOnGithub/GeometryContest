@@ -28,13 +28,21 @@ void solutionMaker::createSolution() {
 
     llPoint solution = llPoint(start);
     llPoint* cur = solution;
+    llPoint* first = cur;
 
     // start with shortest edge from starting point
     double minDist = INT_MAX;
+    vec second;
     for (std::set<vec>::iterator i = available.begin: i != available.end(); i++) {
-        double dist = dist(start)
-
+        double dist = (cur - *i).norm();
+        if (dist < minDist) {
+            minDist = dist;
+            second = *i;
+        }
     }
+    llPoint next(second);
+    cur->next = next;
+    next.prev = cur;
 
 //    // randomly get the initial two vertices for our solution
 //    vertex start;
@@ -50,12 +58,9 @@ void solutionMaker::createSolution() {
 
     // keep adding vertices until polygon contains all points
     while (available.size() > 0) {
-        halfedge cur = start.getEdges()[0];
         // loop over all potential points to add
-        for (int i = 0; i < points.size(); i++) {
-            vec p = vec(points[i].getX(), points[i].getY());
-            // point already in polygon
-            if (std::find(used.start(), used.end(), p) != used.end()) continue;
+        for (std::set<vec>::iterator i = available.begin: i != available.end(); i++) {
+            vec p = *i;
 
             // create triangle with cur.target, cur.twin.target, p
             // check if there is a point in this triangle, if there is we cannot use this point
