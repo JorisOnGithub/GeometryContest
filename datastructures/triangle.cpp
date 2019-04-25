@@ -5,5 +5,6 @@
 #include "triangle.h"
 
 bool triangle::containsPoint(const vec &v) const {
-
+    throw "not implemented";
+    return false;
 }
