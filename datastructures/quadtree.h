@@ -5,7 +5,7 @@
 #define GEOMETRY_CONTEST_QUADTREE_H
 
 static constexpr int bucketsize = 4; // subdivide when size() >= bucketsize
-static constexpr int max_depth = 100;
+static constexpr int max_depth = 100; // depth cap
 
 class quadtree {
     private:
@@ -13,11 +13,18 @@ class quadtree {
         vec *botleft, *topright; // border info
         int node_count;
         int depth;
-        std::set<lineseg *> data;
+        std::set<lineseg*> data;
 
         quadtree(quadtree* _parent, vec* bl, vec* tr) {
-            quadtree(bl, tr);
+            node_count = 0;
             parent = _parent;
+            depth = parent == NULL ? 0 : parent->depth + 1;
+            botleft = bl;
+            topright = tr;
+            nw = NULL;
+            ne = NULL;
+            sw = NULL;
+            se = NULL;
         }
         
         bool intersects_boundary(lineseg& l);
@@ -29,7 +36,7 @@ class quadtree {
         }
 
         bool should_subdivide() { // definition until when to subdivide
-            return data.size() <= bucketsize && depth <= max_depth;
+            return is_leaf() && data.size() > bucketsize && depth < max_depth;
         }
 
         void subdivide();
@@ -44,15 +51,8 @@ class quadtree {
          * @param bl bottom left
          * @param tr top right
          */
-        quadtree(vec* bl, vec* tr) { // client constructor
-            parent = NULL;
-            nw = NULL;
-            ne = NULL;
-            sw = NULL;
-            se = NULL;
-            node_count = 0;
-            botleft = bl;
-            topright = tr;
+        quadtree(vec* bl, vec* tr) {
+            quadtree(NULL, bl, tr);
         }
 
         ~quadtree() { // destructor
@@ -62,6 +62,8 @@ class quadtree {
                 delete sw;
                 delete se;
             }
+            delete botleft;
+            delete topright;
             delete &data;
             delete this;
         }
@@ -71,21 +73,21 @@ class quadtree {
          * @param l linesegment to insert
           *@return whether insert was successful
          */
-        bool insert(lineseg *l);
+        bool insert(lineseg& l);
 
         /**
          * Removes the linesegment from the tree
          * @param l linesegment to remove
          * @return whether the removal was successful
          */
-        bool remove(lineseg *l);
+        bool remove(lineseg& l);
         
         /**
          * Checks whether this line intersects any other in the tree
          * @param l linesegment to analyze intersections with
          * @return if l intersects any other linesegment in the tree
          */
-        bool intersects_line(lineseg *l);
+        bool intersects_line(lineseg& l);
         
         std::set<lineseg *> get_data() {
             return data;

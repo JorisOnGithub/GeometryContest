@@ -37,3 +37,38 @@ void quadtree::subdivide() {
     se = new quadtree(this, new vec(botleft->x + x_diff, botleft->y),
                             new vec(topright->x, topright->y - y_diff));
 }
+
+bool quadtree::insert(lineseg& l) {
+    if (!quadtree::intersects_boundary(l)) {  // if not in this node
+        return false; // cant insert
+    }
+    if (should_subdivide()) { // if should subdivide
+        quadtree::subdivide(); // then subdivide
+
+        if(nw->insert(l) || ne->insert(l) || sw->insert(l) || se->insert(l)) { // with successful insert
+            this->node_count ++; // increment the count
+            return true;
+        } else {
+            return false;
+        }
+    } else { // otherwise dont subdivide
+        this->node_count ++;
+        this->data.insert(&l); // insert the node
+        return true;
+    }
+}
+
+bool quadtree::intersects_line(lineseg& l) {
+    if (!quadtree::intersects_boundary(l)) { // cant intersect with anything in this if not contained in subtree
+        return false;
+    }
+    for (auto seg : this->data) { // for each linesegment
+        if (seg->intersects(l)) { 
+            return true;  // return true if it intersects with any
+        }
+    }
+    if (quadtree::is_leaf()) { // if a leaf and all data processed already
+        return false; // then doesnt intersect 
+    }
+    return nw->intersects_line(l) || sw->intersects_line(l) || se->intersects_line(l) || ne->intersects_line(l);
+}
