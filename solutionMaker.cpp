@@ -2,6 +2,7 @@
 // Created by joris on 4/25/19.
 //
 
+#include <limits>
 #include "solutionMaker.h"
 
 struct llPoint {
@@ -10,7 +11,7 @@ struct llPoint {
     llPoint* prev;
 
     llPoint(vec &p) {
-        point = vec;
+        point = p;
     }
 };
 
@@ -20,29 +21,29 @@ void solutionMaker::createSolution() {
     // set of all points that are already in the solution
     std::set<vec> available;
     for (int i = 0 ; i < this->points.size(); i++) {
-        available.insert(points);
+        available.insert(points[i]);
     }
 
     vec start = *available.begin();
     available.erase(start);
 
     llPoint solution = llPoint(start);
-    llPoint* cur = solution;
+    llPoint* cur = &solution;
     llPoint* first = cur;
 
     // start with shortest edge from starting point
-    double minDist = INT_MAX;
+    double minDist = std::numeric_limits<int>::max();
     vec second;
-    for (std::set<vec>::iterator i = available.begin: i != available.end(); i++) {
-        double dist = (cur - *i).norm();
+    for (std::set<vec>::iterator i = available.begin(); i != available.end(); i++) {
+        double dist = (cur->point - *i).norm();
         if (dist < minDist) {
             minDist = dist;
             second = *i;
         }
     }
-    llPoint next(second);
-    cur->next = next;
-    next.prev = cur;
+    llPoint second_ll(second);
+    cur->next = &second_ll;
+    second_ll.prev = cur;
 
 //    // randomly get the initial two vertices for our solution
 //    vertex start;
@@ -59,7 +60,7 @@ void solutionMaker::createSolution() {
     // keep adding vertices until polygon contains all points
     while (available.size() > 0) {
         // loop over all potential points to add
-        for (std::set<vec>::iterator i = available.begin: i != available.end(); i++) {
+        for (std::set<vec>::iterator i = available.begin(); i != available.end(); i++) {
             vec p = *i;
 
             // create triangle with cur.target, cur.twin.target, p
@@ -76,7 +77,7 @@ void solutionMaker::createSolution() {
 
 }
 
-polygon solutionMaker::getSolution() const {
+polygon solutionMaker::getSolution() {
     // we do not have a solution yet
     if (this->solution.getPoints().size() == 0) {
         this->createSolution();

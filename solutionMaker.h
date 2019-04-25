@@ -18,11 +18,11 @@ private:
 
 public:
     // input t is a triangulation of the input points
-    solutionMaker(const &std::vector<vec> pts) {
-        this.points = pts;
+    solutionMaker(const std::vector<vec> &pts) {
+        this->points = pts;
     }
 
-    polygon getSolution() const;
+    polygon getSolution();
 
 };
 
