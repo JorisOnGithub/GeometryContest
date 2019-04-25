@@ -138,6 +138,7 @@ void solutionMaker::realSolution() {
 
             // remove old linesegment between cur and cur->next
             qt.remove(cur->edge);
+            available.erase(p);
 
             // add new point to the linked list
             llPoint newPoint(p);
