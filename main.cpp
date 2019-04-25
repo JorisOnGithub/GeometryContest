@@ -5,6 +5,7 @@
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
 #include "delaunator.hpp"
+#include "datastructures/triangle.h"
 
 using namespace std;
 
@@ -56,7 +57,17 @@ int main(int argc, char **argv) {
     }
 
     delaunator::Delaunator d(coords);
+
+    vector<triangle> triangles {};
+
     for(std::size_t i = 0; i < d.triangles.size(); i+=3) {
+        vec p1(d.coords[2 * d.triangles[i]],d.coords[2 * d.triangles[i] + 1]);
+        vec p2(d.coords[2 * d.triangles[i + 1]],d.coords[2 * d.triangles[i + 1] + 1]);
+        vec p3(d.coords[2 * d.triangles[i + 2]],d.coords[2 * d.triangles[i + 2] + 1]);
+
+        triangle t(p1, p2, p3);
+        triangles.emplace_back(t);
+
         printf(
             "Triangle points: [[%f, %f], [%f, %f], [%f, %f]]\n",
             d.coords[2 * d.triangles[i]],        //tx0
