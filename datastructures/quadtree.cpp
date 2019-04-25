@@ -72,3 +72,14 @@ bool quadtree::intersects_line(lineseg& l) {
     }
     return nw->intersects_line(l) || sw->intersects_line(l) || se->intersects_line(l) || ne->intersects_line(l);
 }
+bool quadtree::remove(lineseg& l) {
+    if (!quadtree::intersects_boundary(l)) {
+        return false;
+    }
+    if (this->data.erase(&l) == 0) {
+        if (this->is_leaf()) return false;
+        return nw->remove(l) || ne->remove(l) || sw->remove(l) || se->remove(l);
+    } else {
+        return true;
+    }
+}
