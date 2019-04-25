@@ -28,14 +28,16 @@ void quadtree::subdivide() {
     int x_diff = floor((topright->x - botleft->x)/2.0);
     // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
     // TODO: could be issues with coordinate precision because of flooring? 
-    nw = new quadtree(this, new vec(botleft->x, botleft->y + y_diff),
-                            new vec(topright->x - x_diff, topright->y));
-    ne = new quadtree(this, new vec(botleft->x + x_diff, botleft->y + y_diff),
-                            topright);
-    sw = new quadtree(this, botleft,
-                            new vec(topright->x - x_diff, topright->y - y_diff));
-    se = new quadtree(this, new vec(botleft->x + x_diff, botleft->y),
-                            new vec(topright->x, topright->y - y_diff));
+    vec nwbl(botleft->x, botleft->y + y_diff);
+    vec nwtr(topright->x - x_diff, topright->y);
+    nw = new quadtree(this, &nwbl, &nwtr);
+    vec nebl(botleft->x + x_diff, botleft->y + y_diff);
+    ne = new quadtree(this, &nebl, topright);
+    vec swtr(topright->x - x_diff, topright->y - y_diff);
+    sw = new quadtree(this, botleft, &swtr);
+    vec sebl(botleft->x + x_diff, botleft->y);
+    vec setr(topright->x, topright->y - y_diff);
+    se = new quadtree(this, &sebl, &setr);
 }
 
 bool quadtree::insert(lineseg& l) {
