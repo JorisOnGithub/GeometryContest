@@ -1,6 +1,9 @@
 #include "lineseg.h"
 #include "vec.h"
 #include<iostream>
+#define colinear 0
+#define ccw 1
+#define anticcw 2
 
 bool onLine(vec &p, vec &q, vec &r) {   //check whether p is on the line or not
     return q.x <= std::max(p.x, r.x) && q.x >= std::min(p.x, r.x) && 
@@ -10,9 +13,9 @@ bool onLine(vec &p, vec &q, vec &r) {   //check whether p is on the line or not
 int direction(vec &a, vec &b, vec &c) {
    int val = (b.y - a.y)*(c.x - b.x) - (b.x - a.x) * (c.y - b.y);
    if (val == 0) {
-      return 0;     //colinear
+      return colinear;     //colinear
    }
-   return (val > 0)? 1:2;
+   return (val > 0) ? ccw:anticcw;
 }
 
 
