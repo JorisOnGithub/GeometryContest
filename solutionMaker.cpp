@@ -58,6 +58,7 @@ void solutionMaker::createSolution() {
     this->solution.setPoints(points);
 }
 
+/*
 void solutionMaker::realSolution() {
     // set of all points that are already in the solution
     std::set<vec> available;
@@ -174,6 +175,7 @@ void solutionMaker::realSolution() {
 
     this->solution = result;
 }
+ */
 
 polygon solutionMaker::getSolution() {
     // we do not have a solution yet
