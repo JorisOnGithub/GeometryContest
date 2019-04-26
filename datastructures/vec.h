@@ -54,11 +54,6 @@ public:
         }
         return y < p.y;
     }
-
-    bool operator==(const vec &p) const {
-        return this->x == p.x && this->y == p.y;
-    }
-
 };
 
 // VECTOR
