@@ -10,4 +10,4 @@ add_executable(UnitTest tests/tests.cpp datastructures/vec.h datastructures/vec.
 target_link_libraries(UnitTest ${GTEST_LIBRARIES} pthread)
 
 # Main
-add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h datastructures/quadtree.h datastructures/quadtree.cpp datastructures/lineseg.cpp datastructures/lineseg.h datastructures/triangle.h datastructures/triangle.cpp solutionMaker.h solutionMaker.cpp)
+add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h datastructures/quadtree.h datastructures/quadtree.cpp datastructures/lineseg.cpp datastructures/lineseg.h datastructures/triangle.h datastructures/triangle.cpp solutionMaker.h solutionMaker.cpp io/visualiser.cpp io/visualiser.h lib/TinyXML2/tinyxml2.h lib/TinyXML2/tinyxml2.cpp)

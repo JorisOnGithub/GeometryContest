@@ -7,6 +7,7 @@
 #include "delaunator.hpp"
 #include "datastructures/triangle.h"
 #include "solutionMaker.h"
+#include "io/visualiser.h"
 
 using namespace std;
 
@@ -48,6 +49,8 @@ int main(int argc, char **argv) {
     std::cout << "sorted points on y coordinate" << std::endl;
     printEvaluation(solution);
 
+
+
     std::cout << "running delaunay trangulation" << std::endl;
 
     // inefficient, but just showing it works ;)
@@ -82,6 +85,15 @@ int main(int argc, char **argv) {
 
     solutionMaker sm = solutionMaker(triangles);
     polygon poly = sm.getSolution();
+
+    // run visualiser
+    std::cout << "running visualiser" << std::endl;
+    visualiser v;
+    try {
+        v.visualise(points, poly, argv[1]);
+    } catch (const char *e) {
+        std::cerr << e << std::endl;
+    }
 
     std::cerr << "ending main program" << std::endl;
     return 0;
