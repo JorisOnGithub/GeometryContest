@@ -50,11 +50,10 @@ int main(int argc, char **argv) {
     printEvaluation(solution);
 
 
-
     std::cout << "running delaunay trangulation" << std::endl;
 
     // inefficient, but just showing it works ;)
-    vector<double> coords {};
+    vector<double> coords{};
     for (int i = 0; i < points.size(); i++) {
         coords.push_back(points[i].x);
         coords.push_back(points[i].y);
@@ -62,30 +61,35 @@ int main(int argc, char **argv) {
 
     delaunator::Delaunator d(coords);
 
-    vector<triangle> triangles {};
+    vector<triangle> triangles{};
 
-    for(std::size_t i = 0; i < d.triangles.size(); i+=3) {
-        vec p1(d.coords[2 * d.triangles[i]],d.coords[2 * d.triangles[i] + 1]);
-        vec p2(d.coords[2 * d.triangles[i + 1]],d.coords[2 * d.triangles[i + 1] + 1]);
-        vec p3(d.coords[2 * d.triangles[i + 2]],d.coords[2 * d.triangles[i + 2] + 1]);
+    for (std::size_t i = 0; i < d.triangles.size(); i += 3) {
+        vec p1(d.coords[2 * d.triangles[i]], d.coords[2 * d.triangles[i] + 1]);
+        vec p2(d.coords[2 * d.triangles[i + 1]], d.coords[2 * d.triangles[i + 1] + 1]);
+        vec p3(d.coords[2 * d.triangles[i + 2]], d.coords[2 * d.triangles[i + 2] + 1]);
 
         triangle t(p1, p2, p3);
         triangles.emplace_back(t);
 
         printf(
-            "Triangle points: [[%f, %f], [%f, %f], [%f, %f]]\n",
-            d.coords[2 * d.triangles[i]],        //tx0
-            d.coords[2 * d.triangles[i] + 1],    //ty0
-            d.coords[2 * d.triangles[i + 1]],    //tx1
-            d.coords[2 * d.triangles[i + 1] + 1],//ty1
-            d.coords[2 * d.triangles[i + 2]],    //tx2
-            d.coords[2 * d.triangles[i + 2] + 1] //ty2
+                "Triangle points: [[%f, %f], [%f, %f], [%f, %f]]\n",
+                d.coords[2 * d.triangles[i]],        //tx0
+                d.coords[2 * d.triangles[i] + 1],    //ty0
+                d.coords[2 * d.triangles[i + 1]],    //tx1
+                d.coords[2 * d.triangles[i + 1] + 1],//ty1
+                d.coords[2 * d.triangles[i + 2]],    //tx2
+                d.coords[2 * d.triangles[i + 2] + 1] //ty2
         );
     }
 
-    solutionMaker sm = solutionMaker(triangles);
+    std::cout << "finding solution" << std::endl;
+//    solutionMaker sm = solutionMaker(triangles);
+//    polygon poly = sm.getSolution();
+    solutionMaker sm = solutionMaker(points);
     polygon poly = sm.getSolution();
+    printEvaluation(poly);
 
+    std::cout << "done finding solution" << std::endl;
     // run visualiser
     std::cout << "running visualiser" << std::endl;
     visualiser v;

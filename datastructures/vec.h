@@ -6,7 +6,7 @@
 #define GEOMETRY_CONTEST_VEC_H
 
 #include <cmath>
-
+#include <string>
 const double EPS = 1e-9;
 
 // vector in 2D space
@@ -34,6 +34,9 @@ public:
     // cross product
     double cross(const vec &v) const;
 
+    // to string
+    std::string toString() const;
+
     // arithmetic
     vec operator+(const vec &p) const {
         return vec(x + p.x, y + p.y);
@@ -43,12 +46,12 @@ public:
         return vec(x - p.x, y - p.y);
     }
 
-    bool operator==(vec p) const {
+    bool operator==(const vec &p) const {
         return fabs(x -p.x) < EPS && fabs(y-p.y) < EPS;
     }
 
     // default sorting order: y increasing then x increasing
-    bool operator<(vec p) const {
+    bool operator<(const vec &p) const {
         if (fabs(y - p.y) < EPS) {
             return x < p.x;
         }

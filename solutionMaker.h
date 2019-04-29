@@ -7,6 +7,7 @@
 
 #include "datastructures/polygon.h"
 #include "datastructures/triangle.h"
+#include "io/visualiser.h"
 
 class solutionMaker {
 private:

@@ -23,6 +23,8 @@ class lineseg {
 
         bool intersects(lineseg &other);
 
+        std::string toString() const;
+
 
         bool operator <(const lineseg &other) const {
             return other.a < other.b;

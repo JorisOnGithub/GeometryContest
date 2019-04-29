@@ -18,8 +18,20 @@ int direction(vec &a, vec &b, vec &c) {
    return (val > 0) ? ccw:anticcw;
 }
 
+std::string lineseg::toString() const {
+    std::string res = this->a.toString();
+    res += " -> ";
+    res += this->b.toString();
+    return res;
+}
 
 bool lineseg::intersects(lineseg &other) {
+    if (this->a == other.a || this->a == other.b || this->b == other.a || this->b == other.b) {
+        // they share a point, do not count this as intersection, only useful for greedy algo
+        return false;
+    }
+
+
    //four direction for two lines and points of other line
    int dir1 = direction(this->a, this->b, other.a);
    int dir2 = direction(this->a, this->b, other.b);

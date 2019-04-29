@@ -13,11 +13,13 @@
 struct llPoint {
     vec point;
     llPoint *next;
-    lineseg* edge; // edge to next point
+    lineseg *edge; // edge to next point
     llPoint *prev;
 
     llPoint(vec &p) {
         point = p;
+        next = NULL;
+        prev = NULL;
     }
 };
 
@@ -50,27 +52,55 @@ void solutionMaker::createSolution() {
 
     for (int i = 0; i < edges.size(); i++) {
         lineseg seg = edges.at(i);
-        points.emplace_back(*seg.a);
-        points.emplace_back(*seg.b);
+        points.emplace_back(seg.a);
+        points.emplace_back(seg.b);
     }
 
     this->solution = polygon();
     this->solution.setPoints(points);
 }
 
-/*
+std::vector<vec> getPointList(llPoint &first) {
+    std::vector<vec> result{};
+    llPoint *cur = &first;
+    while (cur != NULL) {
+        result.emplace_back(cur->point);
+        cur = cur->next;
+    }
+    result.emplace_back(first.point);
+    return result;
+}
+
+void printCurPoly(std::set<lineseg*> curPoly) {
+    std::cout << "LINE SEGMENTS CURRENTLY IN POLY:" << std::endl;
+    for (auto seg: curPoly) {
+        std::cout << seg->toString() << std::endl;
+    }
+}
+
+void printList(const llPoint &p) {
+    std::cout << " - " << &p << " - ";
+    std::cout.flush();
+    if (p.next != NULL) printList(*p.next);
+}
+
 void solutionMaker::realSolution() {
     // set of all points that are already in the solution
     std::set<vec> available;
     for (int i = 0; i < this->points.size(); i++) {
         available.insert(this->points[i]);
     }
+    // set of linesegments currently in the polygon, used for debugging
+    std::set<lineseg*> inPoly;
 
     // quadtree to maintain the edges of the current polygon
-    quadtree qt(vec(0,0), vec(1000000000, 1000000000));
+    vec bl(0, 0);
+    vec tr(1000000000, 1000000000);
+    quadtree qt(&bl, &tr);
 
     // start points to linked list with points
     vec start = *available.begin();
+    // TODO: this does not work, look at my code for example how to use iterator with removing
     available.erase(start);
 
     llPoint first = llPoint(start);
@@ -92,23 +122,37 @@ void solutionMaker::realSolution() {
     second_ll.prev = cur;
 
     // insert first edge into quad tree
-    vec* a = &cur->point;
-    vec* b = &cur->next->point;
-    lineseg ls(a,b);
-    qt.insert(&ls);
+    vec *a = &cur->point;
+    vec *b = &cur->next->point;
+    lineseg ls(a, b);
+
+    if (!qt.insert(ls)) throw "insert failed";
+    inPoly.insert(&ls);
     cur->edge = &ls;
+
+    int fileCount = 0;
+    int totalLimit = 2000;
 
     // keep adding vertices until polygon contains all points
     while (!available.empty()) {
         if (cur->next == NULL) throw "this point should have a next point";
 
+        auto it = available.begin();
         // loop over all potential points to add
-        for (auto i = available.begin(); i != available.end(); i++) {
+        for (; !available.empty() && it != available.end(); it++) {
+            totalLimit--;
+            if (totalLimit <= 0) {
+                available.clear();
+                std::cout << " WE ARE FUCKED BOYYYYYYSSS ";
+            }
+            if (available.empty()) {
+                break;
+            }
             bool isPossible = true;
-            vec p = *i;
+            vec p = *it;
 
             // create triangle
-            std::vector<vec> pts {};
+            std::vector<vec> pts{};
             pts.emplace_back(p);
             pts.emplace_back(cur->point);
             pts.emplace_back(cur->next->point);
@@ -128,35 +172,62 @@ void solutionMaker::realSolution() {
             if (!isPossible) continue;
 
             // check if the line segments (cur.target, p) or (cur.twin.target, p) intersect with the current polygon
-            lineseg ls1 = lineseg(&p, &cur->point);
-            lineseg ls2 = lineseg(&p, &cur->point);
-            if (qt.intersects_line(&ls1) || qt.intersects_line(&ls2)) {
+            lineseg ls1 = lineseg(&cur->point, &p);
+            lineseg ls2 = lineseg(&p, &cur->next->point);
+            // before checking intersection remove the edge that makes a triangle with ls1 and ls2
+            if (!qt.remove(*cur->edge)) {
+                throw "remove failed";
+            }
+
+            printCurPoly(inPoly);
+            std::cout << "old line segment is " << (*cur->edge).toString() << std::endl;
+            std::cout << "ls1 is " << ls1.toString() << std::endl;
+            std::cout << "ls2 is " << ls2.toString() << std::endl;
+            if (qt.intersects_line(ls1) || qt.intersects_line(ls2)) {
                 isPossible = false;
             }
-            if (!isPossible) continue;
+            // add removed edge back when we don't take this new point
+            if (!isPossible) {
+                std::cout << "THEY INTERSECT WITH POLY";
+                if (!qt.insert(*cur->edge)) {
+                    throw "insert failed";
+                }
+                inPoly.insert(cur->edge); // DEBUG
+                continue;
+            }
+            std::cout << "THEY DONT INTERSECT WITH POLY";
 
             // we can add this point to the polygon
-
-            // remove old linesegment between cur and cur->next
-            qt.remove(cur->edge);
-            available.erase(p);
+            it = available.erase(it);
 
             // add new point to the linked list
-            llPoint newPoint(p);
-            newPoint.prev = cur;
-            newPoint.next = cur->next;
-            newPoint.next->prev = &newPoint;
-            cur->next = &newPoint;
+            llPoint *newPoint = new llPoint(p);
+            newPoint->prev = cur;
+            newPoint->next = cur->next;
+            if (newPoint->next != NULL) newPoint->next->prev = newPoint;
+            cur->next = newPoint;
 
             // add new line segments to the quad tree
-            lineseg l1(&cur->point, &p);
-            lineseg l2(&p, &newPoint.next->point);
-            qt.insert(&l1);
-            qt.insert(&l2);
-            cur->edge = &l1;
-            newPoint.edge = &l2;
+            if (!qt.insert(ls1)) throw "insert failed";
+            if (!qt.insert(ls2)) throw "insert failed";
+            inPoly.insert(&ls1); // DEBUG
+            inPoly.insert(&ls2); // DEBUG
+            cur->edge = &ls1;
+            newPoint->edge = &ls2;
+            std::vector<vec> tempSol = getPointList(first);
+
+            std::cout << "visualizing inbetween" << std::endl;
+            visualiser v;
+            try {
+                v.visualise(this->points, tempSol, "testing"+std::to_string(fileCount++));
+            } catch (const char *e) {
+                std::cerr << e << std::endl;
+            }
+
+            if (available.empty()) break;
         }
 
+        if (available.empty()) break;
         // being here means we cannot add a point to this edge
         // move to the next edge
         if (cur->next->next != NULL) {
@@ -165,22 +236,20 @@ void solutionMaker::realSolution() {
             cur = &first;
         }
     }
-    // first points to a linked list containing the polygon
-    std::vector<vec> result{};
-    cur = &first;
-    while (cur != NULL) {
-        result.emplace_back(cur->point);
-        cur = cur->next;
-    }
 
+    // set solution
+    std::vector<vec> result = getPointList(first);
     this->solution = result;
 }
- */
+
+
+
+
 
 polygon solutionMaker::getSolution() {
     // we do not have a solution yet
     if (this->solution.getPoints().size() == 0) {
-        this->createSolution();
+        this->realSolution();
     }
     return this->solution;
 }
