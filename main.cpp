@@ -5,6 +5,7 @@
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
 #include "delaunator.hpp"
+#include "io/visualiser.h"
 
 using namespace std;
 
@@ -45,6 +46,15 @@ int main(int argc, char **argv) {
     // create polygon from sorted points
     std::cout << "sorted points on y coordinate" << std::endl;
     printEvaluation(solution);
+
+    // run visualiser
+    std::cout << "running visualiser" << std::endl;
+    visualiser v;
+    try {
+        v.visualise(points, solution, argv[1]);
+    } catch (const char *e) {
+        std::cerr << e << std::endl;
+    }
 
     std::cout << "running delaunay trangulation" << std::endl;
 

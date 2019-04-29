@@ -22,7 +22,6 @@ public:
     vec(const vec &a, const vec &b) : vec(b.x - a.x, b.y - a.y) {}
 
     // operations
-
     // L2 norm of this vector squared
     double norm_sq() const;
 
@@ -50,6 +49,10 @@ public:
             return x < p.x;
         }
         return y < p.y;
+    }
+
+    bool operator==(const vec &p) const {
+        return this->x == p.x && this->y == p.y;
     }
 
 };
