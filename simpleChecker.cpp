@@ -34,7 +34,7 @@ bool intersect(const SLseg &a, const SLseg &b) {
 
 bool isSimple(const polygon &P) {
     simpleChecker sC(P);
-    return sC.isSimple();
+    return sC.isSimpleSlow();
 }
 
 bool simpleChecker::isSimpleSlow() const {

@@ -8,6 +8,37 @@
 #include "datastructures/polygon.h"
 #include "datastructures/triangle.h"
 #include "io/visualiser.h"
+#include <set>
+#include "datastructures/lineseg.h"
+#include "datastructures/quadtree.h"
+#include <algorithm>
+#include <iostream>
+#include <limits>
+
+/**
+ * Linked List Node containing a polygon point, pointer to next and previous polygon point and an edge if there
+ * exists a next polygon point. The edge is the edge from this point to the next one.
+ */
+struct llPoint {
+    vec point;
+    llPoint *next;
+    lineseg *edge; // edge to next point
+    llPoint *prev;
+
+    llPoint(const vec &p) {
+        point = p;
+        next = NULL;
+        prev = NULL;
+    }
+};
+
+/**
+ * Inserts p after cur in linked list
+ * @param cur current linked list node
+ * @param p new point
+ * @returns linked list node for newly inserted point
+ */
+llPoint* insertAt(llPoint &cur, const vec &p);
 
 class solutionMaker {
 private:
@@ -16,9 +47,54 @@ private:
     std::vector<triangle> triangles;
 //    dcel* triangulation;
 
+    /**
+     * creates solution based on triangulation, currently not working
+     */
     void createSolution();
-    // temporary function to test another way of getting a solution
+
+    /**
+     * creates solution based on point list
+     */
     void realSolution();
+
+    /**
+     * Returns a list of points (polygon ready) based on the starting point of a linked list
+     * @param first first node in the linked list
+     * @return list of points (last point is the same as first point)
+     */
+    std::vector<vec> getPointList(llPoint &first);
+
+
+    /**
+     * Checks if the triangle made by the edge between cur and cur->next and the new point p, contains any other points.
+     * If it does, this point cannot be added to the polygon at this place.
+     * @param cur linked list node representing the first point of the edge to extend
+     * @param p point to potentially add to the polygon
+     * @return true if the triangle contains a point
+     */
+    bool newTriangleContainsPoint(const llPoint &cur, const vec &p) const;
+
+    /**
+     * Returns the closest point to p in available.
+     * @param p point
+     * @param available non empty set of points
+     * @return closest point to p in available
+     */
+    vec getClosestPoint(const vec &p, const std::set<vec> &available) const;
+
+    // DEBUGGING FUNCTIONS
+
+    /**
+     * Prints all elements in a set of linesegments to stdout.
+     * @param curPoly
+     */
+    void printCurPoly(std::set<lineseg *> curPoly);
+
+    /**
+     * Prints the contests of a linked list starting from point p to stdout.
+     * @param p starting point.
+     */
+    void printList(const llPoint &p);
 
 public:
     // input t is a triangulation of the input points
