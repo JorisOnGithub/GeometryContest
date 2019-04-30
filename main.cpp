@@ -28,13 +28,8 @@ int main(int argc, char **argv) {
     reader r;
     r.readInput(argv[1]);
     vector<vec> points = r.getPoints();
-    points = {};
-    points.emplace_back(vec(10, 10));
-    points.emplace_back(vec(20, 10));
-    points.emplace_back(vec(20, 20));
-    points.emplace_back(vec(10, 20));
-
     points.emplace_back(points[0]);
+
     // create polygon from input order
     polygon solution(points);
     printEvaluation(solution);
