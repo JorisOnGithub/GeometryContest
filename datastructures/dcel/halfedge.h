@@ -31,20 +31,16 @@ public:
         return facer;
     }
 
-    halfedge getTwin() const {
-        return *twin;
-    }
-
-    halfedge getNext() const {
-        return *next;
+    halfedge* getTwinPointer() const {
+        return twin;
     }
 
     halfedge* getNextPointer() const {
         return next;
     }
 
-    halfedge getPrevious() const {
-        return *previous;
+    halfedge* getPreviousPointer() const {
+        return previous;
     }
 
     // Setters

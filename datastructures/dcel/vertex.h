@@ -20,6 +20,12 @@ public:
     // empty constructor
     vertex(){}
 
+    // constructor for coordinates x,y
+    vertex(double x, double y) {
+        this->x = x;
+        this->y = y;
+    }
+
     // Getters
     std::list<halfedge> getEdges() const;
 
