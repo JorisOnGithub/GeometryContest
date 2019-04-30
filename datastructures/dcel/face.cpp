@@ -16,12 +16,12 @@ std::vector<halfedge> face::getAdjacentEdges() const {
     return adjacentEdges;
 }
 
-std::set<face> face::getAdjacentFaces() const {
-    std::set<face> adjacentFaces;
+std::unordered_set<face*> face::getAdjacentFacesPointers() const {
+    std::unordered_set<face*> adjacentFaces;
     std::vector<halfedge> adjacentEdges = this->getAdjacentEdges();
 
     for (halfedge e : adjacentEdges) {
-        adjacentFaces.insert(e.getFace());
+        adjacentFaces.insert(e.getFacePointer());
     }
 
     return adjacentFaces;

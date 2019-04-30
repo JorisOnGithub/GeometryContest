@@ -18,49 +18,49 @@ std::list<face> dcel::getFaces() const {
 }
 
 void dcel::addEdgeAt(vertex v, halfedge h) {
-    face f = h.getFace();
+    face f = *h.getFacePointer();
     face f1;
     face f2;
     halfedge h1;
     halfedge h2;
 
-    h.getTarget().addEdge(h1);
-    v.addEdge(h2);
+    (*h.getTargetPointer()).addEdge(&h1);
+    v.addEdge(&h2);
 
-    f1.getEdge(h1);
-    f2.setEdge(h2);
+    f1.setEdge(&h1);
+    f2.setEdge(&h2);
 
-    h1.setTwin(h2);
-    h2.setTwin(h1);
+    h1.setTwin(&h2);
+    h2.setTwin(&h1);
 
-    h1.setTarget(v);
-    h2.setTarget(h.getTarget());
+    h1.setTarget(&v);
+    h2.setTarget(h.getTargetPointer());
 
-    h2.setNext(h.getNext());
-    h2.getNext().setPrevious(h2);
-    h1.setPrevious(h);
-    h.setNext(h1);
+    h2.setNext(h.getNextPointer());
+    h2.getNext().setPrevious(&h2);
+    h1.setPrevious(&h);
+    h.setNext(&h1);
 
     halfedge *iterator = &h2;
 
-    h2.setFace(f2);
-    while (iterator->getTarget() != v) {
+    h2.setFace(&f2);
+    while (iterator->getTargetPointer() != &v) {
         iterator = iterator->getNextPointer();
-        iterator->setFace(f2);
+        iterator->setFace(&f2);
     }
 
-    h1.setNext(iterator->getNext());
-    h1.getNext().setPrevious(h1);
+    h1.setNext(iterator->getNextPointer());
+    h1.getNext().setPrevious(&h1);
 
-    iterator->setNext(h2);
-    h2.setPrevious(*iterator);
+    iterator->setNext(&h2);
+    h2.setPrevious(iterator);
 
     iterator = &h1;
 
     do {
-        iterator->setFace(f1);
+        iterator->setFace(&f1);
         iterator = iterator->getNextPointer();
-    } while (iterator->getTarget() != h.getTarget());
+    } while (iterator->getTargetPointer() != h.getTargetPointer());
 
     this->edges.push_back(h1);
     this->edges.push_back(h2);
@@ -78,24 +78,24 @@ void dcel::initialVertices(vertex v1, vertex v2) {
     halfedge h1;
     halfedge h2;
 
-    h1.setFace(outer);
-    h2.setFace(outer);
+    h1.setFace(&outer);
+    h2.setFace(&outer);
 
-    h1.setTarget(v1);
-    h2.setTarget(v2);
+    h1.setTarget(&v1);
+    h2.setTarget(&v2);
 
-    h1.setNext(h2);
-    h1.setPrevious(h2);
-    h2.setNext(h1);
-    h2.setPrevious(h1);
+    h1.setNext(&h2);
+    h1.setPrevious(&h2);
+    h2.setNext(&h1);
+    h2.setPrevious(&h1);
 
-    h1.setTwin(h2);
-    h2.setTwin(h1);
+    h1.setTwin(&h2);
+    h2.setTwin(&h1);
 
-    v1.addEdge(h2);
-    v2.addEdge(h1);
+    v1.addEdge(&h2);
+    v2.addEdge(&h1);
 
-    outer.setEdge(h1);
+    outer.setEdge(&h1);
 
     this->vertices.push_back(v1);
     this->vertices.push_back(v2);
@@ -108,26 +108,26 @@ void dcel::addVertexAt(vertex v, halfedge h) {
     halfedge h1;
     halfedge h2;
 
-    v.addEdge(h2);
-    h.getTarget().addEdge(h1);
+    v.addEdge(&h2);
+    h.getTargetPointer()->addEdge(&h1);
 
-    h1.setTwin(h2);
-    h2.setTwin(h1);
+    h1.setTwin(&h2);
+    h2.setTwin(&h1);
 
-    h1.setTarget(v);
-    h2.setTarget(h.getTarget());
+    h1.setTarget(&v);
+    h2.setTarget(h.getTargetPointer());
 
-    h1.setFace(h.getFace());
-    h2.setFace(h.getFace());
+    h1.setFace(h.getFacePointer());
+    h2.setFace(h.getFacePointer());
 
-    h1.setNext(h2);
-    h2.setNext(h.getNext());
+    h1.setNext(&h2);
+    h2.setNext(h.getNextPointer());
 
-    h1.setPrevious(h);
-    h2.setPrevious(h1);
+    h1.setPrevious(&h);
+    h2.setPrevious(&h1);
 
-    h.setNext(h1);
-    h2.getNext().setPrevious(h2);
+    h.setNext(&h1);
+    h2.getNext().setPrevious(&h2);
 
     this->edges.push_back(h1);
     this->edges.push_back(h2);

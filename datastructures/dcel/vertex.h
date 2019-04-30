@@ -7,7 +7,8 @@
 
 #include <list>
 
-#include "halfedge.h"
+//#include "halfedge.h"
+class halfedge;
 
 class vertex {
 protected:
@@ -39,7 +40,7 @@ public:
         this->y = y;
     }
 
-    void addEdge(halfedge h);
+    void addEdge(halfedge *h);
 };
 
 

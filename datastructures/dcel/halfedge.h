@@ -5,13 +5,15 @@
 #ifndef GEOMETRY_CONTEST_HALFEDGE_H
 #define GEOMETRY_CONTEST_HALFEDGE_H
 
-#include "vertex.h"
-#include "face.h"
+//#include "vertex.h"
+//#include "face.h"
+class face;
+class vertex;
 
 class halfedge {
 protected:
     vertex *target;
-    face *face;
+    face *facer;
     halfedge *twin;
     halfedge *next;
     halfedge *previous;
@@ -21,12 +23,12 @@ public:
     halfedge() {}
 
     // Getters
-    vertex getTarget() const {
-        return *target;
+    vertex* getTargetPointer() const {
+        return target;
     }
 
-    face getFace() const {
-        return *face;
+    face* getFacePointer() const {
+        return facer;
     }
 
     halfedge getTwin() const {
@@ -46,28 +48,34 @@ public:
     }
 
     // Setters
-    void setTarget(vertex target) {
-        this->target = &target;
+    void setTarget(vertex *target) {
+        this->target = target;
     }
 
-    void setFace(face f) {
-        this->face = &f;
+    void setFace(face *f) {
+        this->facer = f;
     }
 
-    void setTwin(halfedge twin) {
-        this->twin = &twin;
+    void setTwin(halfedge *twin) {
+        this->twin = twin;
     }
 
-    void setNext(halfedge next) {
-        this->next = &next;
+    void setNext(halfedge *next) {
+        this->next = next;
     }
 
-    void setPrevious(halfedge prev) {
-        this->previous = &prev;
+    void setPrevious(halfedge *prev) {
+        this->previous = prev;
     }
 
+    bool operator== (const halfedge &h) const {
+        return (this == &h);
+    }
 
-}
+    bool operator!= (const halfedge &h) const {
+        return (this != &h);
+    }
+};
 
 
 #endif //GEOMETRY_CONTEST_HALFEDGE_H
