@@ -1,7 +1,7 @@
 #include "localOptimizer.h"
 
 void optimizePolygon(polygon &poly, quadtree &qt, bool maximize) {
-    optimizePolygonWithPoint(poly, qt, 0, maximize);
+    optimizePolygonWithPoint(poly, qt, rand()%poly.getSize(), maximize);
 }
 
 void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize) {
@@ -13,7 +13,7 @@ void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize
     vec p = poly.getPoint(pi);
     poly.removePoint(pi);
     maximize = !(maximize^poly.contains(p));
-    qt.addPoint(poly.getEdge((pi-1+poly.getSize())%poly.getSize()));
+    qt.insert(poly.getEdge((pi-1+poly.getSize())%poly.getSize()));
     std::vector<int> si = {};
     for (int i = 0; i < 10; i++) {
         si.push_back((pi-5+i+poly.getSize())%poly.getSize());
