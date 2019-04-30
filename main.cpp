@@ -30,24 +30,23 @@ int main(int argc, char **argv) {
     reader r;
     r.readInput(argv[1]);
     vector<vec> points = r.getPoints();
+    points.emplace_back(points[0]);
 
     // create polygon from input order
     polygon solution(points);
     printEvaluation(solution);
 
     // create polygon from sorted input
-    std::sort(points.begin(), points.end());
-    solution.setPoints(points);
+//    std::sort(points.begin(), points.end());
+//    solution.setPoints(points);
 
-    /*
     for (int i = 0; i < points.size(); i++) {
         cout << "point " << i << ": (" << points[i].x << ", " << points[i].y << ")" << endl;
     }
-    */
 
     // create polygon from sorted points
-    std::cout << "sorted points on y coordinate" << std::endl;
-    printEvaluation(solution);
+//    std::cout << "sorted points on y coordinate" << std::endl;
+//    printEvaluation(solution);
 
 
     /*
@@ -83,7 +82,6 @@ int main(int argc, char **argv) {
         );
     }
      */
-
     std::cout << "finding solution" << std::endl;
 //    solutionMaker sm = solutionMaker(triangles);
 //    polygon poly = sm.getSolution();

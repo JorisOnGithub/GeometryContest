@@ -16,6 +16,9 @@ double isLeft(const vec &a, const vec &b, const vec &p) {
 bool SLseg::intersect(const SLseg &o) const {
     // intersection at vertex that is in both segments does not count
     if (this->edge == o.edge + 1 || this->edge + 1 == o.edge) return false;
+    if (this->lP == o.lP || this->lP == o.rP || this->rP == o.lP || this->rP == o.rP) {
+        return false;
+    }
 
     double l_sign, r_sign;
     l_sign = isLeft(this->lP, this->rP, o.lP);
