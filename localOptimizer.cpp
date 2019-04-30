@@ -8,12 +8,15 @@ void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize
     if (!canBeRemoved(poly, qt, pi)) {
         return;
     }
-    qt.remove(poly.getEdge((pi-1+poly.getSize())%poly.getSize()));
-    qt.remove(poly.getEdge((pi+1)%poly.getSize()));
+    lineseg l1 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
+    lineseg l2 = poly.getEdge((pi+1)%poly.getSize());
+    qt.remove(l1);
+    qt.remove(l2);
     vec p = poly.getPoint(pi);
     poly.removePoint(pi);
     maximize = !(maximize^poly.contains(p));
-    qt.insert(poly.getEdge((pi-1+poly.getSize())%poly.getSize()));
+    lineseg l3 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
+    qt.insert(l3);
     std::vector<int> si = {};
     for (int i = 0; i < 10; i++) {
         si.push_back((pi-5+i+poly.getSize())%poly.getSize());
