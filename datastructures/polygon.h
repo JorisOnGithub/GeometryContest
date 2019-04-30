@@ -6,6 +6,7 @@
 #define GEOMETRY_CONTEST_POLYGON_H
 
 #include "vec.h"
+#include "lineseg.h"
 #include <vector>
 
 // polygon in 2D space
@@ -29,7 +30,11 @@ public:
 
     void removePoint(int index);
 
+    void addPoint(vec &point, int index);
+
     vec getPoint(int index) const;
+
+    lineseg getEdge(int index) const;
 
     double area() const;
 

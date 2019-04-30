@@ -5,6 +5,7 @@
 #include "polygon.h"
 #include <iostream>
 #include <limits>
+#include <algorithm>
 
 // returns true if c is not to the right of vector ab
 bool ccw(const vec &a, const vec &b, const vec &c) {
@@ -86,4 +87,38 @@ bool polygon::contains(vec &point) {
     }
 
     return inside;
+}
+
+
+int polygon::getSize() const {
+    return this->points.size();
+}
+
+vec polygon::getPoint(int index) const {
+    return this->points[index];
+}
+
+void polygon::removePoint(int index) {
+    this->points.erase(this->points.begin() + index);
+    if (index == 0) {
+        this->points.erase(this->points.end() - 1);
+        this->points.push_back(this->points[0]);
+    } else if (index == this->getSize() - 1) {
+        this->points.erase(this->points.begin());
+        this->points.push_back(this->points[0]);
+    }
+}
+
+void polygon::addPoint(vec &point, int index) {
+    this->points.insert(this->points.begin() + index, point);
+    if (index == 0) {
+        this->points.erase(this->points.end() - 1);
+        this->points.push_back(point);
+    }
+}
+
+lineseg polygon::getEdge(int index) const {
+    vec p1 = this->points[index];
+    vec p2 = this->points[(index + 1) % (this->getSize())];
+    return lineseg(&p1, &p2);
 }
