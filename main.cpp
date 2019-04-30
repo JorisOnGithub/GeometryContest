@@ -5,7 +5,6 @@
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
 #include "delaunator.hpp"
-#include "datastructures/triangle.h"
 #include "solutionMaker.h"
 #include "io/visualiser.h"
 

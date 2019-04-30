@@ -6,7 +6,6 @@
 #define GEOMETRY_CONTEST_SOLUTIONMAKER_H
 
 #include "datastructures/polygon.h"
-#include "datastructures/triangle.h"
 #include "io/visualiser.h"
 #include <set>
 #include "datastructures/lineseg.h"
@@ -44,7 +43,6 @@ class solutionMaker {
 private:
     polygon solution;
     std::vector<vec> points;
-    std::vector<triangle> triangles;
 //    dcel* triangulation;
 
     /**
@@ -102,9 +100,11 @@ public:
         this->points = pts;
     }
 
+    /*
     solutionMaker(const std::vector<triangle> &triangles_) {
         this->triangles = triangles_;
     }
+    */
 
     polygon getSolution();
 

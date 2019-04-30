@@ -4,6 +4,7 @@
 
 #include "solutionMaker.h"
 
+/*
 void solutionMaker::createSolution() {
     std::vector<lineseg> edges{};
 
@@ -40,6 +41,7 @@ void solutionMaker::createSolution() {
     this->solution = polygon();
     this->solution.setPoints(points);
 }
+*/
 
 void solutionMaker::realSolution() {
     // set of points that are not yet in the solution polygon
