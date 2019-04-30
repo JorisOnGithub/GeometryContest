@@ -25,6 +25,12 @@ public:
 
     std::vector<vec> getPoints() const;
 
+    int getSize() const;
+
+    void removePoint(int index);
+
+    vec getPoint(int index) const;
+
     double area() const;
 
     bool isConvex() const;
