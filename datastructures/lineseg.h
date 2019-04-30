@@ -27,7 +27,7 @@ class lineseg {
 
 
         bool operator <(const lineseg &other) const {
-            return other.a < other.b;
+            return this->a < other.a;
         }
 
         bool operator ==(const lineseg &other) const {

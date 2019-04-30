@@ -152,7 +152,7 @@ void solutionMaker::realSolution() {
             vec p = *it;
 
             // create triangle
-            std::vector<vec> pts{};
+            std::vector<vec> pts;
             pts.emplace_back(p);
             pts.emplace_back(cur->point);
             pts.emplace_back(cur->next->point);
@@ -178,11 +178,13 @@ void solutionMaker::realSolution() {
             if (!qt.remove(*cur->edge)) {
                 throw "remove failed";
             }
+            inPoly.erase(cur->edge);
 
             printCurPoly(inPoly);
             std::cout << "old line segment is " << (*cur->edge).toString() << std::endl;
             std::cout << "ls1 is " << ls1.toString() << std::endl;
             std::cout << "ls2 is " << ls2.toString() << std::endl;
+            std::cout << "Quad tree size " << qt.size() << std::endl;
             if (qt.intersects_line(ls1) || qt.intersects_line(ls2)) {
                 isPossible = false;
             }
