@@ -50,6 +50,7 @@ int main(int argc, char **argv) {
     printEvaluation(solution);
 
 
+    /*
     std::cout << "running delaunay trangulation" << std::endl;
 
     // inefficient, but just showing it works ;)
@@ -81,6 +82,7 @@ int main(int argc, char **argv) {
                 d.coords[2 * d.triangles[i + 2] + 1] //ty2
         );
     }
+     */
 
     std::cout << "finding solution" << std::endl;
 //    solutionMaker sm = solutionMaker(triangles);
