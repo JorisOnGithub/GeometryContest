@@ -74,4 +74,23 @@ TEST(QuadtreePoints, RangeSearch) {
     vec rtr(100, 100);
     std::set<vec*> r1 = t.range_search(rbl, rtr);
     EXPECT_TRUE(r1.size() == t.size());
+
+    vec rbl1(25, 25);
+    vec rtr1(40, 40);
+    std::set<vec*> r2 = t.range_search(rbl1, rtr1);
+    EXPECT_TRUE(r2.size() == 1);
+    EXPECT_TRUE(r2.find(&d) != r2.end());
+
+    vec rbl2(25, 25);
+    vec rtr2(29, 29);
+    std::set<vec*> r3 = t.range_search(rbl2, rtr2);
+    EXPECT_TRUE(r3.size() == 0);
+
+    vec rbl3(29, 29);
+    vec rtr3(80, 95);
+    std::set<vec*> r4 = t.range_search(rbl3, rtr3);
+    EXPECT_TRUE(r4.size() == 3);
+    EXPECT_TRUE(r4.find(&d) != r4.end());
+    EXPECT_TRUE(r4.find(&g) != r4.end());
+    EXPECT_TRUE(r4.find(&f) != r4.end());
 }
