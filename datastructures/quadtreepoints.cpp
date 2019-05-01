@@ -1,10 +1,10 @@
 #include "quadtreepoints.h"
 
-bool quadtree::in_boundary(vec &bl, vec &tr, vec &p) {
+bool quadtreeP::in_boundary(vec &bl, vec &tr, vec &p) {
     return p.x >= bl.x && p.y >= bl.y && p.x <= tr.x && p.y <= tr.y;
 }
 
-void quadtree::subdivide() {
+void quadtreeP::subdivide() {
     // edge lengths, divided by two. 
     int y_diff = floor((topright->y - botleft->y)/2.0); 
     int x_diff = floor((topright->x - botleft->x)/2.0);
@@ -12,24 +12,24 @@ void quadtree::subdivide() {
     // TODO: could be issues with coordinate precision because of flooring? 
     vec* nwbl = new vec(botleft->x, botleft->y + y_diff);
     vec* nwtr = new vec(topright->x - x_diff, topright->y);
-    this->nw = new quadtree(this, nwbl, nwtr, false, false);
+    this->nw = new quadtreeP(this, nwbl, nwtr, false, false);
 
     vec* nebl = new vec(botleft->x + x_diff, botleft->y + y_diff);
-    this->ne = new quadtree(this, nebl, topright, false, true);
+    this->ne = new quadtreeP(this, nebl, topright, false, true);
 
     vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
-    this->sw = new quadtree(this, botleft, swtr, true, false);
+    this->sw = new quadtreeP(this, botleft, swtr, true, false);
 
     vec* sebl = new vec(botleft->x + x_diff, botleft->y);
     vec* setr = new vec(topright->x, topright->y - y_diff);
-    this->se = new quadtree(this, sebl, setr, false, false);
+    this->se = new quadtreeP(this, sebl, setr, false, false);
 }
 
-bool quadtree::in_tree_boundary(vec &p) {
+bool quadtreeP::in_tree_boundary(vec &p) {
     return this->in_boundary(*this->botleft, *this->topright, p);
 }
 
-bool quadtree::insert(vec &p) {
+bool quadtreeP::insert(vec &p) {
     if (!this->in_boundary(*this->botleft, *this->topright, p)) {  // if not in this node
         return false; // cant insert
     }
@@ -60,7 +60,7 @@ bool quadtree::insert(vec &p) {
     }
 }
 
-bool quadtree::remove(vec &p) {
+bool quadtreeP::remove(vec &p) {
     if (!this->in_tree_boundary(p)) {
         return false;
     }
@@ -79,7 +79,7 @@ bool quadtree::remove(vec &p) {
     }
 }
 
-void quadtree::gather_in_range(vec &bl, vec &tr, std::set<vec*> &collected) {
+void quadtreeP::gather_in_range(vec &bl, vec &tr, std::set<vec*> &collected) {
     // if both rectangle definitions are not within this tree
     if (this->in_tree_boundary(bl) || this->in_tree_boundary(tr)) {
         return;
@@ -97,7 +97,7 @@ void quadtree::gather_in_range(vec &bl, vec &tr, std::set<vec*> &collected) {
     this->se->gather_in_range(bl, tr, collected);
 }
 
-std::set<vec*> quadtree::range_search(vec &bl, vec &tr) {
+std::set<vec*> quadtreeP::range_search(vec &bl, vec &tr) {
     std::set<vec*> collected;
     this->gather_in_range(bl, tr, collected);
     return collected;

@@ -7,9 +7,9 @@
 static constexpr int bucketsize = 4; // subdivide when size() >= bucketsize
 static constexpr int max_depth = 100; // depth cap
 
-class quadtree {
+class quadtreeP {
     private:
-        quadtree  *parent, *nw, *ne, *sw, *se; // relative info
+        quadtreeP  *parent, *nw, *ne, *sw, *se; // relative info
         vec *botleft, *topright; // border info
 
         int node_count;
@@ -17,7 +17,7 @@ class quadtree {
         bool botl, topr;
         std::set<vec*> data;
 
-        quadtree(quadtree* _parent, vec *bl, vec *tr, bool b, bool t) {
+        quadtreeP(quadtreeP* _parent, vec *bl, vec *tr, bool b, bool t) {
             this->node_count = 0;
             this->parent = _parent;
             this->depth = parent == NULL ? 0 : parent->depth + 1;
@@ -49,9 +49,9 @@ class quadtree {
          * @param bl bottom left
          * @param tr top right
          */
-        quadtree(vec *bl, vec *tr) : quadtree(NULL, bl, tr, true, true) {}
+        quadtreeP(vec *bl, vec *tr) : quadtreeP(NULL, bl, tr, true, true) {}
 
-        ~quadtree() { // destructor
+        ~quadtreeP() { // destructor
             if (!this->is_leaf()) {
                 delete nw;
                 delete ne;
