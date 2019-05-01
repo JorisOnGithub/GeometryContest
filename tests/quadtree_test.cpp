@@ -165,18 +165,23 @@ TEST (QuadTreeTest, GettingIntersectingLines) {
     vec l(30, 5);
     vec p(37, 40);
     lineseg l5(&l, &p);
-    // insert the points
+    vec x(1, 45);
+    vec y(30, 45);
+    lineseg l6(&x, &y);
+    // insert the lines 
     EXPECT_TRUE(t.insert(l1));
     EXPECT_TRUE(t.insert(l2));
     EXPECT_TRUE(t.insert(l3));
     EXPECT_TRUE(t.insert(l4));
     EXPECT_TRUE(t.insert(l5));
+    EXPECT_TRUE(t.insert(l6));
     // they all must intersect
     EXPECT_TRUE(t.intersects_line(l1));
     EXPECT_TRUE(t.intersects_line(l2));
     EXPECT_TRUE(t.intersects_line(l3));
     EXPECT_TRUE(t.intersects_line(l4));
     EXPECT_TRUE(t.intersects_line(l5));
+    EXPECT_FALSE(t.intersects_line(l6));
 
     std::set<lineseg*> lines = t.get_intersecting_lines(l1);
 
@@ -188,4 +193,7 @@ TEST (QuadTreeTest, GettingIntersectingLines) {
 
     EXPECT_TRUE(lines2.size() == 1);
     EXPECT_TRUE(lines2.find(&l4) != lines2.end());
+
+    std::set<lineseg*> lines3 = t.get_intersecting_lines(l6);
+    EXPECT_TRUE(lines3.size() == 0);
 }
