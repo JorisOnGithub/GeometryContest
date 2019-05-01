@@ -29,24 +29,23 @@ int main(int argc, char **argv) {
     reader r;
     r.readInput(argv[1]);
     vector<vec> points = r.getPoints();
+    points.emplace_back(points[0]);
 
     // create polygon from input order
     polygon solution(points);
     printEvaluation(solution);
 
     // create polygon from sorted input
-    std::sort(points.begin(), points.end());
-    solution.setPoints(points);
+//    std::sort(points.begin(), points.end());
+//    solution.setPoints(points);
 
-    /*
     for (int i = 0; i < points.size(); i++) {
         cout << "point " << i << ": (" << points[i].x << ", " << points[i].y << ")" << endl;
     }
-    */
 
     // create polygon from sorted points
-    std::cout << "sorted points on y coordinate" << std::endl;
-    printEvaluation(solution);
+//    std::cout << "sorted points on y coordinate" << std::endl;
+//    printEvaluation(solution);
 
     // run visualiser
     std::cout << "running visualiser" << std::endl;
@@ -57,6 +56,7 @@ int main(int argc, char **argv) {
         std::cerr << e << std::endl;
     }
 
+    /*
     std::cout << "running delaunay trangulation" << std::endl;
 
     // inefficient, but just showing it works ;)
@@ -78,6 +78,7 @@ int main(int argc, char **argv) {
             d.coords[2 * d.triangles[i + 2] + 1] //ty2
         );
     }
+     */
 
     std::cerr << "ending main program" << std::endl;
     return 0;

@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(GTest)
 if (GTest_FOUND)
     include_directories(${GTEST_INCLUDE_DIRS})
-    add_executable(UnitTest tests/tests.cpp datastructures/vec.h datastructures/vec.cpp datastructures/polygon.h datastructures/polygon.cpp tests/polygon_test.cpp datastructures/lineseg.h datastructures/lineseg.cpp tests/lineseg_test.cpp tests/quadtree_test.cpp datastructures/quadtree.cpp datastructures/quadtree.h)
+    add_executable(UnitTest tests/tests.cpp datastructures/vec.h datastructures/vec.cpp datastructures/polygon.h datastructures/polygon.cpp tests/polygon_test.cpp datastructures/lineseg.h datastructures/lineseg.cpp tests/lineseg_test.cpp tests/quadtree_test.cpp datastructures/quadtree.cpp datastructures/quadtree.h tests/simpleChecker_test.cpp simpleChecker.h simpleChecker.cpp)
     target_link_libraries(UnitTest ${GTEST_LIBRARIES} pthread)
 endif()
 
