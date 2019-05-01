@@ -1,5 +1,5 @@
 #include "quadtreepoints.h"
-
+#include <iostream>
 bool quadtreeP::in_boundary(vec &bl, vec &tr, vec &p) {
     return p.x >= bl.x && p.y >= bl.y && p.x <= tr.x && p.y <= tr.y;
 }
@@ -81,7 +81,7 @@ bool quadtreeP::remove(vec &p) {
 
 void quadtreeP::gather_in_range(vec &bl, vec &tr, std::set<vec*> &collected) {
     // if both rectangle definitions are not within this tree
-    if (this->in_tree_boundary(bl) || this->in_tree_boundary(tr)) {
+    if (!(this->in_tree_boundary(bl) || this->in_tree_boundary(tr))) {
         return;
     }
     for (auto p: this->get_data()) {

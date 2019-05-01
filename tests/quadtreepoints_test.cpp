@@ -62,5 +62,16 @@ TEST(QuadtreePoints, RangeSearch) {
 
     quadtreeP t(&bl, &tr);
 
-
+    EXPECT_TRUE(t.insert(a));
+    EXPECT_TRUE(t.insert(b));
+    EXPECT_TRUE(t.insert(c));
+    EXPECT_TRUE(t.insert(d));
+    EXPECT_TRUE(t.insert(e));
+    EXPECT_TRUE(t.insert(f));
+    EXPECT_TRUE(t.insert(g));
+   
+    vec rbl(0, 0);
+    vec rtr(100, 100);
+    std::set<vec*> r1 = t.range_search(rbl, rtr);
+    EXPECT_TRUE(r1.size() == t.size());
 }
