@@ -145,3 +145,55 @@ TEST (QuadTreeTest, QuadLineInteresection) {
     EXPECT_FALSE(t.intersects_line(l4));
     EXPECT_FALSE(t.intersects_line(l5));
 }
+
+TEST (QuadTreeTest, GettingIntersectingLines) {
+    vec br(0, 0);
+    vec tl(50, 50);
+    quadtree t(&br, &tl);
+    vec a(10, 10);
+    vec b(15, 15);
+    lineseg l1(&a, &b);
+    vec c(15, 10);
+    vec d(10, 15);
+    lineseg l2(&c, &d);
+    vec e(20, 10);
+    vec f(20, 20);
+    lineseg l3(&e, &f);
+    vec g(10, 12);
+    vec h(45, 12);
+    lineseg l4(&g, &h);
+    vec l(30, 5);
+    vec p(37, 40);
+    lineseg l5(&l, &p);
+    vec x(1, 45);
+    vec y(30, 45);
+    lineseg l6(&x, &y);
+    // insert the lines 
+    EXPECT_TRUE(t.insert(l1));
+    EXPECT_TRUE(t.insert(l2));
+    EXPECT_TRUE(t.insert(l3));
+    EXPECT_TRUE(t.insert(l4));
+    EXPECT_TRUE(t.insert(l5));
+    EXPECT_TRUE(t.insert(l6));
+    // they all must intersect
+    EXPECT_TRUE(t.intersects_line(l1));
+    EXPECT_TRUE(t.intersects_line(l2));
+    EXPECT_TRUE(t.intersects_line(l3));
+    EXPECT_TRUE(t.intersects_line(l4));
+    EXPECT_TRUE(t.intersects_line(l5));
+    EXPECT_FALSE(t.intersects_line(l6));
+
+    std::set<lineseg*> lines = t.get_intersecting_lines(l1);
+
+    EXPECT_TRUE(lines.size() == 2);
+    EXPECT_TRUE(lines.find(&l2) != lines.end());
+    EXPECT_TRUE(lines.find(&l4) != lines.end());
+    
+    std::set<lineseg*> lines2 = t.get_intersecting_lines(l5);
+
+    EXPECT_TRUE(lines2.size() == 1);
+    EXPECT_TRUE(lines2.find(&l4) != lines2.end());
+
+    std::set<lineseg*> lines3 = t.get_intersecting_lines(l6);
+    EXPECT_TRUE(lines3.size() == 0);
+}
