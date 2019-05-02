@@ -43,7 +43,7 @@ void solutionMaker::createSolution() {
 }
 */
 
-void solutionMaker::realSolution() {
+void solutionMaker::realSolution(bool visualizeInbetween) {
     // set of points that are not yet in the solution polygon
     std::set<vec> available;
     for (int i = 0; i < this->points.size(); i++) {
@@ -79,10 +79,9 @@ void solutionMaker::realSolution() {
 
     // insert edge into quadTree
     if (!qt.insert(ls)) throw "insert failed";
-//    inPoly.insert(&ls);
 
     // number to create debugging visualizations
-//    int fileCount = 0;
+    int fileCount = 0;
 
     // limit to prevent timeouts UNSET FOR LARGE INPUTS
     int totalLimit = 1000000;
@@ -133,6 +132,9 @@ void solutionMaker::realSolution() {
 
             // add removed edge back when we don't take this new point
             if (!isPossible) {
+                // free the line segments
+                delete(ls1);
+                delete(ls2);
                 continue;
             }
 
@@ -162,17 +164,18 @@ void solutionMaker::realSolution() {
             newPoint->edge = ls2;
             isStart = false;
 
-            /*
-            // This code visualizes the new polygon and saves it as ipe file
-            std::vector<vec> tempSol = getPointList(first);
-            std::cout << "visualizing inbetween" << std::endl;
-            visualiser v;
-            try {
-                v.visualise(this->points, tempSol, "testing"+std::to_string(fileCount++));
-            } catch (const char *e) {
-                std::cerr << e << std::endl;
+
+            if (visualizeInbetween) {
+                // This code visualizes the new polygon and saves it as ipe file
+                std::vector<vec> tempSol = getPointList(first);
+                std::cout << "visualizing inbetween" << std::endl;
+                visualiser v;
+                try {
+                    v.visualise(this->points, tempSol, "testing" + std::to_string(fileCount++));
+                } catch (const char *e) {
+                    std::cerr << e << std::endl;
+                }
             }
-             */
 
             // solution found
             if (available.empty()) break;
@@ -239,7 +242,6 @@ bool solutionMaker::newTriangleContainsPoint(const llPoint &cur, const vec &p) c
 }
 
 llPoint* insertAt(llPoint &cur, const vec &p) {
-    // TODO: does this create a memleak?
     // create new linked list node
     llPoint *newPoint = new llPoint(p);
     // connect new point to next and prev

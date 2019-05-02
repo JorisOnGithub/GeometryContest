@@ -23,11 +23,29 @@ struct llPoint {
     llPoint *next;
     lineseg *edge; // edge to next point
     llPoint *prev;
+    bool deleted = false;
 
+    // constructor
     llPoint(const vec &p) {
         point = p;
         next = NULL;
         prev = NULL;
+        edge = NULL;
+    }
+
+    // denstructor
+    ~llPoint() {
+        deleted = true;
+        if (edge != NULL) {
+            delete (edge);
+        }
+
+        if (next != NULL && !next->deleted) {
+            delete (next);
+        }
+        if (prev != NULL && !prev->deleted) {
+            delete (prev);
+        }
     }
 };
 
@@ -37,7 +55,7 @@ struct llPoint {
  * @param p new point
  * @returns linked list node for newly inserted point
  */
-llPoint* insertAt(llPoint &cur, const vec &p);
+llPoint *insertAt(llPoint &cur, const vec &p);
 
 class solutionMaker {
 private:
@@ -52,8 +70,10 @@ private:
 
     /**
      * creates solution based on point list
+     * @param visualizeInbetween if true the function creates and stores an ipe image in output/testingA where A is linear
+     * to the number of points in the polygon so far.
      */
-    void realSolution();
+    void realSolution(bool visualizeInbetween = false);
 
     /**
      * Returns a list of points (polygon ready) based on the starting point of a linked list
