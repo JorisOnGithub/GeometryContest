@@ -100,6 +100,30 @@ private:
      */
     vec getClosestPoint(const vec &p, const std::set<vec> &available) const;
 
+    /**
+     * Creates a starting polygon with 2 vertices and an edge in between and adds the edge to the quadtree.
+     * @param available list of points to pick 2 points from
+     * @param qt (empty) quadtree of linesegments
+     * @return pointer to the first node in the linked list representing the 'current' polygon
+     */
+    llPoint* createStartingEdge(std::set<vec> &available, quadtree &qt);
+
+
+    /**
+     * Adds a point p to the current polygon (represented by the linked list of which cur is a node) between the point of
+     * cur and the point of cur->next. The point will be removed from the set of available points. If this is not the
+     * starting point to be added, the old edge between cur and cur-> next will be removed. The two new edges ls1
+     * and ls2 will be added to the new polygon (represented by the linked list). The edge changes will also be applied
+     * to the quadtree qt.
+     * @param qt quadtree of edge of current polygon
+     * @param cur linked list node of point in current polygon
+     * @param available list of points not yet in polygon
+     * @param it iterator over available point
+     * @param p point to be added
+     * @param isStart true if there are only 2 points in the current polygon
+     */
+    void addPoint(quadtree &qt, llPoint* cur, std::set<vec> &available, std::set<vec>::iterator &it, vec &p, bool isStart);
+
     // DEBUGGING FUNCTIONS
 
     /**

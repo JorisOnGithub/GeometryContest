@@ -43,6 +43,8 @@ void solutionMaker::createSolution() {
 }
 */
 
+
+
 void solutionMaker::realSolution(bool visualizeInbetween) {
     // set of points that are not yet in the solution polygon
     std::set<vec> available;
@@ -55,30 +57,10 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
     vec tr(1000000000, 1000000000);
     quadtree qt(&bl, &tr);
 
-    // first point in polygon is an arbitrary point
-    vec start = *available.begin();
-    available.erase(start);
-
-    // create first linked list point
-    llPoint first = llPoint(start);
-    llPoint *cur = &first;
-
-    // get closest point to starting point (for small area)
-    vec second = getClosestPoint(cur->point, available);
-
-    // create linked list node for second point
-    insertAt(*cur, second);
-    // remove second point from available points
-    available.erase(second);
-
-    // create first edge between the first two points
-    vec *a = &cur->point;
-    vec *b = &cur->next->point;
-    lineseg ls(a, b);
-    cur->edge = &ls;
-
-    // insert edge into quadTree
-    if (!qt.insert(ls)) throw "insert failed";
+    // get a random first point and make the second point the closest one to the first point
+    // we continue building the polygon from these two points and the edge between them
+    llPoint *first = createStartingEdge(available, qt);
+    llPoint *cur = first;
 
     // number to create debugging visualizations
     int fileCount = 0;
@@ -130,44 +112,25 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
                 isPossible = false;
             }
 
+            // free the line segments
+            delete (ls1);
+            delete (ls2);
+
             // add removed edge back when we don't take this new point
             if (!isPossible) {
-                // free the line segments
-                delete(ls1);
-                delete(ls2);
                 continue;
             }
 
             /// We are adding this point to the polygon at this edge
+            addPoint(qt, cur, available, it, p, isStart);
 
-            // this edge is replaced by two new edges (except for the first new point going from a line to a triangle)
-            if (!isStart && !qt.remove(*cur->edge)) throw "remove failed";
-
-            // we can add this point to the polygon
-            it = available.erase(it);
-
-            // add new point to the linked list
-            llPoint* newPoint = insertAt(*cur, p);
-
-            // recreate the line segments that we want to add
-            delete (ls1);
-            delete (ls2);
-            ls1 = new lineseg(&cur->point, &p);
-            ls2 = new lineseg(&p, &cur->next->next->point);
-
-            // add new line segments to the quad tree
-            if (!qt.insert(*ls1)) throw "insert failed";
-            if (!qt.insert(*ls2)) throw "insert failed";
-
-            // update the linked list
-            cur->edge = ls1;
-            newPoint->edge = ls2;
+            // we have added a point, the polygon now has >= 3 points
             isStart = false;
 
-
+            // create image if we want to
             if (visualizeInbetween) {
                 // This code visualizes the new polygon and saves it as ipe file
-                std::vector<vec> tempSol = getPointList(first);
+                std::vector<vec> tempSol = getPointList(*first);
                 std::cout << "visualizing inbetween" << std::endl;
                 visualiser v;
                 try {
@@ -188,15 +151,75 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
         if (cur->next->next != NULL) {
             cur = cur->next;
         } else {
-            cur = &first;
+            cur = first;
         }
     }
 
     // set solution
-    std::vector<vec> result = getPointList(first);
+    std::vector<vec> result = getPointList(*first);
     this->solution = result;
+
+    // clean linked list
+    delete (first);
 }
 
+
+llPoint *solutionMaker::createStartingEdge(std::set<vec> &available, quadtree &qt) {
+    // first point in polygon is an arbitrary point
+    vec start = *available.begin();
+    available.erase(start);
+
+    // create first linked list point
+    llPoint *first = new llPoint(start);
+    llPoint *cur = first;
+
+    // get closest point to starting point (for small area)
+    vec second = getClosestPoint(cur->point, available);
+
+    // create linked list node for second point
+    insertAt(*cur, second);
+    // remove second point from available points
+    available.erase(second);
+
+    // create first edge between the first two points
+    vec *a = &cur->point;
+    vec *b = &cur->next->point;
+    lineseg* ls = new lineseg(a, b);
+    cur->edge = ls;
+
+    // insert edge into quadTree
+    if (!qt.insert(*ls)) throw "insert failed";
+
+    return cur;
+}
+
+
+void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &available, std::set<vec>::iterator &it, vec &p,
+                             bool isStart) {
+    /* this edge is replaced by two new edges (except for the first new point going from a line to a triangle) so
+    it needs to be removed */
+    if (!isStart && !qt.remove(*cur->edge)) throw "remove failed";
+    delete(cur->edge);
+
+    // we can add this point to the polygon
+    it = available.erase(it);
+
+    // add new point to the linked list
+    llPoint *newPoint = insertAt(*cur, p);
+
+    // recreate the line segments that we want to add
+    lineseg* ls1 = new lineseg(&cur->point, &p);
+    lineseg* ls2 = new lineseg(&p, &cur->next->next->point);
+
+    // add new line segments to the quad tree
+    if (!qt.insert(*ls1)) throw "insert failed";
+    if (!qt.insert(*ls2)) throw "insert failed";
+
+    // update the linked list
+    cur->edge = ls1;
+    newPoint->edge = ls2;
+
+}
 
 vec solutionMaker::getClosestPoint(const vec &p, const std::set<vec> &available) const {
     if (available.empty()) throw "available is empty";
@@ -241,7 +264,7 @@ bool solutionMaker::newTriangleContainsPoint(const llPoint &cur, const vec &p) c
     return false;
 }
 
-llPoint* insertAt(llPoint &cur, const vec &p) {
+llPoint *insertAt(llPoint &cur, const vec &p) {
     // create new linked list node
     llPoint *newPoint = new llPoint(p);
     // connect new point to next and prev
