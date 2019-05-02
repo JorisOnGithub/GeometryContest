@@ -124,6 +124,16 @@ private:
      */
     void addPoint(quadtree &qt, llPoint* cur, std::set<vec> &available, std::set<vec>::iterator &it, vec &p, bool isStart);
 
+
+    /**
+     * Calculates the heuristic value of adding point p at the edge starting in cur.
+     * You should only call this on points that are actually addable.
+     * @param cur linked list point after which to add the new point
+     * @param p new point
+     * @return a double heuristic value
+     */
+    double heuristic(llPoint *cur, vec &p);
+
     // DEBUGGING FUNCTIONS
 
     /**

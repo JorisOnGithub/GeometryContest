@@ -39,9 +39,11 @@ int main(int argc, char **argv) {
 //    std::sort(points.begin(), points.end());
 //    solution.setPoints(points);
 
+    /*
     for (int i = 0; i < points.size(); i++) {
         cout << "point " << i << ": (" << points[i].x << ", " << points[i].y << ")" << endl;
     }
+     */
 
     // create polygon from sorted points
 //    std::cout << "sorted points on y coordinate" << std::endl;
