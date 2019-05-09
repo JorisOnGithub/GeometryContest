@@ -5,10 +5,10 @@
 #include "solutionMaker.h"
 
 
-void solutionMaker::realSolution(bool visualizeInbetween) {
+void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
     // set of points that are not yet in the solution polygon
     std::set<vec> available;
-    for (int i = 0; i < this->points.size(); i++) {
+    for (int i = 0; i < this->points.size() - 1; i++) {
         available.insert(this->points[i]);
     }
 
@@ -28,6 +28,8 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
     // limit to prevent timeouts UNSET FOR LARGE INPUTS
     int totalLimit = 1000000000;
 
+    int failCount = 0; // counter to keep track of fails
+
     // this boolean makes sure that the first point to be added is handled differently:
     // when turning a line into a triangle the edge of the line should stay in the polygon
     bool isStart = true;
@@ -41,7 +43,7 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
     while (!available.empty()) {
         if (cur->next == NULL) throw "this point should have a next point";
 
-        double bestH = -1; // keep track of which point gives best value
+        double bestH = 1; // keep track of which point gives best value
         vec *bestP = NULL; // keep track of best point to add
 
         // loop over all potential points to add
@@ -90,9 +92,9 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
 
             // get heuristic value for adding this point
             double value = heuristic(cur, p);
-            if (value > bestH) {
+            if (value < bestH) {
                 bestH = value;
-                delete(bestP);
+                delete (bestP);
                 bestP = new vec(p.x, p.y);
             }
 
@@ -102,9 +104,12 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
 
         // add the best point
         if (bestP != NULL) {
-            std::cout << "adding " << (this->points.size() - available.size() - 1) << "th best point with value " << bestH << std::endl;
+            if (debug) {
+                std::cout << "adding " << (this->points.size() - available.size() - 1) << "th best point with value "
+                          << bestH << std::endl;
+            }
             addPoint(qt, cur, available, it, *bestP, isStart);
-            delete(bestP);
+            delete (bestP);
 
             // we have added a point, the polygon now has >= 3 points
             isStart = false;
@@ -122,13 +127,27 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
                 }
             }
 
+            failCount = 0;
             // keep looking for points
             continue;
         }
 
         if (available.empty()) break;
 
-        std::cout << "Could not find a point to add to this edge, getting new edge" << std::endl;
+        failCount++;
+        if (debug) {
+            std::cout << "failCount " << failCount << "Could not find a point to add to this edge, getting new edge"
+                      << std::endl;
+        }
+        if (failCount > this->points.size() * 2) { // infinite loop, abort mission
+            std::cout << "failed too often PRINTING REMAINING POINTS" << std::endl;
+            std::cerr << "DUMPING ALL POINTS NOT IN POLYGON" << std::endl;
+            for (vec v : available) {
+                std::cout << v.toString() << std::endl;
+                std::cerr << v.toString() << std::endl;
+            }
+            break;
+        }
         // being here means we cannot add a point to this edge
         // move to the next edge (point that has a next point)
         if (cur->next->next != NULL) {
@@ -141,6 +160,12 @@ void solutionMaker::realSolution(bool visualizeInbetween) {
     // set solution
     std::vector<vec> result = getPointList(*first);
     this->solution = result;
+    if (debug) {
+        std::cerr << "DUMPING FULL POLYGON" << std::endl;
+        for (vec v: result) {
+            std::cerr << v.toString() << std::endl;
+        }
+    }
 
     // clean linked list
     delete (first);
@@ -282,7 +307,7 @@ double solutionMaker::heuristic(llPoint *cur, vec &p) {
     delete (ls2);
 
     // current heuristic formula only looks at area
-    return 1.0 * area + 0.0 * edgeSum * edgeSum;
+    return -1.0 * area + -1.0 * edgeSum * edgeSum;
 }
 
 polygon solutionMaker::getSolution() {
@@ -318,45 +343,4 @@ void solutionMaker::printList(const llPoint &p) {
     std::cout.flush();
     if (p.next != NULL) printList(*p.next);
 }
-
-
-
-/*
-void solutionMaker::createSolution() {
-    std::vector<lineseg> edges{};
-
-
-    for (int i = 0; i < triangles.size(); i++) {
-        std::vector<lineseg> triangleEdges = triangles.at(i).getEdges();
-
-        for (int j = 0; j < triangleEdges.size(); j++) {
-            if (std::find(edges.begin(), edges.end(), triangleEdges.at(j)) != edges.end()) {
-                std::vector<lineseg> newedges{};
-
-                for (int k = 0; k < edges.size(); k++) {
-                    if (!(triangleEdges.at(j) == edges.at(k))) {
-                        newedges.emplace_back(edges.at(k));
-                    }
-                }
-
-                edges = newedges;
-            } else {
-                edges.emplace_back(triangleEdges.at(j));
-            }
-        }
-    }
-
-    std::cout << edges.size() << std::endl;
-    std::vector<vec> points{};
-
-    for (int i = 0; i < edges.size(); i++) {
-        lineseg seg = edges.at(i);
-        points.emplace_back(seg.a);
-        points.emplace_back(seg.b);
-    }
-
-    this->solution = polygon();
-    this->solution.setPoints(points);
-}
-*/
 
