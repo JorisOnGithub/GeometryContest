@@ -35,7 +35,7 @@ public:
     // Return all adjacent faces
     std::unordered_set<face*> getAdjacentFacesPointers() const;
 
-    bool operator== (const face &f) const {
+    bool operator== (const face f) const {
         return (this == &f);
     }
 };

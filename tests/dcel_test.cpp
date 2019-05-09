@@ -12,6 +12,9 @@ TEST (dcel, CheckInitialization) {
 
     dcel.initialVertices(&v0, &v1);
 
+    ASSERT_EQ(v0.getEdges().size(), 1);
+    ASSERT_EQ(v1.getEdges().size(), 1);
+
     ASSERT_EQ(v0.getEdges().front()->getTargetPointer(), &v1);
     ASSERT_EQ(v1.getEdges().front()->getTargetPointer(), &v0);
 
@@ -20,9 +23,6 @@ TEST (dcel, CheckInitialization) {
 
     ASSERT_EQ(&v0, dcel.getVertices().front());
     ASSERT_EQ(&v1, dcel.getVertices().back());
-
-    ASSERT_EQ(v0.getEdges().size(), 1);
-    ASSERT_EQ(v1.getEdges().size(), 1);
 
     ASSERT_EQ(dcel.getEdges().size(), 2);
     ASSERT_EQ(dcel.getVertices().size(), 2);
