@@ -1,5 +1,6 @@
 #include "quadtree.h"
 #include <math.h>
+#include <algorithm>
 bool quadtree::in_boundary(vec& p) {
     return p.x >= this->botleft->x && p.y >= this->botleft->y && p.x <= this->topright->x && p.y <= this->topright->y;
 }
@@ -123,8 +124,10 @@ std::set<lineseg*> quadtree::get_intersecting_lines(lineseg& l) {
 }
 
 void quadtree::data_info(std::set<lineseg*> &cur_data) {
-    cur_data.insert(this->get_data().begin(), this->get_data().end());
-    if (this->is_leaf()){ 
+    for (auto seg: this->get_data()) {
+        cur_data.insert(seg);
+    }
+    if (this->is_leaf()){
         return;
     }
     this->nw->data_info(cur_data);
@@ -134,8 +137,8 @@ void quadtree::data_info(std::set<lineseg*> &cur_data) {
 }
 
 std::set<lineseg*> quadtree::get_all_data() {
-    std::set<lineseg*> all_data(this->get_data());
-    data_info(all_data);
+    std::set<lineseg*> all_data;
+    this->data_info(all_data);
     return all_data;
 }
 
