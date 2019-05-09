@@ -30,7 +30,7 @@ public:
     }
 
     // Return all halfedges adjacent to face
-    std::vector<halfedge> getAdjacentEdges() const;
+    std::vector<halfedge*> getAdjacentEdges() const;
 
     // Return all adjacent faces
     std::unordered_set<face*> getAdjacentFacesPointers() const;

@@ -4,12 +4,12 @@
 
 #include "face.h"
 
-std::vector<halfedge> face::getAdjacentEdges() const {
-    std::vector<halfedge> adjacentEdges;
+std::vector<halfedge*> face::getAdjacentEdges() const {
+    std::vector<halfedge*> adjacentEdges;
     halfedge *pointer = this->edge;
 
     do {
-        adjacentEdges.push_back(*pointer);
+        adjacentEdges.push_back(pointer);
         pointer = (*pointer).getNextPointer();
     } while (pointer != this->edge);
 
@@ -18,10 +18,10 @@ std::vector<halfedge> face::getAdjacentEdges() const {
 
 std::unordered_set<face*> face::getAdjacentFacesPointers() const {
     std::unordered_set<face*> adjacentFaces;
-    std::vector<halfedge> adjacentEdges = this->getAdjacentEdges();
+    std::vector<halfedge*> adjacentEdges = this->getAdjacentEdges();
 
-    for (halfedge e : adjacentEdges) {
-        adjacentFaces.insert(e.getFacePointer());
+    for (halfedge *e : adjacentEdges) {
+        adjacentFaces.insert(e->getFacePointer());
     }
 
     return adjacentFaces;

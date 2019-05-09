@@ -5,10 +5,10 @@
 #include "vertex.h"
 #include "halfedge.h"
 
-std::list<halfedge> vertex::getEdges() const {
+std::list<halfedge*> vertex::getEdges() const {
     return this->edges;
 }
 
 void vertex::addEdge(halfedge *h) {
-    this->edges.push_back(*h);
+    this->edges.push_back(h);
 }

@@ -14,7 +14,7 @@ class vertex {
 protected:
     double x;
     double y;
-    std::list<halfedge> edges;
+    std::list<halfedge*> edges;
 
 public:
     // empty constructor
@@ -27,7 +27,7 @@ public:
     }
 
     // Getters
-    std::list<halfedge> getEdges() const;
+    std::list<halfedge*> getEdges() const;
 
     double getX() const {
         return x;
