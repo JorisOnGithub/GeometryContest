@@ -19,6 +19,7 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
     if (points.size() == 0) throw "visualise - invalid argument - the points list should not be empty";
 
     // Load IPE template file
+    // TODO: the path below should be a relative path, this does not work on my system
     XMLError loadResult = xml.LoadFile("../res/template.ipe");
 
     if (loadResult == XML_SUCCESS) {
@@ -42,6 +43,7 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
 
         // Output the generated ipe file
         std::string outFile = "../output/";
+
 
         size_t sepPos = inFile.find_last_of("/");
         outFile += inFile.substr(sepPos + 1, inFile.size() + 1);
