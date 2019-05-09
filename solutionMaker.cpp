@@ -6,15 +6,21 @@
 
 
 void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
+    // boundaries for quad tree
+    long maxX = this->points[0].x;
+    long maxY = this->points[0].y;
+
     // set of points that are not yet in the solution polygon
     std::set<vec> available;
     for (int i = 0; i < this->points.size() - 1; i++) {
+        maxX = std::max(maxX, (long) this->points[i].x);
+        maxY = std::max(maxY, (long) this->points[i].y);
         available.insert(this->points[i]);
     }
 
     // quadtree to maintain the edges of the current polygon
     vec bl(0, 0);
-    vec tr(1000000000, 1000000000);
+    vec tr(maxX + 5, maxY + 5);
     quadtree qt(&bl, &tr);
 
     // get a random first point and make the second point the closest one to the first point
@@ -107,6 +113,24 @@ void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
             if (debug) {
                 std::cout << "adding " << (this->points.size() - available.size() - 1) << "th best point with value "
                           << bestH << std::endl;
+
+                // recreate the line segments that we want to add
+                lineseg *ls1 = new lineseg(&cur->point, bestP);
+                lineseg *ls2 = new lineseg(bestP, &cur->next->point);
+
+                // print lines in qt
+                std::set<lineseg*> data = qt.get_all_data();
+                std::cout << " PRINTING ALL LINE SEGMENTS IN QT " << std::endl;
+                for (auto s: data) {
+                    std::cout << s->toString() << std::endl;
+                }
+                std::cout << "DONE PRINTING" << std::endl;
+
+                std::cout << "NEW LINESEG 1 " << ls1->toString() << std::endl;
+                std::cout << "NEW LINESEG 2 " << ls2->toString() << std::endl;
+
+//                delete(ls1);
+//                delete(ls2);
             }
             addPoint(qt, cur, available, it, *bestP, isStart);
             delete (bestP);
