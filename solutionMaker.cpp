@@ -120,6 +120,7 @@ void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
 
                 // print lines in qt
                 std::set<lineseg*> data = qt.get_all_data();
+                std::cout << "data size " << data.size() << std::endl;
                 std::cout << " PRINTING ALL LINE SEGMENTS IN QT " << std::endl;
                 for (auto s: data) {
                     std::cout << s->toString() << std::endl;
@@ -230,8 +231,10 @@ void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &availabl
                              bool isStart) {
     /* this edge is replaced by two new edges (except for the first new point going from a line to a triangle) so
     it needs to be removed */
-    if (!isStart && !qt.remove(*cur->edge)) throw "remove failed";
-    delete (cur->edge);
+    if (!isStart) {
+        if (!qt.remove(*cur->edge)) throw "remove failed";
+        delete (cur->edge);
+    }
 
     // we can add this point to the polygon
 //    it = available.erase(it);
@@ -241,8 +244,8 @@ void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &availabl
     llPoint *newPoint = insertAt(*cur, p);
 
     // recreate the line segments that we want to add
-    lineseg *ls1 = new lineseg(&cur->point, &p);
-    lineseg *ls2 = new lineseg(&p, &cur->next->next->point);
+    lineseg *ls1 = new lineseg(&cur->point, &newPoint->point);
+    lineseg *ls2 = new lineseg(&newPoint->point, &cur->next->next->point);
 
     // add new line segments to the quad tree
     if (!qt.insert(*ls1)) throw "insert failed";
