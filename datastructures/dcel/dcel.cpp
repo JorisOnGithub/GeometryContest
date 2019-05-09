@@ -37,7 +37,7 @@ void dcel::addEdgeAt(vertex v, halfedge h) {
     h2.setTarget(h.getTargetPointer());
 
     h2.setNext(h.getNextPointer());
-    h2.getNext().setPrevious(&h2);
+    h2.getNextPointer()->setPrevious(&h2);
     h1.setPrevious(&h);
     h.setNext(&h1);
 
@@ -50,7 +50,7 @@ void dcel::addEdgeAt(vertex v, halfedge h) {
     }
 
     h1.setNext(iterator->getNextPointer());
-    h1.getNext().setPrevious(&h1);
+    h1.getNextPointer()->setPrevious(&h1);
 
     iterator->setNext(&h2);
     h2.setPrevious(iterator);
@@ -127,7 +127,7 @@ void dcel::addVertexAt(vertex v, halfedge h) {
     h2.setPrevious(&h1);
 
     h.setNext(&h1);
-    h2.getNext().setPrevious(&h2);
+    h2.getNextPointer()->setPrevious(&h2);
 
     this->edges.push_back(h1);
     this->edges.push_back(h2);
