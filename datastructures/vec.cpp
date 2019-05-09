@@ -24,6 +24,15 @@ double vec::cross(const vec &v) const {
     return this->x * v.y - this->y * v.x;
 }
 
+std::string vec::toString() const {
+    std::string res = "(";
+    res += std::to_string(this->x);
+    res += ",";
+    res += std::to_string(this->y);
+    res += ")";
+    return res;
+}
+
 // VECTOR UTILITY
 
 vec toVec(const vec &a, const vec &b) {
