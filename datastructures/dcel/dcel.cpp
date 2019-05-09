@@ -68,6 +68,7 @@ void dcel::addEdgeAt(vertex *v, halfedge *h) {
     this->faces.push_back(f2);
 
     this->faces.remove(f);
+    delete f;
 }
 
 void dcel::initialVertices(vertex *v1, vertex *v2) {
