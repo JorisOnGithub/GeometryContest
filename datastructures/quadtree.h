@@ -40,6 +40,9 @@ class quadtree {
             return this->data;
         }
 
+        void data_info(std::set<lineseg*> &cur_data);
+
+
     public:
         vec *botleft, *topright; // border info
         /**
@@ -84,6 +87,7 @@ class quadtree {
          */
         bool insert(lineseg& l);
 
+
         /**
          * Removes the linesegment from the tree
          * @param l linesegment to remove
@@ -111,6 +115,8 @@ class quadtree {
         int size() {
             return this->node_count;
         }
+
+        std::set<lineseg*> get_all_data();
 };
 
 #endif
