@@ -122,3 +122,22 @@ std::set<lineseg*> quadtree::get_intersecting_lines(lineseg& l) {
     return intersections;
 }
 
+void quadtree::data_info(std::set<lineseg*> &cur_data) {
+    for (auto seg : this->get_data()) {
+        cur_data.insert(seg);
+    }
+    if (this->is_leaf()){ 
+        return;
+    }
+    this->nw->data_info(cur_data);
+    this->ne->data_info(cur_data);
+    this->sw->data_info(cur_data);
+    this->se->data_info(cur_data);
+}
+
+std::set<lineseg*> quadtree::get_all_data() {
+    std::set<lineseg*> all_data(this->get_data());
+    this->data_info(all_data);
+    return all_data;
+}
+
