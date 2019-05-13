@@ -11,7 +11,7 @@ bool quadtree::intersects_boundary(lineseg& l) {
     vec botright = vec(topright->x, botleft->y);
     // define the rectangle four lines
     lineseg topline = lineseg(&topleft, topright);
-    lineseg leftline = lineseg(&topleft, &botright);
+    lineseg leftline = lineseg(botleft, &topleft);
     lineseg botline = lineseg(botleft ,&botright);
     lineseg rightline = lineseg(topright, &botright);
     // check if intersects boundary 
@@ -29,17 +29,20 @@ void quadtree::subdivide() {
     // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
     // TODO: could be issues with coordinate precision because of flooring? 
     vec* nwbl = new vec(botleft->x, botleft->y + y_diff);
-    vec* nwtr = new vec(topright->x - x_diff, topright->y);
+//    vec* nwtr = new vec(topright->x - x_diff, topright->y);
+    vec* nwtr = new vec(botleft->x + x_diff, topright->y);
     this->nw = new quadtree(this, nwbl, nwtr, false, false);
 
     vec* nebl = new vec(botleft->x + x_diff, botleft->y + y_diff);
     this->ne = new quadtree(this, nebl, topright, false, true);
 
-    vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
+//    vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
+    vec* swtr = new vec(botleft->x + x_diff, botleft->y + y_diff);
     this->sw = new quadtree(this, botleft, swtr, true, false);
 
     vec* sebl = new vec(botleft->x + x_diff, botleft->y);
-    vec* setr = new vec(topright->x, topright->y - y_diff);
+//    vec* setr = new vec(topright->x, topright->y - y_diff);
+    vec* setr = new vec(topright->x, botleft->y + y_diff);
     this->se = new quadtree(this, sebl, setr, false, false);
 }
 

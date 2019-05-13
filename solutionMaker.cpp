@@ -17,6 +17,9 @@ void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
         maxY = std::max(maxY, (long) this->points[i].y);
         available.insert(this->points[i]);
     }
+    if (debug) {
+        std::cout << "Made QT with boundaries (" << maxX << "," << maxY << ")" << std::endl;
+    }
 
     // quadtree to maintain the edges of the current polygon
     vec bl(0, 0);
@@ -47,7 +50,7 @@ void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
 
     // keep adding vertices until polygon contains all points
     while (!available.empty()) {
-        if (cur->next == NULL) throw "this point should have a next point";
+        if (cur->next == NULL) throw std::runtime_error("this point should have a next point");
 
         double bestH = 1; // keep track of which point gives best value
         vec *bestP = NULL; // keep track of best point to add
@@ -221,7 +224,7 @@ llPoint *solutionMaker::createStartingEdge(std::set<vec> &available, quadtree &q
     cur->edge = ls;
 
     // insert edge into quadTree
-    if (!qt.insert(*ls)) throw "insert failed";
+    if (!qt.insert(*ls)) throw std::runtime_error("insert failed 224");
 
     return cur;
 }
@@ -232,7 +235,7 @@ void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &availabl
     /* this edge is replaced by two new edges (except for the first new point going from a line to a triangle) so
     it needs to be removed */
     if (!isStart) {
-        if (!qt.remove(*cur->edge)) throw "remove failed";
+        if (!qt.remove(*cur->edge)) throw std::runtime_error("remove failed");
         delete (cur->edge);
     }
 
@@ -248,8 +251,8 @@ void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &availabl
     lineseg *ls2 = new lineseg(&newPoint->point, &cur->next->next->point);
 
     // add new line segments to the quad tree
-    if (!qt.insert(*ls1)) throw "insert failed";
-    if (!qt.insert(*ls2)) throw "insert failed";
+    if (!qt.insert(*ls1)) throw std::runtime_error("insert failed 251");
+    if (!qt.insert(*ls2)) throw std::runtime_error("insert failed 252");
 
     // update the linked list
     cur->edge = ls1;
@@ -258,7 +261,7 @@ void solutionMaker::addPoint(quadtree &qt, llPoint *cur, std::set<vec> &availabl
 }
 
 vec solutionMaker::getClosestPoint(const vec &p, const std::set<vec> &available) const {
-    if (available.empty()) throw "available is empty";
+    if (available.empty()) throw std::runtime_error("available is empty");
     double minDist = std::numeric_limits<int>::max(); // point coordinates cannot get higher than this
     vec result;
 
