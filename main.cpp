@@ -57,4 +57,5 @@ void configuredRun(std::string configFile) {
     } else {
         throw "Could not load the specified configuration file ...";
     }
+
 }

@@ -1,6 +1,5 @@
 #include "quadtree.h"
 #include <math.h>
-
 bool quadtree::in_boundary(vec& p) {
     return p.x >= this->botleft->x && p.y >= this->botleft->y && p.x <= this->topright->x && p.y <= this->topright->y;
 }
@@ -65,7 +64,7 @@ bool quadtree::insert(lineseg& l) {
 }
 
 bool quadtree::intersects_line(lineseg& l) {
-    if (!this->intersects_boundary(l)) { // cant intersect with anything in this if not contained in subtree
+    if (!this->intersects_boundary(l) || this->size() <= 1) { // cant intersect with anything in this if not contained in subtree
         return false;
     }
     for (auto seg : this->data) { // for each linesegment
@@ -98,3 +97,47 @@ bool quadtree::remove(lineseg& l) {
         return true;
     }
 }
+
+void quadtree::gather_intersecting_lines(std::set<lineseg*> &intersections, lineseg& l) {
+    if (!this->intersects_boundary(l)) { // not in here, stop
+        return;
+    }
+    for (auto seg: this->get_data()) {
+        if (*seg != l && seg->intersects(l) &&
+                intersections.find(seg) == intersections.end()){ // add intersections that are not the line
+            intersections.insert(seg);
+        }
+    }
+    if (this->is_leaf()) return;
+    // gather intersecting lines from the children
+    this->nw->gather_intersecting_lines(intersections, l);
+    this->sw->gather_intersecting_lines(intersections, l);
+    this->se->gather_intersecting_lines(intersections, l);
+    this->ne->gather_intersecting_lines(intersections, l);
+}
+
+std::set<lineseg*> quadtree::get_intersecting_lines(lineseg& l) {
+    std::set<lineseg*> intersections;
+    this->gather_intersecting_lines(intersections, l);
+    return intersections;
+}
+
+void quadtree::data_info(std::set<lineseg*> &cur_data) {
+    for (auto seg : this->get_data()) {
+        cur_data.insert(seg);
+    }
+    if (this->is_leaf()){ 
+        return;
+    }
+    this->nw->data_info(cur_data);
+    this->ne->data_info(cur_data);
+    this->sw->data_info(cur_data);
+    this->se->data_info(cur_data);
+}
+
+std::set<lineseg*> quadtree::get_all_data() {
+    std::set<lineseg*> all_data(this->get_data());
+    this->data_info(all_data);
+    return all_data;
+}
+

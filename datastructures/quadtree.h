@@ -33,6 +33,14 @@ class quadtree {
         }
 
         void subdivide();
+       
+        void gather_intersecting_lines(std::set<lineseg*> &intersections, lineseg& l);
+
+        std::set<lineseg*> get_data() {
+            return this->data;
+        }
+
+        void data_info(std::set<lineseg*> &cur_data);
 
     public:
         vec *botleft, *topright; // border info
@@ -70,12 +78,14 @@ class quadtree {
         }
 
         bool intersects_boundary(lineseg& l);
+
         /**
          * Inserts a linesegment in the tree
          * @param l linesegment to insert
           *@return whether insert was successful
          */
         bool insert(lineseg& l);
+
 
         /**
          * Removes the linesegment from the tree
@@ -96,15 +106,18 @@ class quadtree {
          * @param l linesegment to analyze
          * @return set of line segments that intersect lineseg l
          */
-        std::set<lineseg *> get_intersecting_lines(lineseg& l);
+        std::set<lineseg*> get_intersecting_lines(lineseg& l);
         
         /**
-         * @return how many linesegments the 
+         * @return how many linesegments the subtree contains
          */ 
         int size() {
             return this->node_count;
         }
-
+        /**
+         * @return gets all linesegment contained in the tree 
+         */
+        std::set<lineseg*> get_all_data();
 };
 
 #endif
