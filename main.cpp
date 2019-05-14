@@ -1,6 +1,10 @@
 #include <iostream>
 #include <unistd.h>
+#include <vector>
+#include <thread>
+#include "./solvers/solver.h"
 #include "./lib/TinyXML2/tinyxml2.h"
+#include "solvers/exampleSolverUsage.h"
 
 // Specify the configuration file version we are using
 const char* configVersion = "1.0";
@@ -49,13 +53,32 @@ void configuredRun(std::string configFile) {
         // Get Solver Run Configurations
         XMLElement * SolverConfiguration = root->FirstChildElement("SolverConfig");
 
+        // Create a list for future solver tasks
+        std::vector<solver> solverTasks;
+
         // Configure all the runs
-        for(XMLElement* e = SolverConfiguration->FirstChildElement("Solver"); e != NULL; e = e->NextSiblingElement("Solver")) {
-            std::cout << e->Attribute("type");
+        for (XMLElement* e = SolverConfiguration->FirstChildElement("Solver"); e != NULL; e = e->NextSiblingElement("Solver")) {
+            std::string file = e->Attribute("file");
+            bool local = (e->Attribute("localSearch") == "true") ? true : false;
+            bool inter = (e->Attribute("saveIntermediate") == "true") ? true : false;
+
+            if (e->Attribute("type") == "exampleSolverUsage") {
+                solverTasks.emplace_back(exampleSolverUsage(file, InputDirectory, OutputDirectory, local, inter));
+            }
+        }
+
+        // Run the tasks
+        for(solver s : solverTasks) {
+            s.run();
         }
 
     } else {
         throw "Could not load the specified configuration file ...";
     }
 
+}
+
+void doRun(solver * s)
+{
+    s->run();
 }

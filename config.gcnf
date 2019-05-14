@@ -14,6 +14,6 @@
             localSearch: should local search be ran or not
             saveIntermediate: should the result between the solver and local search be saved
         -->
-        <Solver file="test.txt" type="HeuristicSolver" localSearch="false" saveIntermediate="false"></Solver>
+        <Solver file="test.txt" type="SolutionMaker" localSearch="false" saveIntermediate="false"></Solver>
     </SolverConfig>
 </GeometryConfig>

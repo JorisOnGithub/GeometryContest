@@ -1,27 +1,27 @@
 //
-// Created by 20173586 on 30/04/2019.
+// Created by 20173586 on 14/05/2019.
 //
+
+#include <iostream>
+#include "../datastructures/polygon.h"
 
 #ifndef GEOMETRY_CONTEST_SOLVER_H
 #define GEOMETRY_CONTEST_SOLVER_H
 
-#include <iostream>
-#include <vector>
-#include "../datastructures/vec.h"
-#include "../datastructures/polygon.h"
 
 class solver {
 private:
-    std::string inFile;
-    std::string outFile;
-    //polygon solution;
-    //std::vector<vec> points;
-
+    std::string filename;
+    std::string inputDir;
+    std::string outputDir;
+    bool localSearch;
+    bool saveIntermediate;
+    void saveSolution(polygon s, std::string filename, float score);
+    virtual polygon getSolution();
 
 public:
-    //solver(const std::vector<vec> &pts) { this->points = pts; }
-    //solver(const std::vector<triangle> &triangles_) { this->triangles = triangles_; }
-    virtual polygon getSolution();
+    explicit solver(std::string f, std::string indir, std::string outdir, bool l, bool i);
+    void run();
 };
 
 
