@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<GeometryConfig>
+    <!-- All files you want to process should not be in this directory, not a sub-directory -->
+    <InputDirectory>D:\Studiebestanden\Bachelor\2e Jaar\Honours Academy\GeomContest\GeometryContest\input</InputDirectory>
+
+    <!-- Make sure this folder exists -->
+    <OutputDirectory>D:\Studiebestanden\Bachelor\2e Jaar\Honours Academy\GeomContest\GeometryContest\output</OutputDirectory>
+
+    <!-- Configure which solvers should be used -->
+    <SolverConfig>
+        <!--
+            file: name of the input file including the extension
+            name: class name of the solver to be used (Case Sensitive)
+            localSearch: should local search be ran or not
+            saveIntermediate: should the result between the solver and local search be saved
+        -->
+        <Solver file="test.txt" type="HeuristicSolver" localSearch="false" saveIntermediate="false"></Solver>
+    </SolverConfig>
+</GeometryConfig>

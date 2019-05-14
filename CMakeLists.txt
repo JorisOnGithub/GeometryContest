@@ -12,4 +12,4 @@ if (GTest_FOUND)
 endif()
 
 # Main
-add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h datastructures/quadtree.h datastructures/quadtree.cpp datastructures/lineseg.cpp datastructures/lineseg.h io/visualiser.cpp io/visualiser.h lib/TinyXML2/tinyxml2.h lib/TinyXML2/tinyxml2.cpp)
+add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp io/reader.h simpleChecker.cpp simpleChecker.h datastructures/vec.cpp datastructures/vec.h datastructures/line.cpp datastructures/line.h datastructures/polygon.cpp datastructures/polygon.h datastructures/quadtree.h datastructures/quadtree.cpp datastructures/lineseg.cpp datastructures/lineseg.h io/visualiser.cpp io/visualiser.h lib/TinyXML2/tinyxml2.h lib/TinyXML2/tinyxml2.cpp solvers/solver.cpp solvers/solver.h)
