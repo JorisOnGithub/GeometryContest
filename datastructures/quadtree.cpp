@@ -10,7 +10,7 @@ bool quadtree::intersects_boundary(lineseg& l) {
     vec botright = vec(topright->x, botleft->y);
     // define the rectangle four lines
     lineseg topline = lineseg(&topleft, topright);
-    lineseg leftline = lineseg(&topleft, &botright);
+    lineseg leftline = lineseg(&topleft, botleft);
     lineseg botline = lineseg(botleft ,&botright);
     lineseg rightline = lineseg(topright, &botright);
     // check if intersects boundary 

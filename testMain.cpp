@@ -30,23 +30,28 @@ int mainTest() {
 
     quadtree tree = quadtree(&bl, &tr);
 
-    for (int i = 0; i < poly.getSize(); i++) {
-        lineseg l = poly.getEdge(i);
-        tree.insert(l);
-    }
+    lineseg l = poly.getEdge(0);
+    tree.insert(l);
+    lineseg l1 = poly.getEdge(1);
+    tree.insert(l1);
+    lineseg l2 = poly.getEdge(2);
+    tree.insert(l2);
+    lineseg l3 = poly.getEdge(3);
+    tree.insert(l3);
+    lineseg l4 = poly.getEdge(4);
+    tree.insert(l4);
+    lineseg l5 = poly.getEdge(5);
+    tree.insert(l5);
 
     vector<vec> point = poly.getPoints();
-    for (vec p : points) {
-         //std::cout << p.x << " " << p.y << endl;
-    }
 
     for (int i = 0; i < 1; i++) {
         optimizePolygon(poly, tree, false);
-        std::cout << "result of " << i << "th iteration: " << poly.area() << " " << poly.getSize() <<endl;
+        std::cout << "result of " << i << "th iteration: area: " << poly.area() << ", number of points: " << poly.getSize() <<endl;
         vector<vec> point = poly.getPoints();
         for (int i = 0; i < point.size(); i++)  {
             vec p = point[i];
-            //std::cout << p.x << " " << p.y << endl;
+//            std::cout << p.x << " " << p.y << endl;
         }
 
     }

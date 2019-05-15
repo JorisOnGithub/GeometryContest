@@ -24,14 +24,10 @@ std::vector<vec> polygon::getPoints() const {
 // note that for this contest all areas will be integer, so you can round the returned 'double'
 double polygon::area() const {
     double area = 0;
-//    std::cout << "get area" << std::endl;
     for (int i = 0; i < this->points.size() - 1; i++) {
-//        std::cout << points[i].x << " " << points[i].y << " " << area << std::endl;
         area += this->points[i].x * this->points[i + 1].y;
         area -= this->points[i].y * this->points[i + 1].x;
     }
-
-//    std::cout << "done: "<< fabs(area) / 2.0 <<  std::endl;
 
     return fabs(area) / 2.0;
 }
@@ -88,7 +84,6 @@ bool polygon::contains(vec &point) {
             inside = !inside;
         }
     }
-//    std::cout << "does it contain the point: " << inside << std::endl;
     return inside;
 }
 
@@ -103,51 +98,25 @@ vec polygon::getPoint(int index) const {
 }
 
 void polygon::removePoint(int index) {
-//    std::cout << " ----------- remove point: " << index << std::endl;
-//    std::cout << "before removing: " << std::endl;
-//    for (vec point : this-> points) {
-//        std::cout << point.x << " " << point.y << std::endl;
-//    }
     this->points.erase(this->points.begin() + index);
 
-//    std::cout << "after first removal: " << std::endl;
-//    for (vec point : this-> points) {
-//        std::cout << point.x << " " << point.y << std::endl;
-//    }
     if (index == 0) {
         this->points.erase(this->points.end() - 1);
         this->points.push_back(this->points[0]);
     } else if (index == this->getSize() + 1) {
         this->points.erase(this->points.begin());
-//        std::cout << "after second removal: " << std::endl;
-//        for (vec point : this-> points) {
-//            std::cout << point.x << " " << point.y << std::endl;
-//        }
         this->points.push_back(this->points[0]);
     }
 
-//    std::cout << "final list " << std::endl;
-//    for (vec point : this-> points) {
-//        std::cout << point.x << " " << point.y << std::endl;
-//    }
-//    std::cout << "-----------remove point done" << std::endl;
 }
 //TODO: should be added at index i or after index i
 void polygon::addPoint(vec &point, int index) {
     index %= (this->getSize());
-//    std::cout << "addPoint " << index << " " << point.x << " " << point.y << std::endl;
-//    for (vec point : this->points) {
-//        std::cout << point.x << " " << point.y << std::endl;
-//    }
-//    std::cout << "and then "<< std::endl;
     this->points.insert(this->points.begin() + index, point);
     if (index == 0) {
         this->points.erase(this->points.end() - 1);
         this->points.push_back(point);
     }
-//    for (vec point : this->points) {
-//        std::cout << point.x << " " << point.y << std::endl;
-//    }
 }
 
 lineseg polygon::getEdge(int index) const {
