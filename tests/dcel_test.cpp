@@ -73,6 +73,39 @@ TEST (dcel, CheckAddEdgeAt) {
     ASSERT_EQ(dcel.getFaces().size(), 2);
 }
 
+TEST (dcel, GeneralTest) {
+    dcel dcel;
+    vertex v0(0, 0);
+    vertex v1(0, 1);
+    vertex v2(1, 0);
+
+    dcel.initialVertices(&v0, &v1);
+    dcel.addVertexAt(&v2, v1.getEdges().front());
+    dcel.addEdgeAt(&v2, v0.getEdges().front());
+
+    ASSERT_EQ(v0.getEdges().front()->getFacePointer(), v0.getEdges().front()->getNextPointer()->getFacePointer());
+    ASSERT_EQ(v0.getEdges().front()->getFacePointer(), v0.getEdges().front()->getNextPointer()->getNextPointer()->getFacePointer());
+
+    ASSERT_EQ(v0.getEdges().front()->getTwinPointer()->getFacePointer(), v0.getEdges().front()->getTwinPointer()->getNextPointer()->getFacePointer());
+    ASSERT_EQ(v0.getEdges().front()->getTwinPointer()->getFacePointer(), v0.getEdges().front()->getTwinPointer()->getNextPointer()->getNextPointer()->getFacePointer());
+
+    ASSERT_FALSE(v0.getEdges().front()->getFacePointer() == v0.getEdges().front()->getTwinPointer()->getFacePointer());
+}
+
+TEST (dcel, GetAdjacentEdges) {
+    dcel dcel;
+    vertex v0(0, 0);
+    vertex v1(0, 1);
+    vertex v2(1, 0);
+
+    dcel.initialVertices(&v0, &v1);
+    dcel.addVertexAt(&v2, v1.getEdges().front());
+    dcel.addEdgeAt(&v2, v0.getEdges().front());
+
+    ASSERT_EQ(v0.getEdges().front()->getFacePointer()->getAdjacentEdges().size(), 3);
+    ASSERT_EQ(v0.getEdges().back()->getFacePointer()->getAdjacentEdges().size(), 3);
+}
+
 TEST (dcel, GetAdjacentFacesPointers) {
     dcel dcel;
     vertex v0(0, 0);

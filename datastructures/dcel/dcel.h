@@ -41,7 +41,7 @@ public:
     // Add edge between vertex v and h.target, where h.face is split
     void addEdgeAt(vertex *v, halfedge *h);
 
-    // Insert new vertex connected with a new edge to h.target
+    // Insert new vertex connected with a new edge to h.target - ensure correct edge chosen in regard to face!
     void addVertexAt(vertex *v, halfedge *h);
 
     // Remove edge between vertex v1 and vertex v2

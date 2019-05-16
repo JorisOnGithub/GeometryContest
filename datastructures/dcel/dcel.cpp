@@ -57,10 +57,11 @@ void dcel::addEdgeAt(vertex *v, halfedge *h) {
 
     iterator = h1;
 
-    do {
-        iterator->setFace(f1);
+    h1->setFace(f1);
+    while (iterator->getTargetPointer() != h->getTargetPointer()) {
         iterator = iterator->getNextPointer();
-    } while (iterator->getTargetPointer() != h->getTargetPointer());
+        iterator->setFace(f1);
+    }
 
     this->edges.push_back(h1);
     this->edges.push_back(h2);
