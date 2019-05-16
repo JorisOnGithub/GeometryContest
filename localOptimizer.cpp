@@ -3,7 +3,7 @@
 
 void optimizePolygon(polygon &poly, quadtree &qt, bool maximize) {
     // TODO: random always seems to return the same number
-    optimizePolygonWithPoint(poly, qt, 4, maximize);
+    optimizePolygonWithPoint(poly, qt, largeRandom(poly.getSize()), maximize);
 }
 
 void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize) {
@@ -61,4 +61,13 @@ bool canBeAdded(polygon &poly, quadtree &qt, vec p, int i) {
     lineseg l1 = lineseg(&p, &p1);
     lineseg l2 = lineseg(&p, &p2);\
     return !(qt.intersects_line(l1) || qt.intersects_line(l2));
+}
+
+long long largeRandom(long long mod) {
+    long long res = 0;
+    for (int i = 0; i < 6; i++) {
+        res *= RAND_MAX;
+        res += rand();
+    }
+    return ((res%mod)+mod)%mod;
 }

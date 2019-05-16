@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <ctime>
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
 #include "delaunator.hpp"
@@ -20,6 +21,7 @@ void printEvaluation(polygon &solution) {
 }
 
 int main(int argc, char **argv) {
+    srand(time(NULL));
     mainTest();
 //    if (argc < 2) {
 //        std::cerr << "File not given" << std::endl;

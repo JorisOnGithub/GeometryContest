@@ -15,4 +15,6 @@ void optimizePolygonWithPointsAndSegments(polygon &poly, quadtree &qt, vec p, st
 
 bool canBeAdded(polygon &poly, quadtree &qt, vec p, int i);
 
+long long largeRandom(long long mod);
+
 #endif //GEOMETRY_CONTEST_LOCALOPTIMIZER_H
