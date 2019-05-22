@@ -1,4 +1,5 @@
 #include "convexhull.h"
+#include <iostream>
 
 int convexhull::sqDist(const vec &p1, const vec &p2) {
     return (p1.x - p2.x)*(p1.x - p2.x) +
@@ -60,7 +61,7 @@ void convexhull::add(vec &p) {
     result.push_back(points[cur]);
 
     while (cur != low) {
-        cur = (cur+1) %n;
+        cur = (cur + 1) %n;
         result.push_back(points[cur]);
     }
 
@@ -72,4 +73,8 @@ void convexhull::add(vec &p) {
     }
 
     this->convex.setPoints(points);
+}
+
+polygon convexhull::getPoly() {
+    return this->convex;
 }

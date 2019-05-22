@@ -26,6 +26,7 @@ public:
     }
 
     void add(vec &p);
+    polygon getPoly();
 };
 
 #endif // GEOMETRY_CONTEST_CONVEXHULL_H
