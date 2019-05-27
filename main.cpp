@@ -21,7 +21,8 @@ void printEvaluation(polygon &solution) {
 }
 
 int main(int argc, char **argv) {
-    srand(time(NULL));
+//    srand(time(NULL));
+    srand(2);
     mainTest();
 //    if (argc < 2) {
 //        std::cerr << "File not given" << std::endl;
