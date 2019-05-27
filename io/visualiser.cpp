@@ -42,15 +42,16 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
         this->drawPoly(polygon, page);
 
         // Output the generated ipe file
-        std::string outFile = "../output/";
+        std::string outFile = "..\\output\\";
 
 
-        size_t sepPos = inFile.find_last_of("/");
+        size_t sepPos = inFile.find_last_of("\\");
         outFile += inFile.substr(sepPos + 1, inFile.size() + 1);
 
         outFile += " - ";
         outFile += std::to_string(std::time(nullptr));
         outFile += ".ipe";
+        std::cout << outFile;
 
         XMLError saveResult = xml.SaveFile(outFile.c_str());
 

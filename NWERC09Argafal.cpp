@@ -7,7 +7,7 @@
 using namespace std;
 
 NWERC09Argafal::NWERC09Argafal(const std::vector<vec> &points) {
-    int num = points.size();
+    int num = points.size()-1;
     Point center;
     center.x = 0;
     center.y = 0;

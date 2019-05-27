@@ -88,9 +88,9 @@ int main(int argc, char **argv) {
     std::cout << "finding solution" << std::endl;
 //    solutionMaker sm = solutionMaker(triangles);
 //    polygon poly = sm.getSolution();
-    NWERC09Argafal sm = NWERC09Argafal(points);
+    NWERC09Jaap sm = NWERC09Jaap(points);
     polygon poly = sm.getSolution();
-    printEvaluation(poly);
+    //printEvaluation(poly);
 
     std::cout << "done finding solution" << std::endl;
     // run visualiser

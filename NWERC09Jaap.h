@@ -15,14 +15,14 @@ using namespace std;
 class NWERC09Jaap {
 private:
 
-    typedef vector<int> VI;
+    typedef vector<long long> VI;
 
-    typedef int coord;
+    typedef long double coord;
 
     class point {
     public:
         coord x, y;
-        int index;
+        long long index;
 
         point() { x = y = 0; }
         point(coord x1, coord y1) { x = x1; y = y1; }
@@ -30,8 +30,8 @@ private:
         point operator +=(point a) { x += a.x; y += a.y; return *this; }
         point operator -=(point a) { x -= a.x; y -= a.y; return *this; }
 
-        point operator +(point b) { return *this += b; }
-        point operator -(point b) { return *this -= b; }
+        point operator +(point b) { return point(this->x+b.x, this->y+b.y); }
+        point operator -(point b) { return point(this->x-b.x, this->y-b.y); }
         coord operator *(point b) { return this->x*b.x + this->y*b.y; }
 
         int operator <(point b)

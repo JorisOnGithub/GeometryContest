@@ -21,8 +21,8 @@ std::vector<vec> polygon::getPoints() const {
 
 // calculates the area of this polygon
 // note that for this contest all areas will be integer, so you can round the returned 'double'
-double polygon::area() const {
-    double area = 0;
+long double polygon::area() const {
+    long double area = 0;
 
     for (int i = 0; i < this->points.size() - 1; i++) {
         area += this->points[i].x * this->points[i + 1].y;
@@ -67,8 +67,8 @@ bool polygon::intersects(vec &a, vec &b, vec &p) {
     if (p.x < std::min(a.x, b.x))
         return true;
 
-    double red = (p.y - a.y) / (p.x - a.x);
-    double blue = (b.y - a.y) / (b.x - a.x);
+    long double red = (p.y - a.y) / (p.x - a.x);
+    long double blue = (b.y - a.y) / (b.x - a.x);
 
     return red >= blue;
 }

@@ -7,7 +7,7 @@
 using namespace std;
 
 NWERC09Jaap::NWERC09Jaap(const std::vector<vec> &pts) {
-    int N = pts.size();
+    int N = pts.size()-1;
     points = vector<point>(N);
 
     for(int i=0; i<N; i++) {
@@ -26,14 +26,13 @@ NWERC09Jaap::NWERC09Jaap(const std::vector<vec> &pts) {
     for(int i=N-1; i>=0; i--) {
         if ( !used[i] ) {
             res.push_back(i);
-            resPoints.push_back(vec(points[i].x, points[i].y));
         }
     }
 
     for (int i = 0; i < res.size(); i++) {
-        resPoints.push_back(vec(points[res[i]].x, points[res[i]].y));
+        resPoints.push_back(vec(pts[res[i]].x, pts[res[i]].y));
     }
-    resPoints.push_back(vec(points[res[0]].x, points[res[0]].y));
+    resPoints.push_back(vec(pts[res[0]].x, pts[res[0]].y));
 
     resPoly = polygon(resPoints);
 }
