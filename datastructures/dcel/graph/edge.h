@@ -10,8 +10,10 @@
 class edge {
 private:
     node* target;
+    node* source;
 public:
-    edge(node* target) {
+    edge(node* source, node* target) {
+        this->source = source;
         this->target = target;
     }
 

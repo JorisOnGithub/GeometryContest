@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "datastructures/polygon.h"
 #include "simpleChecker.h"
-#include "delaunator.hpp"
+#include "datastructures/dcel/graph/delaunator.hpp"
 #include "io/visualiser.h"
 
 using namespace std;
