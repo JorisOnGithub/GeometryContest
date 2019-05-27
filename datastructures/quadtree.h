@@ -41,7 +41,7 @@ class quadtree {
         }
 
         void data_info(std::set<lineseg*> &cur_data);
-
+  
     public:
         vec *botleft, *topright; // border info
         /**
@@ -114,6 +114,7 @@ class quadtree {
         int size() {
             return this->node_count;
         }
+
         /**
          * @return gets all linesegment contained in the tree 
          */

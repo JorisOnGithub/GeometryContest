@@ -1,5 +1,6 @@
 #include "quadtree.h"
 #include <math.h>
+#include <algorithm>
 bool quadtree::in_boundary(vec& p) {
     return p.x >= this->botleft->x && p.y >= this->botleft->y && p.x <= this->topright->x && p.y <= this->topright->y;
 }
@@ -10,7 +11,7 @@ bool quadtree::intersects_boundary(lineseg& l) {
     vec botright = vec(topright->x, botleft->y);
     // define the rectangle four lines
     lineseg topline = lineseg(&topleft, topright);
-    lineseg leftline = lineseg(&topleft, &botright);
+    lineseg leftline = lineseg(botleft, &topleft);
     lineseg botline = lineseg(botleft ,&botright);
     lineseg rightline = lineseg(topright, &botright);
     // check if intersects boundary 
@@ -28,17 +29,20 @@ void quadtree::subdivide() {
     // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
     // TODO: could be issues with coordinate precision because of flooring? 
     vec* nwbl = new vec(botleft->x, botleft->y + y_diff);
-    vec* nwtr = new vec(topright->x - x_diff, topright->y);
+//    vec* nwtr = new vec(topright->x - x_diff, topright->y);
+    vec* nwtr = new vec(botleft->x + x_diff, topright->y);
     this->nw = new quadtree(this, nwbl, nwtr, false, false);
 
     vec* nebl = new vec(botleft->x + x_diff, botleft->y + y_diff);
     this->ne = new quadtree(this, nebl, topright, false, true);
 
-    vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
+//    vec* swtr = new vec(topright->x - x_diff, topright->y - y_diff);
+    vec* swtr = new vec(botleft->x + x_diff, botleft->y + y_diff);
     this->sw = new quadtree(this, botleft, swtr, true, false);
 
     vec* sebl = new vec(botleft->x + x_diff, botleft->y);
-    vec* setr = new vec(topright->x, topright->y - y_diff);
+//    vec* setr = new vec(topright->x, topright->y - y_diff);
+    vec* setr = new vec(topright->x, botleft->y + y_diff);
     this->se = new quadtree(this, sebl, setr, false, false);
 }
 
@@ -123,10 +127,10 @@ std::set<lineseg*> quadtree::get_intersecting_lines(lineseg& l) {
 }
 
 void quadtree::data_info(std::set<lineseg*> &cur_data) {
-    for (auto seg : this->get_data()) {
+    for (auto seg: this->get_data()) {
         cur_data.insert(seg);
     }
-    if (this->is_leaf()){ 
+    if (this->is_leaf()){
         return;
     }
     this->nw->data_info(cur_data);
@@ -136,7 +140,7 @@ void quadtree::data_info(std::set<lineseg*> &cur_data) {
 }
 
 std::set<lineseg*> quadtree::get_all_data() {
-    std::set<lineseg*> all_data(this->get_data());
+    std::set<lineseg*> all_data;
     this->data_info(all_data);
     return all_data;
 }

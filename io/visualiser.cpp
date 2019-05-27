@@ -6,6 +6,7 @@
 #include <ctime>
 #include "visualiser.h"
 #include "../lib/TinyXML2/tinyxml2.h"
+#include <filesystem>
 
 using namespace tinyxml2;
 
@@ -16,20 +17,21 @@ using namespace tinyxml2;
  * @param inFile the name of the input file used to generate this solution
  */
 void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string inFile) {
-    if (points.size() == 0) throw "visualise - invalid argument - the points list should not be empty";
+    if (points.size() == 0) throw std::runtime_error("visualise - invalid argument - the points list should not be empty");
 
     // Load IPE template file
     // TODO: the path below should be a relative path, this does not work on my system
-    XMLError loadResult = xml.LoadFile("../res/template.ipe");
+//    XMLError loadResult = xml.LoadFile("../res/template.ipe");
+    XMLError loadResult = xml.LoadFile("/home/joris/files/personal_programs/geometry_contest/res/template.ipe");
 
     if (loadResult == XML_SUCCESS) {
         // Loaded template correctly
         XMLNode * root = xml.RootElement();
-        if (root == nullptr) throw "could not locate root element of IPE template file";
+        if (root == nullptr) throw std::runtime_error("could not locate root element of IPE template file");
 
         // Find the page element
         XMLElement * page = root->FirstChildElement("page");
-        if (page == nullptr) throw "could not locate page element of IPE template file";
+        if (page == nullptr) throw std::runtime_error("could not locate page element of IPE template file");
 
         // Add the points to the page
         int *constraints = this->addPoints(points, page);
@@ -42,7 +44,8 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
         this->drawPoly(polygon, page);
 
         // Output the generated ipe file
-        std::string outFile = "../output/";
+//        std::string outFile = "../output/";
+        std::string outFile = "/home/joris/files/personal_programs/geometry_contest/output/";
 
 
         size_t sepPos = inFile.find_last_of("/");
@@ -59,11 +62,11 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
         if (saveResult == XML_SUCCESS) {
             std::cout << "finished exporting solution to IPE file" << std::endl;
         } else {
-            throw "could not save IPE output file";
+            throw std::runtime_error("could not save IPE output file");
         }
 
     } else {
-        throw "visualiser could not import template IPE file";
+        throw std::runtime_error("visualiser could not import template IPE file");
     }
 }
 
@@ -152,7 +155,7 @@ void visualiser::drawPoly(polygon polygon, tinyxml2::XMLElement *page) {
 void visualiser::sizeCanvas(tinyxml2::XMLNode *root, int *constraints) {
     // Get the style element
     XMLElement * style = root->FirstChildElement("ipestyle");
-    if (style == nullptr) throw "could not locate the style element of the IPE template file";
+    if (style == nullptr) throw std::runtime_error("could not locate the style element of the IPE template file");
 
     // Create a layout element
     XMLElement * layout = xml.NewElement("layout");
