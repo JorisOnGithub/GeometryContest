@@ -99,7 +99,7 @@ bool quadtree::remove(lineseg l) {
     }
 }
 
-void quadtree::gather_intersecting_lines(std::set<lineseg> intersections, lineseg l) {
+void quadtree::gather_intersecting_lines(std::set<lineseg> &intersections, lineseg l) {
     if (!this->intersects_boundary(l)) { // not in here, stop
         return;
     }
@@ -137,7 +137,7 @@ void quadtree::data_info(std::set<lineseg> cur_data) {
 }
 
 std::set<lineseg> quadtree::get_all_data() {
-    std::set<lineseg> all_data;
+    std::set<lineseg> all_data(this->get_data());
     this->data_info(all_data);
     return all_data;
 }
