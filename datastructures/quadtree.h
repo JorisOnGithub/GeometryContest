@@ -13,7 +13,7 @@ class quadtree {
         int node_count;
         int depth;
         bool botl, topr;
-        std::set<lineseg*> data;
+        std::set<lineseg> data;
 
         quadtree(quadtree* _parent, vec *bl, vec *tr, bool b, bool t) {
             this->node_count = 0;
@@ -34,13 +34,13 @@ class quadtree {
 
         void subdivide();
        
-        void gather_intersecting_lines(std::set<lineseg*> &intersections, lineseg& l);
+        void gather_intersecting_lines(std::set<lineseg> intersections, lineseg l);
 
-        std::set<lineseg*> get_data() {
+        std::set<lineseg> get_data() {
             return this->data;
         }
 
-        void data_info(std::set<lineseg*> &cur_data);
+        void data_info(std::set<lineseg> cur_data);
 
     public:
         vec *botleft, *topright; // border info
@@ -84,7 +84,7 @@ class quadtree {
          * @param l linesegment to insert
           *@return whether insert was successful
          */
-        bool insert(lineseg& l);
+        bool insert(lineseg l);
 
 
         /**
@@ -92,21 +92,21 @@ class quadtree {
          * @param l linesegment to remove
          * @return whether the removal was successful
          */
-        bool remove(lineseg& l);
+        bool remove(lineseg l);
         
         /**
          * Checks whether this line intersects any other in the tree
          * @param l linesegment to analyze intersections with
          * @return if l intersects any other linesegment in the tree
          */
-        bool intersects_line(lineseg& l);
+        bool intersects_line(lineseg l);
         
         /**
          * Finds all line segments in quadtree which intersect it.
          * @param l linesegment to analyze
          * @return set of line segments that intersect lineseg l
          */
-        std::set<lineseg*> get_intersecting_lines(lineseg& l);
+        std::set<lineseg> get_intersecting_lines(lineseg l);
         
         /**
          * @return how many linesegments the subtree contains
@@ -117,7 +117,7 @@ class quadtree {
         /**
          * @return gets all linesegment contained in the tree 
          */
-        std::set<lineseg*> get_all_data();
+        std::set<lineseg> get_all_data();
 };
 
 #endif
