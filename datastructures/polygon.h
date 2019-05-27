@@ -34,7 +34,7 @@ public:
 
     vec getPoint(int index) const;
 
-    lineseg getEdge(int index) const;
+    lineseg* getEdge(int index) const;
 
     double area() const;
 
