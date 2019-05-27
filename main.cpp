@@ -7,6 +7,7 @@
 #include "delaunator.hpp"
 #include "solutionMaker.h"
 #include "io/visualiser.h"
+#include "NWERC09Jaap.h"
 
 using namespace std;
 
@@ -86,7 +87,7 @@ int main(int argc, char **argv) {
     std::cout << "finding solution" << std::endl;
 //    solutionMaker sm = solutionMaker(triangles);
 //    polygon poly = sm.getSolution();
-    solutionMaker sm = solutionMaker(points);
+    NWERC09Jaap sm = NWERC09Jaap(points);
     polygon poly = sm.getSolution();
     printEvaluation(poly);
 
