@@ -25,7 +25,7 @@ public:
 
     std::vector<vec> getPoints() const;
 
-    double area() const;
+    long double area() const;
 
     bool isConvex() const;
 

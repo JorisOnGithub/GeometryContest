@@ -54,6 +54,7 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
         outFile += " - ";
         outFile += std::to_string(std::time(nullptr));
         outFile += ".ipe";
+        std::cout << outFile;
 
         XMLError saveResult = xml.SaveFile(outFile.c_str());
 
