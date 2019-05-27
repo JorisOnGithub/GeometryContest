@@ -73,7 +73,7 @@ private:
      * @param visualizeInbetween if true the function creates and stores an ipe image in output/testingA where A is linear
      * to the number of points in the polygon so far.
      */
-    void realSolution(bool visualizeInbetween = false, bool debug = false);
+    void realSolution(bool visualizeInbetween = false, bool debug = true);
 
     /**
      * Returns a list of points (polygon ready) based on the starting point of a linked list

@@ -7,6 +7,10 @@
 class lineseg {
     public:
         vec a, b;
+
+private:
+    double isLeft(const vec &a, const vec &b, const vec &p);
+
     public:
         lineseg(vec *a, vec *b) {
             this->a = *a;
@@ -14,11 +18,11 @@ class lineseg {
         }
 
         void set_a(vec *new_a) {
-            this->a = *new_a; 
+            this->a = *new_a;
         }
 
         void set_b(vec *new_b) {
-            this->b = *new_b; 
+            this->b = *new_b;
         }
 
         bool intersects(lineseg &other);
@@ -33,7 +37,7 @@ class lineseg {
             return (this->a == other.a && this->b == other.b) ||
                     (this->b == other.a && this->a == other.b);
         }
-    
+
         bool operator !=(const lineseg &other) const {
             return !(*this == other);
         }
