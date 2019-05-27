@@ -1,6 +1,8 @@
 #include "vec.h"
 #include "lineseg.h"
 #include <set>
+#include <unordered_set>
+
 #ifndef GEOMETRY_CONTEST_QUADTREE_H
 #define GEOMETRY_CONTEST_QUADTREE_H
 

@@ -1,6 +1,7 @@
 #include "quadtree.h"
 #include <math.h>
 #include <algorithm>
+
 bool quadtree::in_boundary(vec& p) {
     return p.x >= this->botleft->x && p.y >= this->botleft->y && p.x <= this->topright->x && p.y <= this->topright->y;
 }
@@ -44,6 +45,7 @@ void quadtree::subdivide() {
 }
 
 bool quadtree::insert(lineseg l) {
+    std::cout << "insert a line segment: " << l.a.x << " " << l.a.y << ", " << l.b.x << " " << l.b.y << std::endl;
     if (!this->intersects_boundary(l)) {  // if not in this node
         return false; // cant insert
     }
@@ -81,6 +83,7 @@ bool quadtree::intersects_line(lineseg l) {
 }
 
 bool quadtree::remove(lineseg l) {
+    std::cout << "removing a line segment: " << l.a.x << " " << l.a.y << ", " << l.b.x << " " << l.b.y  << std::endl;
     if (!this->intersects_boundary(l)) {
         return false;
     }

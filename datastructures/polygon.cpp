@@ -121,8 +121,8 @@ void polygon::addPoint(vec &point, int index) {
     }
 }
 
-lineseg* polygon::getEdge(int index) const {
+lineseg polygon::getEdge(int index) const {
     vec p1 = this->points[index];
     vec p2 = this->points[(index + 1) % (this->getSize())];
-    return new lineseg(&p1, &p2);
+    return lineseg(&p1, &p2);
 }

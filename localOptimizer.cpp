@@ -5,11 +5,6 @@ void optimizePolygon(polygon &poly, quadtree &qt, bool maximize) {
     optimizePolygonWithPoint(poly, qt, largeRandom(poly.getSize()), maximize);
 //    optimizePolygonWithPoint(poly, qt, 4, maximize);
 
-    std::set<lineseg> segs = qt.get_all_data();
-    std::cout << "segments in tree: " << std::endl;
-    for (lineseg l : segs) {
-        std::cout << (l).a.x << " " << (l).a.y << ", " << (l).b.x << " " << (l).b.y << std::endl;
-    }
 }
 
 void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize) {
@@ -19,15 +14,15 @@ void optimizePolygonWithPoint(polygon &poly, quadtree &qt, int pi, bool maximize
         return;
     }
 
-    lineseg *l1 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
-    lineseg *l2 = poly.getEdge((pi+1)%poly.getSize());
-    qt.remove(*l1);
-    qt.remove(*l2);
+    lineseg l1 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
+    lineseg l2 = poly.getEdge((pi+1)%poly.getSize());
+    qt.remove(l1);
+    qt.remove(l2);
     vec p = poly.getPoint(pi);
     poly.removePoint(pi);
     maximize = (maximize^poly.contains(p));
-    lineseg *l3 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
-    qt.insert(*l3);
+    lineseg l3 = poly.getEdge((pi-1+poly.getSize())%poly.getSize());
+    qt.insert(l3);
 
     std::vector<int> si = {};
     for (int i = 0; i < 10; i++) {
@@ -60,24 +55,21 @@ void optimizePolygonWithPointsAndSegments(polygon &poly, quadtree &qt, vec p, st
         }
     }
 
-    lineseg *l = poly.getEdge((bestI+poly.getSize())%poly.getSize());
+    lineseg l = poly.getEdge((bestI+poly.getSize())%poly.getSize());
 
-    std::cout << "remove: " << (*l).a.x << " " << (*l).a.y << ", " << (*l).b.x << " " << (*l).b.y << std::endl;
-    qt.remove(*l);
+//    std::cout << "remove: " << (*l).a.x << " " << (*l).a.y << ", " << (*l).b.x << " " << (*l).b.y << std::endl;
+    qt.remove(l);
 
     poly.addPoint(p, bestI+1);
 
-    lineseg *l1 = poly.getEdge((bestI + poly.getSize())%poly.getSize());
-    qt.insert(*l1);
-    lineseg *l2 = poly.getEdge((bestI + 1+poly.getSize())%poly.getSize());
-    qt.insert(*l2);
+    lineseg l1 = poly.getEdge((bestI + poly.getSize())%poly.getSize());
+    qt.insert(l1);
+    lineseg l2 = poly.getEdge((bestI + 1+poly.getSize())%poly.getSize());
+    qt.insert(l2);
 
-    std::cout << "add: " << (*l1).a.x << " " << (*l1).a.y << ", " << (*l1).b.x << " " << (*l1).b.y << std::endl;
-    std::cout << "add: " << (*l2).a.x << " " << (*l2).a.y << ", " << (*l2).b.x << " " << (*l2).b.y << std::endl;
+//    std::cout << "add: " << (*l1).a.x << " " << (*l1).a.y << ", " << (*l1).b.x << " " << (*l1).b.y << std::endl;
+//    std::cout << "add: " << (*l2).a.x << " " << (*l2).a.y << ", " << (*l2).b.x << " " << (*l2).b.y << std::endl;
 
-
-
-    //TODO: add new line segments and remove old one
 }
 
 bool canBeAdded(polygon &poly, quadtree &qt, vec p, int i) {

@@ -14,8 +14,8 @@ using namespace std;
 bool checkQuadtree(polygon poly, quadtree tree) {
     set<lineseg> segs = tree.get_all_data();
 
-    if (segs.size() != poly.getPoints().size()) {
-        std::cout << "there is a problem: " << segs.size() << " " << poly.getPoints().size() << std::endl;
+    if (segs.size() != poly.getSize()) {
+        std::cout << "there is a problem: " << segs.size() << " " << poly.getSize() << std::endl;
         return false;
     }
 
@@ -47,18 +47,26 @@ int mainTest() {
 
     quadtree tree = quadtree(&bl, &tr);
 
-    lineseg *l = poly.getEdge(0);
-    tree.insert(*l);
-    lineseg *l1 = poly.getEdge(1);
-    tree.insert(*l1);
-    lineseg *l2 = poly.getEdge(2);
-    tree.insert(*l2);
-    lineseg *l3 = poly.getEdge(3);
-    tree.insert(*l3);
-    lineseg *l4 = poly.getEdge(4);
-    tree.insert(*l4);
-    lineseg *l5 = poly.getEdge(5);
-    tree.insert(*l5);
+    lineseg l = poly.getEdge(0);
+    tree.insert(l);
+    lineseg l1 = poly.getEdge(1);
+    tree.insert(l1);
+    lineseg l2 = poly.getEdge(2);
+    tree.insert(l2);
+    lineseg l3 = poly.getEdge(3);
+    tree.insert(l3);
+    lineseg l4 = poly.getEdge(4);
+    tree.insert(l4);
+    lineseg l5 = poly.getEdge(5);
+    tree.insert(l5);
+        std::cout << (l).a.x << " " << (l).a.y << ", " << (l).b.x << " " << (l).b.y << std::endl;
+
+
+    std::set<lineseg> segs = tree.get_all_data();
+    std::cout << "segments in tree: " << std::endl;
+    for (lineseg l : segs) {
+        std::cout << (l).a.x << " " << (l).a.y << ", " << (l).b.x << " " << (l).b.y << std::endl;
+    }
 
     std::cout << "area at the beginning: " << poly.area() << std::endl;
 
@@ -74,6 +82,12 @@ int mainTest() {
             if (true) {
                 std::cout << p.x << " " << p.y << endl;
             }
+
+        }
+        std::set<lineseg> segs = tree.get_all_data();
+        std::cout << "segments in tree: " << std::endl;
+        for (lineseg l : segs) {
+            std::cout << (l).a.x << " " << (l).a.y << ", " << (l).b.x << " " << (l).b.y << std::endl;
         }
 
         if (!checkQuadtree(poly, tree)) {
