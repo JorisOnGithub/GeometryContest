@@ -34,7 +34,7 @@ class quadtree {
 
         void subdivide();
        
-        void gather_intersecting_lines(std::set<lineseg> intersections, lineseg l);
+        void gather_intersecting_lines(std::set<lineseg> &intersections, lineseg l);
 
         std::set<lineseg> get_data() {
             return this->data;
