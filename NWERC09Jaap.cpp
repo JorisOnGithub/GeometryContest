@@ -30,6 +30,11 @@ NWERC09Jaap::NWERC09Jaap(const std::vector<vec> &pts) {
         }
     }
 
+    for (int i = 0; i < res.size(); i++) {
+        resPoints.push_back(vec(points[res[i]].x, points[res[i]].y));
+    }
+    resPoints.push_back(vec(points[res[0]].x, points[res[0]].y));
+
     resPoly = polygon(resPoints);
 }
 
