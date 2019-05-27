@@ -32,4 +32,6 @@ add_executable(Geometry_Contest delaunator.hpp main.cpp io/reader.cpp
     datastructures/quadtreepoints.cpp datastructures/quadtreepoints.h
     io/visualiser.cpp io/visualiser.h lib/TinyXML2/tinyxml2.h
     lib/TinyXML2/tinyxml2.cpp solutionMaker.h solutionMaker.cpp
-    datastructures/convexhull.h datastructures/convexhull.cpp)
+    datastructures/convexhull.h datastructures/convexhull.cpp
+    NWERC09Jaap.cpp NWERC09Jaap.h
+    NWERC09Argafal.cpp NWERC09Argafal.h)
