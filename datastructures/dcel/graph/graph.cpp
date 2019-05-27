@@ -44,18 +44,14 @@ void graph::createDelaunayGraph(std::vector<double> coordinates) {
         edge e23(checked[point2], checked[point3]);
         edge e32(checked[point3], checked[point2]);
 
+        checked[point1]->addEdge(e12);
+        checked[point1]->addEdge(e13);
 
+        checked[point2]->addEdge(e21);
+        checked[point2]->addEdge(e23);
 
-
-        printf(
-                "Triangle points: [[%f, %f], [%f, %f], [%f, %f]]\n",
-                d.coords[2 * d.triangles[i]],        //tx0
-                d.coords[2 * d.triangles[i] + 1],    //ty0
-                d.coords[2 * d.triangles[i + 1]],    //tx1
-                d.coords[2 * d.triangles[i + 1] + 1],//ty1
-                d.coords[2 * d.triangles[i + 2]],    //tx2
-                d.coords[2 * d.triangles[i + 2] + 1] //ty2
-        );
+        checked[point3]->addEdge(e31);
+        checked[point3]->addEdge(e32);
     }
 
 }
