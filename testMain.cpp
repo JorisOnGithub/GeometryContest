@@ -11,9 +11,23 @@
 
 using namespace std;
 
+bool checkQuadtree(polygon poly, quadtree tree) {
+    set<lineseg> segs = tree.get_all_data();
+
+    if (segs.size() != poly.getPoints().size()) {
+        std::cout << "there is a problem: " << segs.size() << " " << poly.getPoints().size() << std::endl;
+        return false;
+    }
+
+
+
+    return true;
+}
+
+
 int mainTest() {
-//    srand(time(NULL));
-    srand(4);
+    srand(time(NULL));
+//    srand(4);
 
 
 
@@ -57,9 +71,14 @@ int mainTest() {
         vector<vec> point = poly.getPoints();
         for (int j = 0; j < point.size(); j++)  {
             vec p = point[j];
-            if (i >= 7 && i <= 8) {
+            if (true) {
                 std::cout << p.x << " " << p.y << endl;
             }
+        }
+
+        if (!checkQuadtree(poly, tree)) {
+            std::cout << "there is a problem in the quad tree" << std::endl;
+            //break;
         }
 
     }
@@ -69,3 +88,6 @@ int mainTest() {
 
     return 0;
 }
+
+
+

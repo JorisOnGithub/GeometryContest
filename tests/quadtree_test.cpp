@@ -183,17 +183,17 @@ TEST (QuadTreeTest, GettingIntersectingLines) {
     EXPECT_TRUE(t.intersects_line(l5));
     EXPECT_FALSE(t.intersects_line(l6));
 
-    std::set<lineseg*> lines = t.get_intersecting_lines(l1);
+    std::set<lineseg> lines = t.get_intersecting_lines(l1);
 
-    EXPECT_TRUE(lines.size() == 2);
-    EXPECT_TRUE(lines.find(&l2) != lines.end());
-    EXPECT_TRUE(lines.find(&l4) != lines.end());
+    EXPECT_EQ(lines.size(), 2);
+    EXPECT_TRUE(lines.find(l2) != lines.end());
+    EXPECT_TRUE(lines.find(l4) != lines.end());
     
-    std::set<lineseg*> lines2 = t.get_intersecting_lines(l5);
+    std::set<lineseg> lines2 = t.get_intersecting_lines(l5);
 
     EXPECT_TRUE(lines2.size() == 1);
-    EXPECT_TRUE(lines2.find(&l4) != lines2.end());
+    EXPECT_TRUE(lines2.find(l4) != lines2.end());
 
-    std::set<lineseg*> lines3 = t.get_intersecting_lines(l6);
+    std::set<lineseg> lines3 = t.get_intersecting_lines(l6);
     EXPECT_TRUE(lines3.size() == 0);
 }
