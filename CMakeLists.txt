@@ -18,7 +18,7 @@ if (GTest_FOUND)
         datastructures/quadtreepoints.cpp datastructures/quadtreepoints.h
         tests/quadtreepoints_test.cpp 
         datastructures/convexhull.h datastructures/convexhull.cpp
-        tests/convechull_test.cpp)
+        tests/convexhull_test.cpp)
     target_link_libraries(UnitTest ${GTEST_LIBRARIES} pthread)
 endif()
 
