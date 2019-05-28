@@ -1,0 +1,18 @@
+NAME : euro_night10.26840.tour
+COMMENT : Length = 26840
+COMMENT : Found by LKH [Keld Helsgaun] Fri May  3 10:20:46 2019
+TYPE : TOUR
+DIMENSION : 10
+TOUR_SECTION
+1
+2
+5
+3
+4
+6
+8
+10
+9
+7
+-1
+EOF
