@@ -1,0 +1,797 @@
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\vc141.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\buildkdtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\bridgegain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\bit.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\between_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\between_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\between.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\bestspecialoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\bestkoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\best5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\best4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\best3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\best2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\ascent.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\allocatestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\adjustclusters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\adjustcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\addtourcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\addextracandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\addcandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\activate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\fixedorcommoncandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\findtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\exclude.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\excludable.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\erxt.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\eprintf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\distance_special.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\distance_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\distance_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\distance.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\delaunay.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\cvrp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\createquadrantcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\createnncandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\createdelaunaycandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\createcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\connect.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\chooseinitialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\candidatereport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\c.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\kswapkick.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\ispossiblecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\iscommonedge.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\iscandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\improvement.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\heap.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\hashing.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\greedytour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\gpx.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\gettime.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\geoconversion.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\genetic.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\generatecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\gain23.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\fscanint.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\freestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\forbidden.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\flip_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\flip_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\flip.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\ordercandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\normalizesegmentlist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\normalizenodelist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mtsp_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mtsp_writeresult.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mtsp_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mtsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mtsp2tsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\minimumspanningtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\minimum1treecost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mergewithtouript.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mergewithtourgpx2.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\mergetourwithbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\makekoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\make5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\make4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\make3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\make2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\lkhmain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\linkernighan.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_rctvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_pdtspl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_pdtspf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_pdptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_ovrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_m_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_mvrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_m1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_cvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_cvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_ccvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_bwtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_acvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\pdtspl_tree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\pdtspl_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\pdptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\patchcycles.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\removefirstactive.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\recordbettertour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\recordbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readpenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readline.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\random.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\printparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\printff.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_vrppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_vrpbtw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_vrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_tsptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_tsppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_tspdl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_trp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\penalty_scvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\statistics.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sop_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sop_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sop_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvetoursegmentsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvesubproblemborderproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvesubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvesfcsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solverohesubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvekmeanssubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvekcentersubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvekarpsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvedelaunaysubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\solvecompressedsubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sintef_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sfctour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\sequence.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\segmentsize.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\restoretour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\resetcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\writetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\writepenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\writecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\vrpb_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\tsptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\tsptw_makespancost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\tspdl_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\trimcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\symmetrizecandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\storetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\statusreport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\readedges.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\vc141.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\normalizenodelist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\chooseinitialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\best5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mergewithtourgpx2.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\create_popmusic_candidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mergetourwithbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mtsp_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mtsp_writeresult.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mtsp_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mtsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mtsp2tsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\lkhmain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\ispossiblecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\improvement.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\genetic.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\fixedorcommoncandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\erxt.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\distance_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\distance_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\createnncandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\cvrp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\bestspecialoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\bit.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\adjustclusters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_pdtspl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_pdtspf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_pdptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_ovrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_m_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_mvrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_m1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_cvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_cvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_ccvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_bwtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_acvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\pdtspl_tree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\pdtspl_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\pdptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\mergewithtouript.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\statusreport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvesfcsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvekcentersubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvecompressedsubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sop_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sop_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sop_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sintef_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sfctour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readedges.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_vrppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_vrpbtw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_vrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_tsptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_tsppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_tspdl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_trp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_scvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\penalty_rctvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\between_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\between_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\between.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\bestkoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\best4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\best3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\best2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\ascent.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\allocatestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\adjustcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\addtourcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\addextracandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\addcandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\activate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\gpx.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\vrpb_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\tsptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\tsptw_makespancost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\tspdl_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\freestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\forbidden.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\flip_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\flip_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\flip.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\findtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\exclude.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\excludable.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\distance_special.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\distance.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\delaunay.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\createquadrantcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\createdelaunaycandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\createcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\connect.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\candidatereport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\c.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\buildkdtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\bridgegain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\normalizesegmentlist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\minimumspanningtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\minimum1treecost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\makekoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\make5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\make4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\make3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\make2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\linkernighan.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\kswapkick.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\iscommonedge.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\iscandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\heap.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\hashing.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\greedytour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\gettime.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\geoconversion.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\generatecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\gain23.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solverohesubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvekarpsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvekmeanssubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvedelaunaysubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\sequence.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\segmentsize.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\restoretour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\resetcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\removefirstactive.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\recordbettertour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\recordbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readpenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readline.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\readcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\random.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\printparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\patchcycles.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\ordercandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\printff.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\fscanint.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\eprintf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\writetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\writepenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\writecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\trimcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\symmetrizecandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\storetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\statistics.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvetoursegmentsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvesubproblemborderproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\solvesubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\isbackbonecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\vc141.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\buildkdtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\bridgegain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\bit.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\between_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\between_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\between.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\bestspecialoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\bestkoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\best5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\best4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\best3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\best2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\ascent.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\allocatestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\adjustclusters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\adjustcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\addtourcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\addextracandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\addcandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\activate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\findtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\exclude.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\excludable.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\erxt.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\eprintf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\distance_special.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\distance_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\distance_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\distance.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\delaunay.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\cvrp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\create_popmusic_candidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\createquadrantcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\createnncandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\createdelaunaycandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\createcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\connect.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\chooseinitialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\candidatereport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\c.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\ispossiblecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\iscommonedge.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\iscandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\improvement.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\heap.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\hashing.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\greedytour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\gpx.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\gettime.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\geoconversion.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\genetic.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\generatecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\gain23.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\fscanint.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\freestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\forbidden.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\flip_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\flip_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\flip.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\fixedorcommoncandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\normalizesegmentlist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\normalizenodelist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mtsp_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mtsp_writeresult.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mtsp_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mtsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mtsp2tsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\minimumspanningtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\minimum1treecost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mergewithtouript.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mergewithtourgpx2.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\mergetourwithbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\makekoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\make5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\make4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\make3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\make2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\lkhmain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\linkernighan.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\kswapkick.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_pdtspf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_pdptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_ovrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_m_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_mvrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_m1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_cvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_cvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_ctsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_ccvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_bwtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_acvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\pdtspl_tree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\pdtspl_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\pdptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\patchcycles.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\ordercandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readpenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readline.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readedges.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\readcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\random.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\printparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\printff.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_vrppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_vrpbtw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_vrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_tsptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_tsppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_tspdl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_trp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_scvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_rctvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_pdtspl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sop_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvetoursegmentsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvesubproblemborderproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvesubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvesfcsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solverohesubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvekmeanssubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvekcentersubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvekarpsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvedelaunaysubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\solvecompressedsubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sintef_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sfctour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sequence.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\segmentsize.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\restoretour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\resetcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\removefirstactive.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\recordbettertour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\recordbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\writetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\writepenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\writecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\vrpb_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\tsptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\tsptw_makespancost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\tspdl_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\trimcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\symmetrizecandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\storetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\statusreport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\statistics.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sop_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\sop_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\penalty_mlp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\ctsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\isbackbonecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\vc141.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mtsp2tsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mtsp_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mtsp_writeresult.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mtsp_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mtsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\lkhmain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\ispossiblecandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\improvement.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\genetic.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\fixedorcommoncandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\erxt.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\distance_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\distance_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\create_popmusic_candidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\createnncandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\cvrp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\ctsp_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\bestspecialoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\bit.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\adjustclusters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_pdptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_ovrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_m_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_mvrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_mtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_mlp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_m1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_cvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_cvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_ctsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_ccvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_bwtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_acvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_1_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\pdtspl_tree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\pdtspl_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\pdptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mergewithtouript.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mergewithtourgpx2.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\mergetourwithbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvecompressedsubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sop_report.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sop_repairtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sop_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sintef_writesolution.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sfctour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readedges.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_vrppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_vrpbtw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_vrpb.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_tsptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_tsppd.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_tspdl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_trp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_sop.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_scvrptw.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_rctvrp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_pdtspl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_pdtspf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\penalty_pdtsp.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\bestkoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\best5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\best4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\best3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\best2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\ascent.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\allocatestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\adjustcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\addtourcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\addextracandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\addcandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\activate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\gpx.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\vrpb_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\tsptw_reduce.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\tsptw_makespancost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\tspdl_initialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\statusreport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvesfcsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvekcentersubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\flip_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\flip.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\findtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\exclude.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\excludable.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\distance_special.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\distance.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\delaunay.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\createquadrantcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\createdelaunaycandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\createcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\connect.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\chooseinitialtour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\candidatereport.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\c.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\buildkdtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\bridgegain.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\between_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\between_sl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\between.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\minimum1treecost.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\makekoptmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\make5optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\make4optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\make3optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\make2optmove.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\linkernighan.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\kswapkick.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\iscommonedge.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\iscandidate.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\heap.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\hashing.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\greedytour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\gettime.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\geoconversion.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\generatecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\gain23.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\freestructures.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\forbidden.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\flip_ssl.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvedelaunaysubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\sequence.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\segmentsize.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\restoretour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\resetcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\removefirstactive.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\recordbettertour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\recordbesttour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readpenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readline.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\readcandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\random.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\printparameters.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\patchcycles.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\ordercandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\normalizesegmentlist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\normalizenodelist.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\minimumspanningtree.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\printff.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\fscanint.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\eprintf.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\writetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\writepenalties.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\writecandidates.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\trimcandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\symmetrizecandidateset.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\storetour.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\statistics.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvetoursegmentsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvesubproblemborderproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvesubproblem.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solverohesubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvekarpsubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\solvekmeanssubproblems.obj
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\lkh.exe
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.2\x64\release\lkh.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\lkh.exe
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.3\x64\release\lkh.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\lkh.exe
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.4\x64\release\lkh.pdb
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\lkh.exe
+\\mac\home\desktop\lkh3-site\lkhwin-3.0.5\x64\release\lkh.pdb
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\activate.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\addcandidate.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\addextracandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\addtourcandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\adjustcandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\adjustclusters.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\allocatestructures.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\ascent.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\best2optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\best3optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\best4optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\best5optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\bestkoptmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\bestspecialoptmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\between.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\between_sl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\between_ssl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\bit.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\bridgegain.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\buildkdtree.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\c.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\candidatereport.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\chooseinitialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\connect.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\createcandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\createdelaunaycandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\createnncandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\createquadrantcandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\create_popmusic_candidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\ctsp_initialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\cvrp_initialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\delaunay.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\distance.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\distance_mtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\distance_sop.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\distance_special.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\eprintf.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\erxt.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\excludable.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\exclude.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\findtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\fixedorcommoncandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\flip.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\flip_sl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\flip_ssl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\forbidden.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\freestructures.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\fscanint.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\gain23.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\generatecandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\genetic.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\geoconversion.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\gettime.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\gpx.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\greedytour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\hashing.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\heap.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\improvement.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\isbackbonecandidate.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\iscandidate.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\iscommonedge.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\ispossiblecandidate.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\kswapkick.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\linkernighan.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkhmain.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\make2optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\make3optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\make4optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\make5optmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\makekoptmove.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mergetourwithbesttour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mergewithtourgpx2.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mergewithtouript.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\minimum1treecost.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\minimumspanningtree.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mtsp2tsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mtsp_initialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mtsp_report.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mtsp_writeresult.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\mtsp_writesolution.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\normalizenodelist.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\normalizesegmentlist.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\ordercandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\patchcycles.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\pdptw_reduce.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\pdtspl_repairtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\pdtspl_tree.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_1_pdtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_acvrp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_bwtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_ccvrp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_ctsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_cvrp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_cvrptw.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_m1_pdtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_mlp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_mtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_mvrpb.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_m_pdtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_ovrp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_pdptw.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_pdtsp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_pdtspf.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_pdtspl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_rctvrp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_scvrptw.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_sop.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_trp.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_tspdl.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_tsppd.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_tsptw.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_vrpb.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_vrpbtw.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\penalty_vrppd.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\printff.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\printparameters.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\random.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readcandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readedges.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readline.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readparameters.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readpenalties.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\readproblem.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\recordbesttour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\recordbettertour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\removefirstactive.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\resetcandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\restoretour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\segmentsize.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sequence.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sfctour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sintef_writesolution.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvecompressedsubproblem.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvedelaunaysubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvekarpsubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvekcentersubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvekmeanssubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solverohesubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvesfcsubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvesubproblem.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvesubproblemborderproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\solvetoursegmentsubproblems.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sop_initialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sop_repairtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\sop_report.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\statistics.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\statusreport.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\storetour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\symmetrizecandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\trimcandidateset.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\tspdl_initialtour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\tsptw_makespancost.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\tsptw_reduce.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\vrpb_reduce.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\writecandidates.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\writepenalties.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\writetour.obj
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.pdb
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\vc141.pdb
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.exe
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\cl.command.1.tlog
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\cl.read.1.tlog
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\cl.write.1.tlog
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\link.command.1.tlog
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\link.read.1.tlog
+c:\users\s134399\documents\phd\geom challenge polygon area\polygon-area-geometry-challenge\lkhwin-3.0.5\x64\release\lkh.tlog\link.write.1.tlog
