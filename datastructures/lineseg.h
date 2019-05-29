@@ -30,7 +30,13 @@ private:
         std::string toString() const;
 
         bool operator <(const lineseg &other) const {
-            return this->a < other.a;
+            if (this->a < other.a) {
+                return true;
+            } else if (this->a > other.a) {
+                return false;
+            } else {
+                return this->b < other.b;
+            }
         }
 
         bool operator ==(const lineseg &other) const {

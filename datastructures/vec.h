@@ -57,6 +57,13 @@ public:
         }
         return y < p.y;
     }
+
+    bool operator>(const vec &p) const {
+        if (fabs(y - p.y) < EPS) {
+            return x > p.x;
+        }
+        return y > p.y;
+    }
 };
 
 // VECTOR
