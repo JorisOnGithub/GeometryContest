@@ -36,7 +36,7 @@ public:
 
     lineseg getEdge(int index) const;
 
-    double area() const;
+    long double area() const;
 
     bool isConvex() const;
 

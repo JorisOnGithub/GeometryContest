@@ -127,7 +127,7 @@ void quadtree::data_info(std::set<lineseg> cur_data) {
     for (auto seg : this->get_data()) {
         cur_data.insert(seg);
     }
-    if (this->is_leaf()){ 
+    if (this->is_leaf()){
         return;
     }
     this->nw->data_info(cur_data);

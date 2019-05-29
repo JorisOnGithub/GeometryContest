@@ -7,7 +7,7 @@
 
 #include <cmath>
 #include <string>
-const double EPS = 1e-9;
+const long double EPS = 1e-9;
 
 // vector in 2D space
 class vec {
@@ -17,22 +17,22 @@ public:
 public:
     // constructors
     vec() {}
-    vec(double _x, double _y) : x(_x), y(_y) {}
+    vec(long double _x, long double _y) : x(_x), y(_y) {}
 
     vec(const vec &a, const vec &b) : vec(b.x - a.x, b.y - a.y) {}
 
     // operations
     // L2 norm of this vector squared
-    double norm_sq() const;
+    long double norm_sq() const;
 
     // L2 norm of this vector
-    double norm() const;
+    long double norm() const;
 
     // dot product
-    double dot(const vec &v) const;
+    long double dot(const vec &v) const;
 
     // cross product
-    double cross(const vec &v) const;
+    long double cross(const vec &v) const;
 
     // to string
     std::string toString() const;
@@ -62,12 +62,12 @@ public:
 // VECTOR
 vec toVec(vec a, vec b);
 
-double norm_sq(vec v);
+long double norm_sq(vec v);
 
-double norm(const vec &v);
+long double norm(const vec &v);
 
-double dot(vec a, vec b);
+long double dot(vec a, vec b);
 
-double cross(vec a, vec b);
+long double cross(vec a, vec b);
 
 #endif //GEOMETRY_CONTEST_VEC_H

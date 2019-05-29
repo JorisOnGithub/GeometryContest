@@ -115,6 +115,7 @@ class quadtree {
         int size() {
             return this->node_count;
         }
+
         /**
          * @return gets all linesegment contained in the tree 
          */
