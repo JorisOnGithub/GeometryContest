@@ -4,8 +4,8 @@
 #ifndef GEOMETRY_CONTEST_QUADTREE_H
 #define GEOMETRY_CONTEST_QUADTREE_H
 
-static constexpr int bucketsize = 4; // subdivide when size() >= bucketsize
-static constexpr int max_depth = 100; // depth cap
+static constexpr int bucketsize = 10; // subdivide when size() >= bucketsize
+static constexpr int max_depth = 20; // depth cap
 
 class quadtree {
     private:
@@ -24,6 +24,7 @@ class quadtree {
             this->nw = NULL;
             this->ne = NULL;
             this->sw = NULL;
+            this->se = NULL;
             this->botl = b;
             this->topr = t;
         }
