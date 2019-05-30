@@ -118,6 +118,14 @@ bool quadtree::remove(lineseg l) {
             this->data.insert(ne->data.begin(), ne->data.end());
             this->data.insert(sw->data.begin(), sw->data.end());
             this->data.insert(se->data.begin(), se->data.end());
+            delete nw;
+            delete ne;
+            delete sw;
+            delete se;
+            nw = NULL;
+            ne = NULL;
+            sw = NULL;
+            se = NULL;
         }
         return removeSuccess;
     }
@@ -127,18 +135,20 @@ void quadtree::gather_intersecting_lines(std::set<lineseg> &intersections, lines
     if (!this->intersects_boundary(l)) { // not in here, stop
         return;
     }
-    for (auto seg: this->get_data()) {
-        if (seg != l && seg.intersects(l) &&
-                intersections.find(seg) == intersections.end()){ // add intersections that are not the line
-            intersections.insert(seg);
+    if (this->is_leaf()) {
+        for (auto seg: this->get_data()) {
+            if (seg != l && seg.intersects(l) &&
+                intersections.find(seg) == intersections.end()) { // add intersections that are not the line
+                intersections.insert(seg);
+            }
         }
+    } else {
+        // gather intersecting lines from the children
+        this->nw->gather_intersecting_lines(intersections, l);
+        this->sw->gather_intersecting_lines(intersections, l);
+        this->se->gather_intersecting_lines(intersections, l);
+        this->ne->gather_intersecting_lines(intersections, l);
     }
-    if (this->is_leaf()) return;
-    // gather intersecting lines from the children
-    this->nw->gather_intersecting_lines(intersections, l);
-    this->sw->gather_intersecting_lines(intersections, l);
-    this->se->gather_intersecting_lines(intersections, l);
-    this->ne->gather_intersecting_lines(intersections, l);
 }
 
 std::set<lineseg> quadtree::get_intersecting_lines(lineseg l) {
@@ -148,16 +158,16 @@ std::set<lineseg> quadtree::get_intersecting_lines(lineseg l) {
 }
 
 void quadtree::data_info(std::set<lineseg> cur_data) {
-    for (auto seg : this->get_data()) {
-        cur_data.insert(seg);
+    if (this->is_leaf()) {
+        for (auto seg : this->get_data()) {
+            cur_data.insert(seg);
+        }
+    } else {
+        this->nw->data_info(cur_data);
+        this->ne->data_info(cur_data);
+        this->sw->data_info(cur_data);
+        this->se->data_info(cur_data);
     }
-    if (this->is_leaf()){
-        return;
-    }
-    this->nw->data_info(cur_data);
-    this->ne->data_info(cur_data);
-    this->sw->data_info(cur_data);
-    this->se->data_info(cur_data);
 }
 
 std::set<lineseg> quadtree::get_all_data() {

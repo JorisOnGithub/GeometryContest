@@ -114,7 +114,9 @@ class quadtree {
          * @return how many linesegments the subtree contains
          */ 
         int size() {
-            return this->node_count;
+            std::cout << "quadtree::size() is not correctly implemented and should not be used" << std::endl;
+            return data.size();
+            //return this->node_count;
         }
 
         /**
