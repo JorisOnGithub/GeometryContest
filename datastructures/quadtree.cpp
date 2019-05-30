@@ -22,6 +22,22 @@ bool quadtree::intersects_boundary(lineseg& l) {
     return this->in_boundary(l); 
 }
 
+bool quadtree::intersects_boundary_ray(lineseg& l) {
+    // define two other points of rectangle
+    vec topleft = vec(botleft->x, topright->y);
+    vec botright = vec(topright->x, botleft->y);
+    // define the rectangle four lines
+    lineseg topline = lineseg(&topleft, topright);
+    lineseg leftline = lineseg(botleft, &topleft);
+    lineseg botline = lineseg(botleft ,&botright);
+    lineseg rightline = lineseg(topright, &botright);
+    // check if intersects boundary
+    if (l.ray_intersects(topline) || l.ray_intersects(leftline) || l.ray_intersects(botline) || l.ray_intersects(rightline)) {
+        return true;
+    }
+    return false;
+}
+
 void quadtree::subdivide() {
     // edge lengths, divided by two. 
     double y_diff = (topright->y - botleft->y)/2.0;
@@ -51,7 +67,7 @@ void quadtree::subdivide() {
     this->data.clear();
 }
 
-bool quadtree::insert(lineseg l) {
+bool quadtree::insert(lineseg& l) {
     if (!this->intersects_boundary(l)) {  // if not in this node
         return false; // cant insert
     }
@@ -72,7 +88,7 @@ bool quadtree::insert(lineseg l) {
     }
 }
 
-bool quadtree::intersects_line(lineseg l) {
+bool quadtree::intersects_line(lineseg& l) {
     if (!this->intersects_boundary(l)) { // cant intersect with anything in this if not contained in subtree
         return false;
     }
@@ -89,7 +105,7 @@ bool quadtree::intersects_line(lineseg l) {
     }
 }
 
-bool quadtree::remove(lineseg l) {
+bool quadtree::remove(lineseg& l) {
     if (!this->intersects_boundary(l)) {
         return false;
     }
@@ -131,7 +147,7 @@ bool quadtree::remove(lineseg l) {
     }
 }
 
-void quadtree::gather_intersecting_lines(std::set<lineseg> &intersections, lineseg l) {
+void quadtree::gather_intersecting_lines(std::set<lineseg> &intersections, lineseg& l) {
     if (!this->intersects_boundary(l)) { // not in here, stop
         return;
     }
@@ -151,7 +167,7 @@ void quadtree::gather_intersecting_lines(std::set<lineseg> &intersections, lines
     }
 }
 
-std::set<lineseg> quadtree::get_intersecting_lines(lineseg l) {
+std::set<lineseg> quadtree::get_intersecting_lines(lineseg& l) {
     std::set<lineseg> intersections;
     this->gather_intersecting_lines(intersections, l);
     return intersections;
@@ -176,3 +192,42 @@ std::set<lineseg> quadtree::get_all_data() {
     return all_data;
 }
 
+lineseg* quadtree::cast_ray(lineseg& l) {
+    if (!this->intersects_boundary_ray(l)) { // cant intersect with anything in this if not contained in subtree
+        return nullptr;
+    }
+    if (this->is_leaf()) {
+        lineseg *first_seg = nullptr;
+        double first_dist = -1;
+        for (auto seg : this->data) {
+            double dist = l.ray_dist_to_intersection(seg);
+            vec intersection = vec(l.a.x+dist*(l.b.x-l.a.x), l.a.y+dist*(l.b.y-l.a.y));
+            if (dist > 0 && (first_dist == -1 || dist < first_dist)
+                && intersection.x >= botleft->x && intersection.x <= topright->x
+                && intersection.y >= botleft->y && intersection.y <= topright->y) {
+                first_dist = dist;
+                first_seg = &seg;
+            }
+        }
+        return first_seg;
+    } else {
+        quadtree *first, *second, *third, *fourth;
+        if (l.a.x <= l.b.x && l.a.y <= l.b.y) {
+            first = sw; second = se; third = nw; fourth = ne;
+        } else if (l.a.x <= l.b.x) {
+            first = nw; second = sw; third = ne; fourth = se;
+        } else if (l.a.y <= l.b.y) {
+            first = se; second = ne; third = sw; fourth = nw;
+        } else {
+            first = ne; second = nw; third = se; fourth = sw;
+        }
+        lineseg *res = first->cast_ray(l);
+        if (res != nullptr) return res;
+        res = second->cast_ray(l);
+        if (res != nullptr) return res;
+        res = third->cast_ray(l);
+        if (res != nullptr) return res;
+        res = fourth->cast_ray(l);
+        return res;
+    }
+}

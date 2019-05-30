@@ -80,6 +80,34 @@ bool lineseg::intersects(lineseg &other) {
      */
 }
 
+bool lineseg::ray_intersects(lineseg &other) {
+    if (this->a == other.a || this->a == other.b) {
+        // they share a point, do not count this as intersection
+        return false;
+    }
+
+    double l_sign, r_sign;
+    l_sign = isLeft(a, b, other.a);
+    r_sign = isLeft(a, b, other.b);
+    if (l_sign * r_sign > 0) return false; // both endpoints on the same side of ray
+
+    double x1 = this->a.x;
+    double y1 = this->a.y;
+    double x2 = this->b.x;
+    double y2 = this->b.y;
+
+    double x3 = other.a.x;
+    double y3 = other.a.y;
+    double x4 = other.b.x;
+    double y4 = other.b.y;
+
+    double t = (y3-y4)*(x1-x3) + (x4-x3)*(y1-y3);
+    t /= (x4-x3) * (y1-y2) - (x1-x2) * (y4-y3);
+    if (t <= 0) return false;
+
+    return true;
+}
+
 vec lineseg::pointOfIntersection(lineseg &other) {
     if (!intersects(other)) {
         return vec(-M_PI, -M_PI);
@@ -100,4 +128,23 @@ vec lineseg::pointOfIntersection(lineseg &other) {
 
         return vec(x1 - t * (x2 - x1), y1 - t * (y2 - y1));
     }
+}
+
+double lineseg::ray_dist_to_intersection(lineseg &other) {
+    if (!ray_intersects(other)) {
+        return -1;
+    }
+    double x1 = this->a.x;
+    double y1 = this->a.y;
+    double x2 = this->b.x;
+    double y2 = this->b.y;
+
+    double x3 = other.a.x;
+    double y3 = other.a.y;
+    double x4 = other.b.x;
+    double y4 = other.b.y;
+
+    double t = (y3-y4)*(x1-x3) + (x4-x3)*(y1-y3);
+    t /= (x4-x3) * (y1-y2) - (x1-x2) * (y4-y3);
+    return t;
 }

@@ -27,6 +27,8 @@ private:
 
         bool intersects(lineseg &other);
 
+        bool ray_intersects(lineseg &other);
+
         /**
          * Method for finding the point of intersection with another linesegment
          * Assumes non-coinciding!
@@ -34,6 +36,8 @@ private:
          * @return POI if exists, otherwise (-pi, -pi)
          */
         vec pointOfIntersection(lineseg &other);
+
+        double ray_dist_to_intersection(lineseg &other);
 
         std::string toString() const;
 

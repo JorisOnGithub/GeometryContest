@@ -36,7 +36,7 @@ class quadtree {
 
         void subdivide();
        
-        void gather_intersecting_lines(std::set<lineseg> &intersections, lineseg l);
+        void gather_intersecting_lines(std::set<lineseg> &intersections, lineseg& l);
 
         std::set<lineseg> get_data() {
             return this->data;
@@ -81,12 +81,14 @@ class quadtree {
 
         bool intersects_boundary(lineseg& l);
 
+        bool intersects_boundary_ray(lineseg& l);
+
         /**
          * Inserts a linesegment in the tree
          * @param l linesegment to insert
           *@return whether insert was successful
          */
-        bool insert(lineseg l);
+        bool insert(lineseg& l);
 
 
         /**
@@ -94,21 +96,21 @@ class quadtree {
          * @param l linesegment to remove
          * @return whether the removal was successful
          */
-        bool remove(lineseg l);
+        bool remove(lineseg& l);
         
         /**
          * Checks whether this line intersects any other in the tree
          * @param l linesegment to analyze intersections with
          * @return if l intersects any other linesegment in the tree
          */
-        bool intersects_line(lineseg l);
+        bool intersects_line(lineseg& l);
         
         /**
          * Finds all line segments in quadtree which intersect it.
          * @param l linesegment to analyze
          * @return set of line segments that intersect lineseg l
          */
-        std::set<lineseg> get_intersecting_lines(lineseg l);
+        std::set<lineseg> get_intersecting_lines(lineseg& l);
         
         /**
          * @return how many linesegments the subtree contains
@@ -123,6 +125,14 @@ class quadtree {
          * @return gets all linesegment contained in the tree 
          */
         std::set<lineseg> get_all_data();
+
+        /**
+         * Returns a pointer to the first linesegment intersecting the ray from l.a through l.b,
+         * or nullptr if there is none
+         * @param l
+         * @return
+         */
+        lineseg* cast_ray(lineseg& l);
 };
 
 #endif
