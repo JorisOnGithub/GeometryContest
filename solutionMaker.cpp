@@ -122,11 +122,11 @@ void solutionMaker::realSolution(bool visualizeInbetween, bool debug) {
                 lineseg *ls2 = new lineseg(bestP, &cur->next->point);
 
                 // print lines in qt
-                std::set<lineseg*> data = qt.get_all_data();
+                std::set<lineseg> data = qt.get_all_data();
                 std::cout << "data size " << data.size() << std::endl;
                 std::cout << " PRINTING ALL LINE SEGMENTS IN QT " << std::endl;
                 for (auto s: data) {
-                    std::cout << s->toString() << std::endl;
+                    std::cout << s.toString() << std::endl;
                 }
                 std::cout << "DONE PRINTING" << std::endl;
 

@@ -6,7 +6,7 @@
 #include <ctime>
 #include "visualiser.h"
 #include "../lib/TinyXML2/tinyxml2.h"
-#include <filesystem>
+//#include <filesystem>
 
 using namespace tinyxml2;
 
@@ -21,8 +21,8 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
 
     // Load IPE template file
     // TODO: the path below should be a relative path, this does not work on my system
-//    XMLError loadResult = xml.LoadFile("../res/template.ipe");
-    XMLError loadResult = xml.LoadFile("/home/joris/files/personal_programs/geometry_contest/res/template.ipe");
+    XMLError loadResult = xml.LoadFile("../res/template.ipe");
+    //XMLError loadResult = xml.LoadFile("/home/joris/files/personal_programs/geometry_contest/res/template.ipe");
 
     if (loadResult == XML_SUCCESS) {
         // Loaded template correctly
@@ -44,8 +44,8 @@ void visualiser::visualise(std::vector<vec> points, polygon polygon, std::string
         this->drawPoly(polygon, page);
 
         // Output the generated ipe file
-//        std::string outFile = "../output/";
-        std::string outFile = "/home/joris/files/personal_programs/geometry_contest/output/";
+        std::string outFile = "../output/";
+//        std::string outFile = "/home/joris/files/personal_programs/geometry_contest/output/";
 
 
         size_t sepPos = inFile.find_last_of("/");
