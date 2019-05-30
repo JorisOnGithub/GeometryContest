@@ -6,17 +6,18 @@
 
 static constexpr int bucketsize = 10; // subdivide when size() >= bucketsize
 static constexpr int max_depth = 20; // depth cap
+static constexpr int mergesize = 5; // merge when size of all children together is at most 5
 
 class quadtree {
     private:
         quadtree  *parent, *nw, *ne, *sw, *se; // relative info
-        int node_count;
+        //int node_count;
         int depth;
         bool botl, topr;
         std::set<lineseg> data;
 
         quadtree(quadtree* _parent, vec *bl, vec *tr, bool b, bool t) {
-            this->node_count = 0;
+            //this->node_count = 0;
             this->parent = _parent;
             this->depth = parent == NULL ? 0 : parent->depth + 1;
             this->botleft = bl;

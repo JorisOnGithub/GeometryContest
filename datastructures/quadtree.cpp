@@ -24,10 +24,10 @@ bool quadtree::intersects_boundary(lineseg& l) {
 
 void quadtree::subdivide() {
     // edge lengths, divided by two. 
-    int y_diff = floor((topright->y - botleft->y)/2.0); 
-    int x_diff = floor((topright->x - botleft->x)/2.0);
+    double y_diff = (topright->y - botleft->y)/2.0;
+    double x_diff = (topright->x - botleft->x)/2.0;
+
     // define each child, nw=topleft, ne=topright-> sw=botleft-> se=botright
-    // TODO: could be issues with coordinate precision because of flooring? 
     vec* nwbl = new vec(botleft->x, botleft->y + y_diff);
     vec* nwtr = new vec(botleft->x + x_diff, topright->y);
     this->nw = new quadtree(this, nwbl, nwtr, false, false);
@@ -41,61 +41,85 @@ void quadtree::subdivide() {
     vec* sebl = new vec(botleft->x + x_diff, botleft->y);
     vec* setr = new vec(topright->x, botleft->y + y_diff);
     this->se = new quadtree(this, sebl, setr, false, false);
+
+    for (lineseg l : this->data) {
+        this->nw->insert(l);
+        this->ne->insert(l);
+        this->sw->insert(l);
+        this->se->insert(l);
+    }
+    this->data.clear();
 }
 
 bool quadtree::insert(lineseg l) {
     if (!this->intersects_boundary(l)) {  // if not in this node
         return false; // cant insert
     }
-    if (this->should_subdivide()) { // if should subdivide
-        this->subdivide(); // then subdivide
+    if (this->is_leaf()) {
+        data.insert(l);
 
-        if(this->nw->insert(l) || this->ne->insert(l) ||
-                this->sw->insert(l) || this->se->insert(l)) { // with successful insert
-            this->node_count ++; // increment the count
-            return true;
-        } else {
-            return false;
+        if (this->should_subdivide()) {
+            this->subdivide();
         }
-    } else { // otherwise dont subdivide
-        this->node_count ++;
-        this->data.insert(l); // insert the node
+
+        return true;
+    } else {
+        this->nw->insert(l);
+        this->ne->insert(l);
+        this->sw->insert(l);
+        this->se->insert(l);
         return true;
     }
 }
 
 bool quadtree::intersects_line(lineseg l) {
-    if (!this->intersects_boundary(l) || this->size() <= 1) { // cant intersect with anything in this if not contained in subtree
+    if (!this->intersects_boundary(l)) { // cant intersect with anything in this if not contained in subtree
         return false;
     }
-    for (auto seg : this->data) { // for each linesegment
-        if (seg != l && seg.intersects(l)) {
-            return true;  // return true if it intersects with any
+    if (this->is_leaf()) {
+        for (auto seg : this->data) { // for each linesegment
+            if (seg != l && seg.intersects(l)) {
+                return true;  // return true if it intersects with any
+            }
         }
+        return false;
+    } else {
+        return this->nw->intersects_line(l) || this->sw->intersects_line(l) ||
+               this->se->intersects_line(l) || this->ne->intersects_line(l);
     }
-    if (this->is_leaf()) { // if a leaf and all data processed already
-        return false; // then doesnt intersect 
-    }
-    return this->nw->intersects_line(l) || this->sw->intersects_line(l) ||
-        this->se->intersects_line(l) || this->ne->intersects_line(l);
 }
 
 bool quadtree::remove(lineseg l) {
     if (!this->intersects_boundary(l)) {
         return false;
     }
-    if (this->data.erase(l) == 0) {
-        if (this->is_leaf()) return false;
-        if (this->nw->remove(l) || this->ne->remove(l) || 
-                this->sw->remove(l) || this->se->remove(l)) {
-            this->node_count--;
-            return true;
-        } else {
-            return false;
-        }
+    if (this->is_leaf()) {
+        return this->data.erase(l) != 0; // TODO: Check that this does what I expect
     } else {
-        this->node_count--;
-        return true;
+        bool removeSuccess = false;
+        if (this->nw->remove(l)) {
+            removeSuccess = true;
+        }
+        if (this->ne->remove(l)) {
+            removeSuccess = true;
+        }
+        if (this->sw->remove(l)) {
+            removeSuccess = true;
+        }
+        if (this->se->remove(l)) {
+            removeSuccess = true;
+        }
+
+        if (nw->is_leaf() && ne->is_leaf() && sw->is_leaf() && se->is_leaf() &&
+            nw->data.size() + ne->data.size() + nw->data.size() + se->data.size() <= mergesize) {
+            // Now the children should be merged
+            // TODO: Is there a better way for merging sets?
+            this->data.insert(nw->data.begin(), nw->data.end());
+            this->data.insert(ne->data.begin(), ne->data.end());
+            this->data.insert(sw->data.begin(), sw->data.end());
+            this->data.insert(se->data.begin(), se->data.end());
+        }
+        return removeSuccess;
     }
 }
 
