@@ -46,7 +46,7 @@ bool lineseg::intersects(lineseg &other) {
     if (l_sign * r_sign > 0) return false; // both endpoints on the same side of line
 
     l_sign = isLeft(other.a, other.b, a);
-    l_sign = isLeft(other.a, other.b, b);
+    r_sign = isLeft(other.a, other.b, b);
     if (l_sign * r_sign > 0) return false;
     return true;
     /*
