@@ -27,6 +27,14 @@ private:
 
         bool intersects(lineseg &other);
 
+        /**
+         * Method for finding the point of intersection with another linesegment
+         * Assumes non-coinciding!
+         * @param other : linesegment to check intersection with
+         * @return POI if exists, otherwise (-pi, -pi)
+         */
+        vec pointOfIntersection(lineseg &other);
+
         std::string toString() const;
 
         bool operator <(const lineseg &other) const {

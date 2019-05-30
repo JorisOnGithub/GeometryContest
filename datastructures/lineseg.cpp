@@ -79,3 +79,25 @@ bool lineseg::intersects(lineseg &other) {
     return false;
      */
 }
+
+vec lineseg::pointOfIntersection(lineseg &other) {
+    if (!intersects(other)) {
+        return vec(-M_PI, -M_PI);
+    } else {
+        // using http://www.cs.swan.ac.uk/~cssimon/line_intersection.html
+        double x1 = this->a.x;
+        double y1 = this->a.y;
+        double x2 = this->b.x;
+        double y2 = this->b.y;
+
+        double x3 = other.a.x;
+        double y3 = other.a.y;
+        double x4 = other.b.x;
+        double y4 = other.b.y;
+
+        double t = (y3-y4)*(x1-x3) + (x4-x3)*(y1-y3);
+        t /= (x4-x3) * (y1-y2) - (x1-x2) * (y4-y3);
+
+        return vec(x1 - t * (x2 - x1), y1 - t * (y2 - y1));
+    }
+}
