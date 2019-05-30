@@ -126,6 +126,8 @@ vec lineseg::pointOfIntersection(lineseg &other) {
         double t = (y3-y4)*(x1-x3) + (x4-x3)*(y1-y3);
         t /= (x4-x3) * (y1-y2) - (x1-x2) * (y4-y3);
 
+        // TODO: Someone should check this, but I think that this should be:
+        // TODO: return vec(x1 + t * (x2 - x1), y1 + t * (y2 - y1));
         return vec(x1 - t * (x2 - x1), y1 - t * (y2 - y1));
     }
 }
